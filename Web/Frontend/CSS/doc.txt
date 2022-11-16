@@ -1,0 +1,318 @@
+___________________________Các cách sử dụng css__________________________
+    Internal: dùng trực tiếp trong file HTML(đặt trong cặp thẻ style thường trong <head>)
+    External: dùng file css từ bên ngoài(liên kết qua thẻ link trong <head> )
+    Inline  : dùng attribute style trong các thẻ HTML
+
+___________________________Cách viết trong CSS:____________________________
+    với thẻ trực tiếp:
+        TagName{
+
+        }
+    với ID:
+        #IDName{
+
+        }
+    Với class:
+        .className{
+
+        }
+    sử dụng cho tất cả thẻ:
+        *{
+
+        }
+
+_____________________________Mức độ ưu tiên trong CSS______________________
+    Xét về cách sử dụng:
+        1. Inline
+        2. internal và external
+            Không có sự ưu tiên giữa internal và external, cái nào gọi sau thì ưu tiên cái đó
+    Thứ tự tổng quan:
+        0. !important
+        1. Inline - 1000
+        2. #id    - 100
+        3. .class - 10 
+        5. tag    - 1 
+        6. Cùng loại thì ưu tiên cái sau
+        7. *
+    
+    Lưu ý:
+        h1#id.class > id.class > h1#id > id > h1.class > class >tag
+
+_____________________________Đặt biến css________________________________
+    Dạng global:
+        :root{
+            --text-color: red;
+        }
+        h1{
+            color: var(--text-color);
+        }
+    Dạng local:
+        h1{
+            --text-color: red;
+            color: var(--text-color);
+        }
+
+______________________________Đơn vị CSS_________________________________
+    1. Absolute units(đơn vị tuyệt đối)
+        px
+        pt
+        cm 
+        mm 
+        inch
+        pc
+    2. Relative units(đơn vị tương đối)
+        % (lấy x% kích thước thẻ chứa nó)
+        rem (phụ thuộc thẻ <html>: 1 rem tương ứng với 100%)
+        em (tương tự rem nhưng phụ thuộc vào thẻ gần nhất chứa nó có thuộc tính cần đặt giá trị em)
+        vw (viewport - width: % chiều ngang theo kích thước trình duyệt)
+        vh (viewport - height: % chiều dọc theo kích thước trình duyệt)
+        vmin
+        vmax
+        ex 
+        ch
+
+______________________________Các thộc tính_____________________________
+    Tổng quan:
+        thứ tự bao bọc:
+            margin(tạo khoảng cách giữa các element) -> border(viền ngoài cùng) -> padding(đệm) -> content(nội dung)
+    1.padding
+        padding: 10px 12px;(1 tham số: 4 phía; 2 tham số: trên+dưới -- trái+phải; 3 tham số: trên -- trái+ phải -- dưới; 4 tham số: chiều kim đồng hồ)
+        padding-top: 10px;
+        padding-right
+        padding-bottom
+        padding-left
+    2.border
+        border: 10px solid #333;
+        border-top: 10px solid #333;
+        border-width: 10px;
+        border-top-width: 10px;
+        border-left-width: 10px;
+        border-right-width: 10px;
+        border-bottom-width: 10px;
+
+        border-style: solid;
+        border-color: #333;
+    3.margin
+        margin: 10px 12px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-botton: 10px;
+        margin-right: 10px;
+
+    4. float(các khối nằm trên 1 chiều xác định,thường đặt trong thẻ bao bọc)
+        float: left;
+    5. box-sizing
+        box-sizing: border-box;(cố định kích thước tổng cho element = content+padding+border)
+        box-sizing: unset; (hủy box-sizing)
+    6. background
+        background-color: green;
+        background-clip: border-box;(đổ màu nền từ vị trí chọn vào trong: border-box, padding-box, content-box)
+        background-image: url(https://ga.com/a.jpg) url(https://ga.com/b.jpg); (ảnh nào viết trước hiển thị bên trên)
+        background-image: linear-gredient(0deg,rgba(0,255,255,0.5),rgba(0,255,0,0.5)),url(https://ga.com/a.jpg); (dải màu chuyển từ #333 -> #ccc)
+        background-size: 100px; (kích cỡ ảnh nền; auto;100%; contain: lấy kích thước hình ảnh phù hợp nhất với màn hình, cover: chấp nhận reset )
+        background-repeat: no-repeat; (ko lặp lại ảnh nền; repeat-x: lặp theo trục x; repeat-y: lặp lại theo trục y)
+        background-origin: border-box; (tương tự background-clip)
+        background-position:  bottom 10px center 10px; (căn chỉ vị trị background)
+    7. color
+        đổi màu chữ
+        color: red;
+    8. opacity
+        độ trong suốt
+        opacity:1
+
+_____________________________CSS Function_______________________________
+    1.rgb
+        rgb(255,255,255)
+    2.rgba
+        rgba(255,255,255,1)
+    3.calc
+        Tính toán
+        width: calc(120px / 2)
+    4.attr
+        a::after{
+            content: "(" attr(href) " `)";
+        }
+        <a href="https://ga.com"> Hoc</a>
+    5.var
+        --text-color: red;
+        color: var(--text-color);
+    6. linear-gredient
+        linear-gredient(0deg,rgba(0,255,255,0.5),rgba(0,255,0,0.5))
+
+_____________________________pseudo-class (Lớp giả)_____________________________________
+
+    :root  (tham chiếu đến phần tử gốc)
+
+    :hover (kích hoạt khi di chuột)
+        h1:hover{
+            color: red;
+        }
+    
+    :active (kích hoạt khi click chuột)
+        h1:active{
+            color: red;
+        }
+    :first-child (tác dụng lên thẻ con đầu tiên)
+        li:first-child{
+            color:red;
+        }
+
+    :last-child  (tác dụng lên thẻ con cuối)
+        li:last-child{
+            color:red;
+        }
+
+_____________________________pseudo-elements (phần tử giả)_____________________________________
+
+    Mỗi element chỉ tồn tại lớp giả ko trùng nhau
+    Before đứng đầu, after đứng cuối
+    ::before
+        .box::before{
+            content: ""; (cần để tồn tại)
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    ::after
+        .box::after{
+            content: "HI"; (cần để tồn tại)
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+        }
+
+    ::first-letter 
+        ảnh hưởng kí tự đầu tiên
+        .box::first-letter{
+            font-size: 20px;
+        }
+    ::first-line
+        ảnh hưởng đến dòng đầu tiên
+        .box::first-line{
+            font-size: 20px;
+        }
+    ::selection
+        thay đổi khi bôi đen
+        .box::selection{
+            background-color: red;
+            color: #fff;
+        }
+
+_____________________________position________________________________________________________
+
+    Relative
+        Vị trí tương đối
+        Cho phép đè lên các phần khác
+        phụ thuộc vào vị trí của chính thẻ đó để lấy làm gốc tọa độ
+        top,left,bottom,right chỉ hoạt động khi có position
+        .box{
+            position: relative;
+            top: 100px;
+            left: 100px
+        }
+    Absolute
+        Vị trí tuyệt đối
+        Cho phép đè lên các phần khác
+        phụ thuộc vào vị trí thẻ trong cùng có position chứa nó để lấy làm gốc tọa độ
+        .box-child{
+            position: absolute;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+        }
+    Fixed
+        Cố định vị trí 
+        phụ thuộc cửa sổ trình duyệt
+        .header{
+            width: 200px;
+            height: 42px;
+            background-color: #333;
+            position: fixed;
+            top: px;
+        }
+    sticky
+        Kéo đến vị trí xác định thì cố định lại
+
+____________________________Flex box layout__________________________________________________
+
+    display: flex| inline-flex
+        quyết định xem sử dụng flex ko
+    flex-direction: row | column | row-reverse | column-reverse
+        row   : main axis theo chiều ngang 
+        column: main axis theo chiều dọc
+    flex-wrap: nowrap| wrap | wrap | wrap-reverse
+        xuống dòng hay ko(thay đổi chiều cross start - end)
+        no-wrap     : ko xuống dòng
+        wrap        : item hiển thị theo thứ tự theo dòng từ trên xuống
+        wrap-reverse: item hiển thị theo thứ tự theo dòng từ dưới lên
+        
+    flex-basis:
+        set kích thước cho main size
+    justify-content: flex-start | flex-end | center | space-betwween | space-around
+        set cho cả vùng chứa
+        căn chỉnh theo main axis
+    justify-self: flex-start | flex end | center
+        set cho item
+        căn chỉnh theo main axis
+    align-content: flex-start| flex-end | center
+        set cho cả vùng chưa
+        căn chỉnh theo cross axis
+    align-self: flex-start| flex-end | center
+        set cho item
+        căn chỉnh theo cross axis
+    flex-grow:
+        thay đổi kích thước main size
+    flex-shrink:
+        thay đổi kích thước main size
+    flex:
+        thay thế cho 3 thuộc tính flex-grow, flex-shrink, flex-basis
+        
+    order:
+        quyết định thứ tự item
+        càng nhỏ càng gần main start
+
+    flex-flow:
+        thay thế cho flex-wrap flex-direction
+
+________________________________@_____________________________________
+
+    @media:
+        @media(min-width: 740px){
+            .fe-layput{
+                flex-direction: row;
+            }
+        }
+    @keyframe:
+        h1{
+            animation: growth ease-in 0.5s;
+        }
+        @keyframe growth{
+            from{
+                opacity: 0;
+                height: 50%;
+            }
+            to{
+                opacity:1;
+                height:100%;
+            }
+        }
+
+________________________________Tiêu chuẩn BEM___________________________
+
+    viết tăt Block element modifier
+    Tác dụng:
+        Làm chuẩn cú pháp đặt tên 
+    Cú pháp:
+        .block
+        .block__element 
+        .block--modifier
+        .block__element--modifier
+    Ưu điểm:
+        rõ ràng
+        dễ tái sử dụng
+        thích hợp làm việc nhóm
+        Tính module, ko lo css của class này ảnh hưởng css của class khác
+        

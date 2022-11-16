@@ -1,0 +1,152 @@
+HTML là viết tắt của Hyper Text Markup Language(Ngôn ngữ đánh dấu siêu văn bản)
+HTML là ngôn ngữ đánh dấu tiêu chuẩn để tạo các trang Web
+HTML mô tả cấu trúc của một trang Web
+HTML bao gồm một loạt các elements
+Các phần tử HTML cho trình duyệt biết cách hiển thị nội dung
+
+Lưu ý chung:
+     luôn bao gồm thuộc tính lang bên trong thẻ <html>, để khai báo ngôn ngữ của trang Web. Điều này có nghĩa là để hỗ trợ các công cụ tìm kiếm và trình duyệt.
+     Giá trị của thuộc tính title sẽ được hiển thị dưới dạng chú giải công cụ khi bạn di chuột qua phần tử:
+     Luôn sử dụng chữ thường cho thuộc tính 
+     có thể dùng lorem để tạo các dòng text ngẫu nhiên
+
+Các phần tử HTML có thể được lồng vào nhau (điều này có nghĩa là các phần tử có thể chứa các phần tử khác).
+Tất cả các phần tử HTML có thể có các thuộc tính
+Các thuộc tính cung cấp thông tin bổ sung về các phần tử
+Các thuộc tính luôn được chỉ định trong thẻ bắt đầu
+Các thuộc tính thường có trong các cặp tên / giá trị như: name = "value"
+
+Các loại thẻ:
+     Block Elements:
+          luôn bắt đầu trên một dòng mới 
+          trình duyệt tự động thêm một số khoảng trắng (lề) trước và sau phần tử.
+          luôn chiếm toàn bộ chiều rộng có sẵn (trải dài sang trái và phải hết mức có thể)
+          Các thẻ Block:
+               <h1> -> <h6>
+
+               <table>
+               <form>
+
+               <div>
+               <p>
+               <pre>
+
+               <ul>
+               <dl>
+               <dt>
+               <li>
+               <ol>
+               <dd>
+
+               <header>
+               <footer>
+               <nav>
+               <hr>
+
+               <address>
+               <article>
+               <aside>
+               <blockquote>
+               <details>
+               <dialog>
+               <fieldset>
+               <figcaption>
+               <figure>
+               <hgroup>
+               <main>
+               <section>
+               
+               
+     Inline Elements:
+          không bắt đầu trên một dòng mới.
+          chiếm đủ chiều rộng cần thiết.
+          các thẻ inline:
+               <a>
+               <textarea>
+               <input>
+               <label>
+               <button>
+               <select>
+
+               <picture>
+               <img>
+               <map>
+               <video>
+               <audio> (if it has visible controls)
+
+               <iframe>
+               <span>
+               <br>
+               <canvas>
+               
+
+               <abbr>
+               <acronym>
+               <b>
+               <bdi>
+               <bdo>
+               <big>
+               <cite>
+               <code>
+               <data>
+               <datalist>
+               <del>
+               <dfn>
+               <em>
+               <embed>
+               <i>
+               <ins>
+               <kbd>
+               <mark>
+               <meter>
+               <noscript>
+               <object>
+               <output>
+               <progress>
+               <q>
+               <ruby>
+               <s>
+               <samp>
+               <script>
+               <slot>
+               <small>
+               <strong>
+               <sub>
+               <sup>
+               <svg>
+               <template>
+               <time>
+               <u>
+               <tt>
+               <var>
+               <wbr>
+
+
+1 Vài thẻ đáng chú ý:
+     iframe: 
+          hiển thị 1 trang HTML khác trong 1 khung chỉ định 
+          có thể sử dụng 1 thẻ link với target là name của iframe để thay đổi trang web hiển  thị trong đó
+          
+               <iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+               <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+     meta:
+          thiết lập chiều rộng trang web = chiều rộng thiết bị , thu phóng khởi tạo =1
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          Xác định bộ ký tự được sử dụng:
+               <meta charset="UTF-8" />
+          Xác định từ khóa cho công cụ tìm kiếm:
+               <meta name="keywords" content="HTML, CSS, JavaScript">
+          Xác định mô tả về trang web của bạn:
+               <meta name="description" content="Free Web tutorials">
+          Xác định tác giả của một trang:
+               <meta name="author" content="John Doe">
+          Làm mới tài liệu sau mỗi 30 giây:
+               <meta http-equiv="refresh" content="30">
+     base:
+          Xác định đường dẫn cơ sở cho src hay href khác
+               <head>
+                    <base href="https://www.w3schools.com/" target="_blank">
+               </head>
+          
+          
+          

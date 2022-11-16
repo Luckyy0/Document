@@ -1,0 +1,106 @@
+Git:
+    Nơi lưu trữ source Code
+Git flow:
+    luồng quản lý source code
+
+    lập trình viên làm việc tại feature
+    Người kiểm duyệt review và đẩy vào develop
+    develop review ok thì đẩy lên release
+    release review ok đẩy lên master
+    bug tại master => đẩy code lỗi xuống hotfix
+    sửa lỗi tại hotfix đẩy lên master và develop
+Git repository: 
+    repository: 
+        kho lưu trữ dữ liệu của toàn bộ dự án
+    local repository:
+        repo phía local của ltv, được đẩy lên remote repo
+    Remote repository:
+        là repo được lưu trữ ở git(github,backlog,bibucket)
+Git Branch: 
+    Các hoạt động trên mỗi branch sẽ không ảnh hưởng đến các branch khác nên có 
+        thể tiến hành nhiều thay đổi đồng thời trên một repository. Hơn nữa, bạn có 
+        thể dễ dàng hợp nhất branch đã tách vào một branch chính bằng các câu lệnh merge.
+Pull request(PR):
+    Được tạo ra để đưa những file source code của bạn lên 1 host chung nơi mọi người có quyền 
+        truy cập sẽ truy cập vào và cùng review, để lại comment trên những file source code đó
+
+Các lệnh cơ bản:
+    1. Tạo thư mục 
+        Tạo 1 thư mục
+            mkdir <tên thư mục>
+        Tạo nhiều thư mục liên tiếp;
+            mkdir -p <tên thư mục>/<tên thư mục>
+    2. Xóa thư mục
+        Thư mục có dữ liệu:
+            rm <tên thư mục>
+        Thư mục trống:
+            rm -Rf <tên thư mục>
+    3. Tạo file:
+        vi <tên file>
+    4. show list file trong folder
+        ls -la
+    5. Di chuyển 
+        Chuyển đến thư mục:
+            cd <thư mục>
+        Chuyển lại thư mục cũ:
+            cd .. 
+        Chuyển ổ đĩa:
+            cd /D
+    6. kiểm tra vị trí thư mục đang trỏ vào
+        pwd
+
+Các bước :
+
+    1.Cấu hình git:
+        Trước khi làm việc với git phải tiến hành cấu hình
+        Mọi dữ liệu được bạn tạo ra ở git sẽ ăn theo thông tin cấu hình này
+        Chú ý không cấu hình sẽ không chạy được 1 số câu lệnh như commit, clone, stash …
+        Lệnh cấu hình Tên và Email
+            git config --global user.name "Tên của bạn"
+            git config --global user.email "Email của bạn"
+            Kiểm tra lại config xem đã đúng chưa
+            git config --list
+    2. Repository
+        Repository là gì: Là kho lưu trữ dữ liệu của 1 dự án
+        Local Repository: Là repo phía local của developer, nó được đồng bộ lên remote repo khi bạn làm việc với git
+        Remote Repository: Là repo được lưu trữ ở git trung tâm ví dụ như github, bitbucket, backlog
+
+        Lệnh tạo repo
+        mkdir [tên dự án]
+        cd [tên dự án]
+        git init
+    3. Git Branch
+        Branch là gì: Trong 1 dự án có nhiều task vụ khác nhau, chính vì vậy người 
+            ta phải dùng branch để phân nhánh mỗi task vụ đó thành 1 branch riêng 
+            biệt để lưu lại luồng lịch sử làm việc cho toàn bộ dự án. Branch 
+            đã phân nhánh sẽ không ảnh hưởng đến branch khác nên có thể tiến 
+            hành nhiều thay đổi đồng thời trong cùng 1 repository:
+                Branch Master
+                Branch Release(Staging)
+                Branch Develop
+                Branch Feature
+                Branch Hostfix
+        Khi 1 repo mới được tạo ra thì nó sẽ chưa tồn tại bất kỳ nhánh nào, để khởi tạo 1 branch thì ta phải lưu trữ trong branch ít nhất 1 file thì nó sẽ mặc định tạo ra branch master đầu tiên
+
+        Các câu lệnh:
+                echo “Git hoc lap trinh”＞hello.txt
+                git add hello.txt
+                git commit -m “khởi tạo git”
+                git branch                        :: xem danh sách branch
+                git branch <tên branch>           :: tạo branch 
+                git checkout -b <tên branch>      :: tạo branch và chuyển đến branch đó
+                git checkout <tên branch>         :: chuyển đến branch khác
+                    Chú ý: trước khi chuyển branch phải commit code lên branch hiện tại không thì code sẽ bị mất
+                git status                        :: xem trạng thái thay đổi của branch
+                git log                           :: xem lịch sử commit
+                    
+            Đưa dữ liệu lên branch: 
+                git add <file 1> <file 2> <thư mục 1/*>    :: Đưa từng file
+                git add .                          :: Đưa toàn bộ những thanh đổi lên branch
+                git commit -m “Comment nội dung mà bạn đưa lên brach”
+
+            Merge branch: 
+                git checkout <nhanh A>  :: di chuyển vào nhánh a
+                git merge <nhánh B>     :: gộp B vào a
+            Xử lý conflic khi merge:
+

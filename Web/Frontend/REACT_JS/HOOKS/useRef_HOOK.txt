@@ -1,0 +1,19 @@
+-------------------Những điều cần ghi nhớ--------------------
+1. Dùng khi nào?
+    - Dùng để lưu giá trị qua tham chiếu bên ngoài
+2. Code
+    import { useRef } from 'react'
+    function App(){
+        const ref = useRef(value)
+    } 
+3. Hoạt động :
+    luôn trả về object {current: giá trị}
+    Chỉ lấy giá trị khởi tạo (value) trong lần đầu tiên
+    Lưu các giá trị thay đổi ngay cả khi component re-render
+4. Sử dụng:
+    dùng ref.current để nhận hoạc gán giá trị
+    đặt trong thẻ html với prop ref để lấy cả thẻ:
+        trong th này, ref luôn được update lại mỗi khi component re-render
+        vd: <h1 ref={ref}></h1>
+5. Bài toán Dùng    
+    lấy giá trị hiện tại và trước đó của state (kết hợp với useEffect)

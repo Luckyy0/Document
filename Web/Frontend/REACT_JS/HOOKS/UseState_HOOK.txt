@@ -1,0 +1,36 @@
+-------------------Những điều cần ghi nhớ--------------------
+1. Dùng khi nào?
+    Khi muốn dữ liệu thay đổi =>  giao diện tự động cập nhật(re-render)
+2. Code cơ bản:
+    import { useState } from 'react'
+    function App(){
+        const [state,setState] = useState(initState)
+    }
+3. Các tham số:
+    + initState: 
+        - Chỉ khởi tạo cho lần đầu
+        - Có thể nhận nhiều kiểu dữ liệu số, mảng , chuỗi,...
+        - Nếu truyền vào hàm => chỉ nhận giá trị hàm đó đưa ra 
+    + state:
+        - Biến lưu trạng thái
+        - Chỉ được cập nhật lại khi component re-render
+    + setState: 
+        - Hàm tính toán để thay đổi giá trị state
+        - Có thể nhận callback
+4. Hoạt động:
+    - Trong lần đầu tiên:
+        khởi tạo giá trị state = initState
+    - Khi thực hiện setState:
+        Tạo ra biến mainState, preState tương đương state
+        Nếu setState có đối số ko phải hàm:
+            mainState đước gán bằng đối số (state ko đổi)
+        Nếu setState có đối số là callback:
+            preState là tham số đầu vào của callback
+                đồng thời được cập nhật giá trị = giá trị hàm trả về
+            mainState = preState
+    -  re-render component đồng thời cập nhật state = mainState
+
+5. Lưu ý:
+    Component được re-render khi setState(state thay đổi)
+    state thay đổi ngay trước khi return
+    

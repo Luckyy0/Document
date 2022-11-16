@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        _______________select________________________
+        sử dụng để tạo danh sách thả xuống.
+        Thuộc tính name là cần thiết để tham chiếu dữ liệu biểu mẫu sau khi biểu mẫu được gửi (nếu bỏ qua , sẽ không có dữ liệu nào từ danh sách thả xuống được gửi).
+        Thuộc tính id là cần thiết để liên kết danh sách thả xuống với một nhãn.
+        Các thẻ <option> bên trong phần tử <select> xác định các tùy chọn có sẵn trong danh sách thả xuống.
+            ____________các thuộc tinh__________-
+        autofocus: Chỉ định tự động focus khi trang tải
+        disabled: Chỉ định vô hiệu hóa
+        form: xác định thẻ form mà nó phụ thuộc (dựa vào id)
+        multiple: chỉ định có thể chọn nhiều giá trị
+        required: Chỉ định bắt buộc chọn một giá trị trước khi gửi biểu mẫu
+        size: xác định kích thước danh sách hiển thị
+        
+    -->
+    <label for="cars">Choose a car:</label>
+
+    <select name="cars" id="cars" size="8">
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </optgroup>
+      <optgroup label="German Cars">
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </optgroup>
+    </select>
+
+    <!-- 
+        _________________table___________________________
+        Mỗi ô trong bảng được xác định bởi thẻ <td> và </td>.(td: table data)
+        Mỗi hàng trong bảng bắt đầu bằng <tr> và kết thúc bằng thẻ </tr>(tr: table row)
+        có bao nhiêu hàng tùy thích trong một bảng; chỉ cần đảm bảo rằng số lượng ô trong mỗi hàng là như nhau.
+        dùng thẻ th(table header) làm tiêu đề cho mỗi cột tronng bảng
+
+        Thẻ <caption> xác định chú thích bảng
+        Thẻ <colgroup> chỉ định một nhóm gồm một hoặc nhiều cột trong bảng để định dạng.
+        Thẻ <thead>: Nhóm nội dung tiêu đề 
+        Thẻ <tbody>: Nhóm nội dung body
+        Thẻ <tfoot>: Nhóm nội dung chân bảng
+        colspan; số cột thẻ đó chiếm
+        rowspan: số hàng thẻ đó chiếm
+     -->
+    <table>
+      <caption>
+        Infomation
+      </caption>
+
+      <colgroup>
+        <col span="1" style="background-color: red" />
+        <col style="background-color: yellow" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th colspan="2">Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 
+        ____________________________líst____________________________
+        Đặc điểm chung:
+            có thể lồng nhau
+        + danh sách ko theo thứ tự:
+            <ul>
+                <li>Coffee</li>
+                <li>Tea
+                    <ul>
+                        <li>Black tea</li>
+                        <li>Green tea</li>
+                    </ul>
+                </li>
+                <li>Milk</li>
+            </ul>
+        + Danh sách có thứ tự:
+            type: loại số hiệu mỗi chỉ mục(1;A;a;I;i)
+            start="50": vị trị bắt đàu đánh số
+            <ol type="i">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+        + Danh sách mô tả:
+            dt: thuật ngữ
+            dd: mô tả thuật ngữ
+            <dl>
+                <dt>Coffee</dt>
+                <dd>- black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>- white cold drink</dd>
+            </dl>
+     -->
+  </body>
+</html>

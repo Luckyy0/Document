@@ -1,0 +1,40 @@
+-------------------Những điều cần ghi nhớ--------------------
+1. Dùng khi nào?
+    - Xử lý side effect
+    - Update DOM
+    - Listen DOM event
+    - Call API
+    - Cleanup
+2. Code
+    import { useEffect } from 'react'
+    function App(){
+        useEffect(callback,[deps])
+    } 
+3. Các tham số
+    callback: 
+        Là 1 callback
+        tham số bắt buộc
+    deps:
+        tham số không bắt buộc
+4. Hoạt động 
+    + Chung:
+        callback luôn được gọi sau khi component mounted
+        Cleanup function ( return trong useEffect) luôn được gọi khi component unmounted
+        
+
+    + TH1: useEffect(callback)
+        callback được gọi cả mỗi khi component re-render
+        callback được thực hiện sau return
+    + TH2: useEffect(callback,[]) (thường dùng call API)
+         callback chỉ được gọi 1 lần sau khi component mounted
+    + TH3: useEffect(callback,[deps])
+         callback được gọi mỗi khi deps thay đổi
+5. lưu ý:
+    callback luôn được gọi sau khi component mounted
+    các DOM event nên được Cleanup mỗi khi unmounted
+    Cleanup luôn được gọi trước callback(trừ lần mounted Cleanup ko được gọi)
+        hay:
+            lần đầu tiên mounted: callback được gọi
+            Khi useEffect được gọi lại:
+                Cleanup sẽ thực hiện trước để dọn dẹp cho callback trước đó
+                callback được gọi sau

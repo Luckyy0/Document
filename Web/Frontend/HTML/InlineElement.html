@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        <a>
+        <textarea>
+        <input>
+        <label>
+        <button>
+        <select>
+
+        <picture>
+        <img>
+        <map>
+        <video>
+        <audio> (if it has visible controls)
+
+        <iframe>
+        <span>
+        <br>
+        <canvas>
+        
+
+        <abbr>
+        <acronym>
+        <b>
+        <bdi>
+        <bdo>
+        <big>
+        <cite>
+        <code>
+        <data>
+        <datalist>
+        <del>
+        <dfn>
+        <em>
+        <embed>
+        <i>
+        <ins>
+        <kbd>
+        <mark>
+        <meter>
+        <noscript>
+        <object>
+        <output>
+        <progress>
+        <q>
+        <ruby>
+        <s>
+        <samp>
+        <script>
+        <slot>
+        <small>
+        <strong>
+        <sub>
+        <sup>
+        <svg>
+        <template>
+        <time>
+        <u>
+        <tt>
+        <var>
+               <wbr>
+     -->
+
+    ________________ Thẻ a __________________
+    <!--
+        Một thẻ a không nhất thiết phải là văn bản. 
+        Một thẻ a có thể là một hình ảnh hoặc bất kỳ phần tử HTML nào khác!
+        thuộc tính trong a:
+            download
+            target
+            type(chỉ định loại tài liệu)
+            href(đường dẫn liên kết)
+            title(hiển thị khi di chuột vào)
+            hreflang
+            media(chỉ định thiết bị tối ưu)
+
+        thuộc tính download:
+            chỉ định tải xuống khi nhấn vào liên kết
+        thuộc tính target trong a:
+            _self - Mặc định. Mở tài liệu trong cùng một cửa sổ / tab khi nó được nhấp vào
+            _blank - Mở tài liệu trong cửa sổ hoặc tab mới
+            _parent - Mở tài liệu trong khung chính
+            _top - Mở tài liệu trong toàn bộ phần thân của cửa sổ
+      -->
+    <a
+      href="https://www.w3schools.com"
+      title="go to w3school"
+      type="text/html"
+      target="_blank"
+      >Đường link đầu tiên</a
+    >
+    <br />
+
+    <a href="https://www.w3schools.com" target="_blank">
+      <img
+        src="https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Bức ảnh đầu tiên"
+        width="104"
+        height="142"
+      />
+    </a>
+
+    <a href="mailto: vuducmanh016@gmail.com">Send email</a>
+
+    ________________ Thẻ Textarea __________________
+    <!-- 
+        Cho phép nhập văn bản trên nhiều dòng
+        Kích thước của vùng văn bản được chỉ định bởi thuộc tính cols và row (hoặc bằng CSS).
+        Cần có thuộc tính name để gửi giá trị, ko có sẽ ko gửi đc
+        Thuộc tính:
+            autofocus	: tự động focus khi tải trang
+            cols        : Chỉ định chiều rộng có thể nhìn thấy của một vùng văn bản
+            rows        : Chỉ định số cột hiển thi
+            dirname     : Chỉ định hướng của vùng văn bản sẽ gửi
+            disabled    : Vô hiệu hóa
+            form        : Chỉ định form mà textarea phụ thuộc
+            maxlength   : Chỉ định số kí tự tối đa được nhập
+            name
+            placeholder : Chỉ định chữ hiển thị gợi ý
+            readonly
+            required    : yêu cầu nhập giá trị
+            wrap
+     -->
+
+    <label for="w3review">Review of W3Schools:</label>
+
+    <textarea
+      id="w3review"
+      name="myname"
+      rows="4"
+      cols="50"
+      dirname="myname.dir"
+    >
+        At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+    </textarea>
+    ________________ Thẻ input __________________
+    <!-- 
+        Cho phép nhập dữ liệu
+        Thuộc tính type:
+            button:
+                tạo 1 button
+                <input type="button" value="Click me" onclick="msg()">
+            
+            checkbox:
+                Cho phép chọn 1 hoặc nhiều lựa chọn
+                <form action="/action_page.php">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> I have a car</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> I have a boat</label><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            radio:
+                Nhóm radio phải có cùng tên (giá trị của thuộc tính name) 
+                Khi nhóm radio được tạo, việc chọn bất kỳ nút radio nào trong nhóm đó sẽ tự 
+                    động bỏ chọn bất kỳ nút radio nào đã chọn khác trong cùng một nhóm. 
+                Bạn có thể có bao nhiêu nhóm radio trên một trang tùy thích, 
+                    miễn là mỗi nhóm có tên riêng.
+                <form action="/action_page.php">
+                    <p>Please select your favorite Web language:</p>
+                      <input type="radio" id="html" name="fav_language" value="HTML">
+                      <label for="html">HTML</label><br>
+                      <input type="radio" id="css" name="fav_language" value="CSS">
+                      <label for="css">CSS</label><br>
+                      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                      <label for="javascript">JavaScript</label>
+                </form>
+
+            hidden:
+                Thẻ ẩn
+                <input type="hidden" id="custId" name="custId" value="3487">
+            email:
+                Yêu cầu nhập định dạng email
+                <form action="/action_page.php">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email" name="email">
+                    <input type="submit">
+                </form>
+            file:
+                Cho phép chọn file
+                <form action="/action_page.php">
+                    <label for="myfile">Select files:</label>
+                    <input type="file" id="myfile" name="myfile" multiple><br><br>
+                    <input type="submit">
+                </form>
+            image:
+                Hiển thị dưới dạng ảnh
+                <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+            number:
+                Nhập số
+                <input type="number" id="quantity" name="quantity" min="1" max="5">
+            pasword:
+                Hiển thị dưới dạng password
+                <label for="pwd">Password:</label>
+                <input type="password" id="pwd" name="pwd">
+            text:
+                Nhập dữ liệu dưới dạng text
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname">
+            submit:
+                Nút gửi
+                <input type="submit">
+            
+            reset:
+                Xóa tát cả giá trị đã nhập
+                <form action="/action_page.php">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+
+                    <label for="pin">Enter a PIN:</label>
+                    <input type="text" id="pin" name="pin" maxlength="4"><br><br>  
+
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </form>
+            search:
+                Thanh tìm kiếm
+                <form action="/action_page.php">
+                    <label for="gsearch">Search Google:</label>
+                    <input type="search" id="gsearch" name="gsearch">
+                    <input type="submit">
+                </form>
+            tel:
+                Nhập số theo định dạng xác định
+                <form action="/action_page.php">
+                    <label for="phone">Enter a phone number:</label><br><br>
+                    <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+                    <small>Format: 123-45-678</small><br><br>
+                    <input type="submit">
+                </form>
+            range:
+                Nhận giá trị dưới dạng thanh trượt
+                <label for="vol">Volume (between 0 and 50):</label>
+                <input type="range" id="vol" name="vol" min="0" max="50">
+            color:
+                Thẻ chọn màu
+                <form action="/action_page.php">
+                    <label for="favcolor">Select your favorite color:</label>
+                    <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+                    <input type="submit">
+                </form>
+            date:
+                Thẻ chọn ngày tháng
+                <form action="/action_page.php">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                    <input type="submit">
+                </form>
+            datetime-local:
+                Thẻ chọn giờ ngày tháng
+                <form action="/action_page.php">
+                    <label for="birthdaytime">Birthday (date and time):</label>
+                    <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                    <input type="submit">
+                </form>
+            url:
+                nhập dưới dạng url:
+                    <label for="homepage">Add your homepage:</label>
+                    <input type="url" id="homepage" name="homepage">   
+    -->
+    <form action="/action_page.php">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    ________________ Thẻ Lable __________________
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" />
+
+    ________________ Thẻ Button __________________
+    <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+
+    ________________ Thẻ select __________________
+    <!-- 
+        sử dụng để tạo danh sách thả xuống.
+        name là cần thiết để tham chiếu dữ liệu biểu mẫu sau khi biểu mẫu được gửi 
+            (nếu bỏ qua name, sẽ không có dữ liệu nào từ danh sách thả xuống được gửi).
+        Các thuộc tính:
+            autofocus
+            disabled
+            form
+            multiple
+            name
+            required
+            size(số lượng option hiển thị trong ds thả xuống )
+     -->
+    <form action="/action_page.php">
+      <label for="cars">Choose a car:</label>
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    ________________ Thẻ picture __________________
+    <!-- 
+        Như 1 công cụ chọn hình ảnh hiển thị : nó tìm kiếm phần tử <source> đầu 
+            tiên nơi truy vấn khớp với chiều rộng khung nhìn hiện tại và 
+            sau đó nó sẽ hiển thị hình ảnh thích hợp 
+     -->
+    <picture>
+      <source media="(min-width:650px)" srcset="img_pink_flowers.jpg" />
+      <source media="(min-width:465px)" srcset="img_white_flower.jpg" />
+      <img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto" />
+    </picture>
+
+    ________________ Thẻ Img __________________
+    <!-- 
+        sử dụng để nhúng hình ảnh vào trang HTML.
+     -->
+    <img
+      src="smiley.gif"
+      alt="Smiley face"
+      width="42"
+      height="42"
+      style="border: 5px solid black"
+    />
+
+    ________________ Thẻ Map __________________
+    <!-- 
+        sử dụng để xem vùng hình ảnh được nhấn và chuyển hướng đến địa 
+            chỉ gán cho vùng hình ảnh đó
+        bắt buộc thẻ img phải liên kết với map qua thuộc tính usemap để hoạt động
+     -->
+    <img
+      src="workplace.jpg"
+      alt="Workplace"
+      usemap="#workmap"
+      width="400"
+      height="379"
+    />
+    <map name="workmap">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        alt="Computer"
+        href="computer.htm"
+      />
+      <area
+        shape="rect"
+        coords="290,172,333,250"
+        alt="Phone"
+        href="phone.htm"
+      />
+      <area
+        shape="circle"
+        coords="337,300,44"
+        alt="Cup of coffee"
+        href="coffee.htm"
+      />
+    </map>
+
+    ________________Thẻ Video__________________
+    <!-- 
+        Thẻ <video> chứa một hoặc nhiều thẻ <source> với các nguồn video khác nhau. 
+            Trình duyệt sẽ chọn nguồn đầu tiên mà nó hỗ trợ.
+        Văn bản giữa thẻ <video> và </video> sẽ chỉ được hiển thị trong 
+            các trình duyệt không hỗ trợ phần tử <video>.
+        Các tùy chọn thuộc tính:
+            autoplay:  video sẽ phát ngay khi sẵn sàng
+            controls:  điều khiển video sẽ được hiển thị
+            loop:      video sẽ bắt đầu lại, mỗi khi kết thúc
+            muted:     tắt tiếng video
+            poster="/images/w3html5.gif" : Chỉ định hình ảnh sẽ được hiển thị cho video ban đầu
+            preload:   Cho phép tải video khi tải trang hay ko
+            src:       Chỉ định nguồn video        
+     -->
+    <video width="320" height="240" controls loop>
+      <source src="movie.mp4" type="video/mp4" />
+      <source src="movie.ogg" type="video/ogg" />
+      Your browser does not support the video tag.
+    </video>
+
+    ________________ Thẻ audio __________________
+    <!-- 
+         sử dụng để nhúng nội dung âm thanh 
+          chứa một hoặc nhiều thẻ <source> với các nguồn âm thanh 
+            khác nhau. Trình duyệt sẽ chọn nguồn đầu tiên mà nó hỗ trợ.
+        Các thuộc tính:
+            autoplay:  video sẽ phát ngay khi sẵn sàng
+            controls:  điều khiển video sẽ được hiển thị
+            loop:      video sẽ bắt đầu lại, mỗi khi kết thúc
+            muted:     tắt tiếng video
+            preload:   Cho phép tải video khi tải trang hay ko
+            src:       Chỉ định nguồn video      
+     -->
+    <audio controls>
+      <source src="horse.ogg" type="audio/ogg" />
+      <source src="horse.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    ________________ Thẻ iframe __________________
+    <!--  
+        hiển thị 1 trang HTML khác trong 1 khung chỉ định 
+          có thể sử dụng 1 thẻ link với target là name của iframe để 
+          thay đổi trang web hiển  thị trong đó 
+    -->
+    <iframe
+      src="demo_iframe.htm"
+      name="iframe_a"
+      title="Iframe Example"
+    ></iframe>
+    <p>
+      <a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a>
+    </p>
+
+    ________________ Thẻ canvas __________________
+    <!-- 
+        sử dụng để vẽ đồ họa một cách nhanh chóng
+            thông qua tập lệnh (thường là JavaScript).
+        
+     -->
+    <canvas id="myCanvas">Your browser does not support the canvas tag.</canvas>
+  </body>
+</html>

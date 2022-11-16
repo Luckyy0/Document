@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Button/button_co_ban.css" />
+    <link rel="stylesheet" href="../toast_message/message.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="toast"></div>
+    <div class="btn btn--success btn--size-s">OK</div>
+    <div class="btn btn--warn btn--size-s">Warn</div>
+    <div class="btn btn--danger btn--size-s">SORRY</div>
+    <script>
+      function toast({title,message,type,duration}) {
+        const main = document.getElementById('toast');
+        if (main){
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML= '<div class="toast__icon"><i class="fa-sharp fa-solid fa-circle-check"></i></div><h3 class="toast__title">Success</h3><p class="toast__msg">Đây là thông báo thành công</p></div><div class="toast__close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>';
+        }
+      }
+      toast({
+        title: "Success",
+        message: " Lorem aghs jsgjkeksh hghsikhgsk ",
+        type: "success",
+        duration: 3000,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.card {
+}
+
+.card--success .card__btn {
+  color: greenyellow;
+}
+
+.card--error .card__btn {
+}
+
+.card__heading {
+}
+
+.card__desc {
+}
+.card__btn {
+}

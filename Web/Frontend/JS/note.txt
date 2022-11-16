@@ -1,0 +1,472 @@
+*******************************JAVASCRIPT***********************
+1. Basic:
+    a. Dùng JS trong HTML:
+        + Js nằm giữa thẻ <script> ... </script>:
+            Viết code trực tiếp trong thẻ script
+            Tạo thẻ script với src là  tên file js
+        + Có thể đặt trong phần <head>, <body>
+        + Đặt js cuối phần body cải thiện tốc độ hiển thị HTML 
+    b. Hàm trong js 
+        + Bắt đầu với funtion:
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "Paragraph changed.";
+            }
+    c. Lưu ý: 
+        + document.write():
+            Phục vụ cho kiểm thử
+            ko gọi document.write() nếu HTML đã load(mất hết dữ liệu đã load trc đó)
+        + window là biến phạm vi global
+            => có thể gọi các phương thức qua window
+                window.alert(4+6) == alert(4+6) 
+                window.print() để in trang web
+        + Nếu không tồn tại String.prototype.includes => cần polyfill
+    label đặt trước câu lệnh(label: ) kết hợp với break và continue
+___________________________________________________________________________
+2. Biến trong JS:
+    var       :: mô tả biến
+    let       :: mô tả 1 block biến
+    const     :: mô tả 1 block hằng
+    + Lưu ý:
+        biến có giá trị undefinded khi chưa gán giá trị
+        biến var sau khi khởi tạo lại, vẫn giữ giá trị cũ
+        không thề khởi tạo biến cùng tên với let,const
+_____________________________________________________________________________
+3. built-in function:
+    + Alert:
+        alert("Hello world");    in thông báo lên trình duyệt
+    + console:
+        console.log('Hello');    in ra thông báo trong Console
+        console.error('error');  in ra err tron Console
+        cconsole.warn();         in ra cảnh báo trong Console
+        console.table({          in ra bảng
+            a: x,
+            b: y
+        })
+    + confirm:
+        confirm('Bạn có chắc muốn truy cập không')   in ra hộp thoại Confirm trên trình duyệt
+    + Prompt:
+        prompt('vui long nhap tuoi cua bạn');        tương tự confirm nhưng có thêm ô input
+    + setTimeOut:
+
+        setTimeout(function() {
+            alert('thông báo hiển thị 1 lần sau 1s');
+        },1000)
+
+        Thực thi function 1 lần sau 1 khoảng thời gian được chỉ định.
+        Các đối số:
+            1 là function
+            2 là khoảng thời gian
+    + setInterval:
+
+        setInterval(function() {
+            console.log('thông báo hiển thị lặp lại sau mỗi giây');
+        },1000)
+
+        Thực thi function vô số lần ,mỗi lần sau 1 khoảng thời gian được chỉ định
+        Các đối số:
+            1 là function
+            2 là khoảng thời gian
+__________________________________________________________________________
+4. Function 
+    + Declaration function:
+        Có thể gọi trước khi định nghĩa(hoisting)
+
+        function show(){
+            console.log('Hello');
+        }
+
+    + Expression function:
+        Không thể gọi trước khi định nghĩa
+
+        const show = function(){
+            console.log('Hello');
+        }
+
+        setTimeout(function(){
+            console.log('Hello');
+        },1000)
+
+        const obj = {
+            fc: function(){
+                console.log('Hello');
+            }
+        }
+    + Arrow function:
+        Không có context(không bind this)
+
+        () => {console.log("It's here")}
+_________________________________________________________________________
+5. Object
+    + Basic
+        Cặp key: value
+        key ko có => trả về undefinded
+
+        Truyền biến -> key
+            let emailKey = 'email';
+            const myInfo = {
+                name: 'Manh',
+                age: 18,
+                address: 'Hai Dương',
+                [emailkey]: 'ff@gmail.com',
+                getName: function(){return this.name;}
+            }
+        Thêm giá trị:
+            myInfo.tel = 0783924213;
+            myinfo['gioi-tinh'] = 'Nam';
+        Xóa key-value:
+            delete myInfo.age
+        Lấy các key :
+            Object.keys(myInfo)
+    
+    + Object constructor
+        function User(firstName,lastName,avatar){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.avatar = avatar;
+
+            this.getName = function(){
+                return '${this.firstName} ${this.lastName}';
+            }
+        }
+        const author = new User('Manh','Vu','avatar);
+
+        có thể thêm thuộc tính mà các đối tượng khác ko bị ảnh hưởng
+        author.title = 'chia se';
+    + Object prototype
+        dùng cho hàm tạo:
+            Tất cả các thuộc tính và phương thức gán cho tất cả đối tượng cùng hàm tạo
+            thêm thuộc tính hàm tạo:
+                author.prototype.className='Lucky';
+            thêm function:
+                author.prototype.getClassName = function(){
+                    return this.className;
+                }
+
+_________________________________________________________________________
+6. String
+	.length                       :: xem độ dài chuỗi
+	.indexOf(String)              :: trả về vị trí đầu tiên xuất hiện String  || không tìm được return -1
+	.indexOf(String,index)        :: trả về vị trí đầu tiên xuất hiện String, với chuỗi gốc bắt đầu từ vị trí index || không tìm được return -1
+	.lastIndexOf(String)	      :: trả về vị trí cuối cùng xuất hiện chuỗi || không tìm được return -1
+	.search(String or regex)      :: tương tự indexOf nhưng có thể sử dụng biểu thúc chính quy
+	.replace(oldString,newString) :: thay thế chuỗi oldString -> newString(thay thế chuỗi tìm thấy đầu tiên)
+		sử biểu thức chính quy /.../i ko phân biệt chữ hoa chữ thường
+							   /.../g thay thế toàn bộ
+	.toUpperCase()                :: chuyển thành chữ hoa
+	.toLowerCase()                :: chuyển thành chữ thường
+	.slice(start,end)             :: Cắt chuỗi, nếu bỏ end=> lấy đến hết chuỗi
+	.substring(start,end)         :: tương tự slice, nếu index<0 coi là 0
+	.substr(start,length)         :: tương tự slice, tham số t2 là độ dài chuỗi
+	.trim()                       :: loại bỏ khoảng trắng 2 đầu 
+	.split(chuỗi phân cách)       :: tách chuỗi thành array, nếu muốn tách thành các phần tử đơn => ''
+	.charAt(index)                :: lấy kí tự tại vị trí inđex                             
+	.concat("từ nối", String2)    :: nối chuỗi
+	.padStart(length,padString)   :: thêm padString đến vị trí length -1
+	.padEnd(length,padString)     :: tương tự padStart
+	.charCodeAt(index)            :: trả về mã unicode
+	.math(String or regex)        :: đối sánh chuỗi, trả về tất cả chuỗi phù hợp dưới dạng array
+	.includes(String,start)       :: trả về boolean
+	.startWith(Strng,start)       :: trả về true nếu trùng chuỗi bắt đầu
+	.endWith(String,lengthString) :: tương tự startWith, lengthString là độ dài chuỗi kiểm trang
+
+_________________________________________________________________________________________________
+_________________________________String Template_________________________________________________
+ - sử dụng dấu nháy đơn thay vì nháy kép
+ - cho phép nội suy chuỗi
+	let lastName = "Doe";
+	let text = `Welcome ${lastName}!`;
+ - cho phép biểu thức trong chuỗi
+	let price = 10;
+	let VAT = 0.25;
+	let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+	
+
+
+_________________________________________________________________________________________________
+_________________________________General_________________________________________________________
+ Number()
+ ParseInt()
+ ParseFloat()
+ Number.MAX_VALUE;        :: trả về số lớn nhất trong js
+ Number.MIN_VALUE;        :: trả về số nhỏ nhất trong js
+ Number.NaN;              :: trả về NaN
+ Number.NEGATIVE_INFINITY;:: trả về -infinity
+ Number.POSITIVE_INFINITY;:: trả về infinity
+ typeof                   :: trả về kiểu dữ liệu
+ Array.from(Object)       :: trả về một mảng đối tượng của object
+ Array.keys()             :: trả về các key Iterator
+ isNaN(x)                 :: kiểm tra x có phải số không
+ 
+ 
+_________________________________________________________________________________________________
+_________________________________Number__________________________________________________________
+ - Độ chính xác đến 15 chữ số(Z) 17 chữ số(R)
+ - Dấu phẩy động ko hoàn toàn chính xác=> khắc phục 
+	let x = (0.2 * 10 + 0.1 * 10) / 10;
+ - js cố gắng chuyển đổi tất cả các chuỗi thành số trong các phép toán, trừ trường hợp phép cộng
+ - kiểm tra phép toán có thực hiện được ko :: isNaN()
+ 
+ -phương thức:
+	 .toString(cơ số||số cần chuyển) :: chuyển cơ số|| chuyển số thành chuỗi
+	 .toExponential(số chữ số sau ,) :: làm tròn số dưới dạng hàm mũ
+	 .toFixed(x)                     :: làm tròn đến x chữ số
+	 .toPrecision(x)                 :: trả về 1 chuỗi với độ dài x
+ 
+ 
+_________________________________________________________________________________________________
+10. Array
+    + khai báo: 
+        const array_name = [item1, item2, ...]; 
+        or
+            const cars = [];
+            cars[0]= "Saab";
+            cars[1]= "Volvo";
+            cars[2]= "BMW";
+        or 
+		const person = {firstName:"John", lastName:"Doe", age:46};
+    + phần tử mảng có thể là đối tượng
+		myArray[0] = Date.now;
+		myArray[1] = myFunction;
+		myArray[2] = myCars;
+    + nếu sử dụng mảng chỉ mục được đặt tên, một số p thức sẽ ko chính xác
+		const person = [];
+		person["firstName"] = "John";
+		person["lastName"] = "Doe";
+		person["age"] = 46;
+		person.length;     // Will return 0
+		person[0];         // Will return undefined
+    + phương thức
+        .length                                      :: trả về độ dài mảng
+        .isArray()                                   :: kt có phải mảng ko
+        .instanceof                                  :: tương tự isArray 
+                fruits instanceof Array;
+        .toString()                                  :: trả về 1 chuỗi string phân cách bới ,
+        .join("*")                                   :: trả về 1 chuỗi string phân cách bới *
+        .pop()                                       :: xóa phần tử cuối cùng + trả về
+        .push(phần tử)                               :: thêm phần tử cuối mảng
+        .shift()                                     :: loại bỏ phần tử đầu tiên + trả về, và hạ index all xuống -1
+        .unshift(phần tử)                            :: thêm vào đầu mảng + trả về độ dài mảng
+        .concat(arr2,arr3)                           :: nối n mảng
+        .splice(add_index,length_delete,phần tử thêm):: thêm vào mảng ở 1 vịt trí xác định + xóa phần tử
+        .splice(0,1)                                 :: xóa phần tử ở vị trí 0, 1 là số luongj phần tử cần loại bỏ
+        .slice(startIndex,endIndex)                  :: tạo mảng mới từ vị trí startIndex -> endIndex
+        .entries()                                   :: trả về cặp key,value
+        .includes(element)                           :: kiểm tra element thuộc mảng ko
+        
+        
+        .sort()                                      :: sắp xếp mảng
+                                                            sắp xếp số tăng dần:
+                                                                    .sort(function(a, b){return a - b});
+                                                            sắp xếp số ngẫu nhiên:
+                                                                    .sort(function(a, b){return 0.5 - Math.random()});
+                                                            sắp xếp mảng đối tượng:
+                                                                .sort(function(a, b){return a.year - b.year});
+                                                                
+        .reverse()                                   :: đảo ngược mảng
+        Math.max.apply(null, arr);                   :: tìm max
+        Math.min.apply(null, arr);                   :: tìm min
+    + vòng lặp
+        .forEach(myFunction)            ::   lặp qua mỗi phần tử
+                                             Đối số t3 là mảng gốc ban đầu
+                                                    fruits.forEach( (fruit,index) => {
+                                                        console.log(index,fruit);
+                                                    });
+                                            
+        .map(myFunction)                ::    tạo mảng mới dựa trên mảng đã cho
+                                              Đối số t3 là mảng gốc ban đầu
+                                                    const newFruits = fruits.map( (fruit,index) => {
+                                                        return fruit.name
+                                                    }); 
+        .filter(myFunction)             ::    lọc tất cả các giá trị mảng thỏa mãn function
+                                                    fruits.filter( (fruit,index) => {
+                                                        return fruit === 'chuoi';
+                                                    });
+        .reduce(myFunction,total)       ::    myFunction để tính toán có thêm đối số total là giá trị khởi tạo
+                                              Nếu không có biến khởi tạo , lay giá trị đầu tiên của vòng lặp làm khởi tạo
+                                                    const total=0;
+                                                    let total = fruits.reduce( (bienluutru,fruit,index) => {
+                                                        return bienluutru + index
+                                                    },bienkhoitao); 
+        .reduceRight(myFunction,total)  ::    tương tự reduce, nhưng duyệt từ phải sang
+        .every(myFunction)              ::    trả về true khi tất cả giá trị thỏa mãn function => boolean
+                                                    fruits.every( (fruit,index) => {
+                                                        return fruit === 'chuoi';
+                                                    });
+        .some(myFunction)               ::    trả về true khi chỉ cần 1 giá trị thỏa mãn => boolean
+                                                    fruits.some( (fruit,index) => {
+                                                        return fruit === 'chuoi';
+                                                    });
+        .indexOf(item,start)            ::    trả về chỉ mục của item thỏa mãn
+        .lastIndexOf(item,start)        ::    không có trả về -1
+        
+        .find(myFunction)               ::    trả về phần tử mảng đầu tiên thỏa mãn function
+                                                    fruits.find( (fruit,index) => {
+                                                        return fruit === 'chuoi';
+                                                    });
+        .findIndex(myFunction)          ::    trả về chỉ mục phần tử đầu tiên thỏa mãn
+	
+
+_________________________________________________________________________________________________
+11. Set
+    + khai báo 
+            const letters = new Set(["a","b","c"]);
+        or
+            const letters = new Set();
+            letters.add("a");
+            letters.add("b");
+            letters.add("c");
+    + Lặp 
+            letters.forEach (function(value) {
+                text += value;})
+        or 
+            for (const x of letters.values()) {
+            text += x;}
+    + phương thức	
+        .size
+        .delete()
+        .has()
+_________________________________________________________________________________________________
+12. Map
+    + khai báo
+			const fruits = new Map([
+			  ["apples", 500],
+			  ["bananas", 300],
+			  ["oranges", 200]
+			]);
+		or
+			const fruits = new Map();
+			fruits.set("apples", 500);
+			fruits.set("bananas", 300);
+			fruits.set("oranges", 200);
+    + lặp
+            fruits.forEach (function(value, key) {text += key + ' = ' + value;})
+        or
+            for (const x of fruits.entries()) {text += x;}
+    + phương thức
+        .get(key)     
+        .size
+        .delete(key)
+        .has(key)
+											  
+
+_________________________________________________________________________________________________
+13. Date
+    + Basic:
+        Loại Object
+    + Khởi tạo:
+        new Date()
+        new Date(year, month, day, hours, minutes, seconds, milliseconds)
+        new Date(milliseconds)
+        new Date(date string)
+    + phương thức
+        .toUTCString()  :: chuyển thành định dạng Sat, 02 Jul 2022 01:19:58 GMT
+        .toDateString() :: chuyển thành định dạng Sat Jul 02 2022
+        .toISOString()  :: chuyển thành định dạng 2022-07-02T01:20:17.582Z
+        .parse()        :: chuyển sang mili giây hoặc date
+        .getTime()      :: chuyển sang mili giây
+        .getFullYear()+set
+        .getMonth()+set :: trả về 0-11
+        .getDate()+set
+        .getHours()+set
+        .getMinutes()+set
+        .getSeconds()+set
+        .getMiliseconds()+set
+        .getDay()+set
+	
+-----------------------------js Math----------------------------------
+ - tương tự java
+-----------------------------js Random----------------------------------
+ - tương tự java
+_________________________________________________________________________________________________
+14. Statement + toán tử 3 ngôi
+ 
+    + if (điều kiện) {...} else if{...} else{...}
+        điều kiện:  true khi != null,0,undefine,'',NaN,false
+	
+    + switch(z){case x: ... break; case y: ... break; default: ....}
+
+    + for                 :: lặp qua số lần(như C++)
+    + for/in              :: dùng trong lặp properties of an Object(lặp dựa trên key or index)(như Python)
+    + for/off             :: lặp dựa trên value với array, key-value với map or object
+ 
+    + while(){...}
+    + do{...}while()
+    + forEach(myFunction)
+    + try {....throw replace_exception} catch(err) {...} finally {...}
+    + Toán tử 3 ngôi:
+        var x = dieuKien > 0 ? y : z
+ 
+_________________________________________________________________________________________________
+
+ 
+ 
+ 
+ 
+
+	
+	
+	
+ 
+ 
+_________________________________________________________________________________________________
+_________________________________DOM_____________________________________________________________
+ -document.getElementById('StringId') or document.getElementsByTagName(name) or document.getElementsByClassName(name):
+	**thay đổi thuộc tính**
+	+).innerHTML =  new html content
+		.innerHTML = 'text'      :: thay đổi nội dung HTML có id là StringId = text
+	+).attribute = new value
+		.src = 'img_address'     :: thay đổi src HTML có id là StringId = img_address
+	+).style.property = new style
+		.style                   :: thay đổi style
+			.fontSize = '35px'
+			.display = 'none'    :: ẩn HTML
+			.display = 'block'   :: hiện HTML
+	**thêm xử lý sự kiện**
+	+).onclick = function(){code}
+ -Thêm và xóa các phần tử
+	document.createElement(element)	 ::Create an HTML element
+	document.removeChild(element)	 ::Remove an HTML element
+	document.appendChild(element)	 ::Add an HTML element
+	document.replaceChild(new, old)	 ::Replace an HTML element
+	document.write(text)	         ::Write into the HTML output stream
+ -khác
+	document.querySelectorAll("p.intro");    :: tìm tất cả các html tag=p class=intro
+	document.forms["frm1"];                  :: truy cập form có id =frm1
+		.elements[i].value                   :: lây tất cả các value trong form
+    + element
+        - set:
+            cú pháp:
+                <element>.innerHTML = '<h1>Heading</h1>'  (có thể thêm element)
+                <element>.outerHTML = '<h1>Heading</h1>'  (xóa <element> và các thẻ con của nó, thay thế bằng thẻ h1 đã thêm )
+    + attribute
+        setAttribute:
+            cú pháp:
+                <element>.<attribute> = value
+                <element>.setAttribute(attribute, value)
+            Ví dụ:
+                .setAttribute(attribute, value)
+                .className = 
+                .id = 
+                .title =
+        getAttribute:
+            cú pháp:
+                <element>.<attribute> (dùng cho att' thuộc element)
+                <element>.getAttribute(attribute)  (dùng cho cả element tự tạo)
+    + text
+        cú pháp:
+            Không thể thêm element
+            <element>.innerText (chỉ lấy text đã chuẩn hóa - giống những gì nhìn thấy trên trình duyệt)
+            <element>.textContent (lấy tất cả không chuẩn hóa - giống trong code)
+
+_________________________________________________________________________
+    +Promise:
+        Dùng trong xử lý bất đồng bộ
+        Trc khi có Promise, code dễ gây tình trạng callback hell
+            => Promise sinh ra để giải quyết vấn đề đó
+        Sử dụng promise:
+            Trong constructor truyền 1 hàm executor:
+                executor có truyền vào 2 tham số:
+                    resolve : khi xử lý thành công (.then())
+                    reject  : khi xử lý thất bại   (.catch())
+        thực thi:
+            promise.then().catch().finally()

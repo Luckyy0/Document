@@ -1,0 +1,21 @@
+-------------------Những điều cần ghi nhớ--------------------
+1. Dùng khi nào?
+    Dùng cho 1 số trường hợp đặc biệt của useEffect
+2. Code:
+    import { useLayoutEffect } from 'react'
+    function App(){
+        useLayoutEffect(callback,[deps])
+    } 
+3. Hoạt động:
+    useEffect:
+        1. cập nhật lại state
+        2. cập nhật DOM(mutated)
+        3. render lại UI
+        4. Gọi cleanup nếu deps thay đổi
+        5. gọi callback
+    useLayoutEffect:
+        1. cập nhật lại state
+        2. cập nhật DOM(mutated)
+        3. Gọi cleanup nếu deps thay đổi(sync)
+        4. gọi callback(sync)
+        5. render lại UI

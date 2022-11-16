@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link với CSS bên ngoài -->
+    <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+    <!-- link đến icon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Hello World</title>
+  </head>
+  <body>
+    <!-- Văn bản bên trong phần tử <pre> được hiển thị bằng phông 
+        chữ có độ rộng cố định (thường là Courier) và nó bảo toàn cả dấu cách và dấu ngắt dòng: -->
+    <pre>
+        Vũ Đức Mạnh
+        Ptiter
+    </pre>
+
+    <!-- ngoài h1 còn có h2 -> h6 -->
+    <h1 title="Đây là thẻ h1">Đây là những dòng code đầu tiên</h1>
+
+    <!-- có thể thêm các thẻ:
+        <b>, strong để in đậm 
+        i, em để in nghiêng
+        small để thu nhỏ cỡ chữ
+        mark để đánh dấu(đổi màu chữ)
+        del,s gạch giữa dòng chữ
+        ins gạch dưới chữ
+        <sub> chữ nhỏ, lệch xuống dưới dòng, thường dùng cho các công thức toán, hóa học
+        <sup> chữ nhỏ, lệch lên trên dòng, thường dùng cho các công thức toán, hóa học
+    -->
+    <p>Hy vọng mọi thứ sẽ suôn sẻ</p>
+
+    <!--Tạo dòng kẻ ngang  -->
+    <hr />
+
+    <!-- 
+        ________Thanh tiến trình________
+        Luôn thêm thẻ <label> để truy xuất tốt hơn!
+    
+    -->
+    <label for="file">Downloading progress:</label>
+    <progress id="file" value="32" max="100"> 32% </progress><br>
+
+    <!-- 
+        ________________Các thẻ hình ảnh khác_______________
+            <map>:
+                sử dụng để xem vùng hình ảnh được nhấn và chuyển hướng đến địa chỉ gán cho vùng hình ảnh đó
+                bắt buộc thẻ img phải liên kết với map qua thuộc tính usemap để hoạt động
+                <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+                <map name="workmap">
+                    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+                    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+                    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+                </map>
+            
+                <picture>:
+                    như 1 công cụ chọn hình ảnh hiển thị : nó tìm kiếm phần tử <source> đầu tiên nơi truy vấn
+                    phương tiện khớp với chiều rộng khung nhìn hiện tại và sau đó nó sẽ hiển thị hình ảnh 
+                    thích hợp 
+
+                    <picture>
+                        <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+                        <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+                        <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+                    </picture>
+
+     -->
+    <img
+      src="https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="Bức ảnh đầu tiên"
+      width="104"
+      height="142"
+    />
+    <p><sub>Bức ảnh đầu tiên</sub></p>
+
+    <!--
+        Một liên kết không nhất thiết phải là văn bản. Một liên kết có thể là một hình ảnh hoặc bất kỳ phần tử HTML nào khác!
+        thuộc tính target trong a:
+            _self - Mặc định. Mở tài liệu trong cùng một cửa sổ / tab khi nó được nhấp vào
+            _blank - Mở tài liệu trong cửa sổ hoặc tab mới
+            _parent - Mở tài liệu trong khung chính
+            _top - Mở tài liệu trong toàn bộ phần thân của cửa sổ
+      -->
+    <a href="https://www.w3schools.com" title="go to w3school" target="_blank">Đường link đầu tiên</a> <br />
+
+    <a href="https://www.w3schools.com" target="_blank">
+        <img
+            src="https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Bức ảnh đầu tiên"
+            width="104"
+            height="142"
+        />
+    </a> <br />
+    <p><sub>Link bằng hình ảnh</sub></p>
+
+    <a href="mailto: vuducmanh016@gmail.com">Send email</a>
+    <p><sub>Link đến email</sub></p>
+
+    <!-- 
+        ____________Bookmark in HTML__________________________
+        chứa 1 thẻ có id và 1 thẻ a có href trỏ đến id đó  
+        có thể thêm liên kết đến dấu trang trên một trang khác:
+            <a href="html_demo.html#C4">Jump to Chapter 4</a>
+    -->
+    <p>Bookmark in HTML
+        <h2 id="C4">Chapter 4</h2>
+        <!-- section xác định 1 phần của tài liệu -->
+        <section>
+            <h2>WWF History</h2>
+            <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+            </section>
+            
+            <section>
+            <h2>WWF's Symbol</h2>
+            <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+        </section>
+        <section>
+            <h2>WWF History</h2>
+            <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+            </section>
+            
+            <section>
+            <h2>WWF's Symbol</h2>
+            <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+        </section>
+        <a href="#C4">Jump to Chapter 4</a>
+    </p>
+
+
+    <!-- 
+        blockquote: xác định một phần được trích dẫn từ một nguồn khác. 
+        q: trích dẫn đặt trong dấu "" 
+        abbr: xác định từ đầy đủ của chữ viết tắt
+        address: xác định thông tin liên hệ của tác giả / chủ sở hữu của một tài liệu hoặc một bài báo.
+        <cite>: xác định tiêu đề của tác phẩm sáng tạo, thường đặt dưới ảnh,sách,video,...
+        bdo: rtl: đảo ngược thứ tự chữ cái
+    -->
+    <p>blockquote:
+        <blockquote cite="http://www.worldwildlife.org/who/index.html">
+          blockquote đầu tiên
+        </blockquote>
+    </p>
+    <p>q: Trích dẫn: <q>Trích dẫn ngắn q</q></p>
+    <p>
+      abbr: The <abbr title="World Health Organization">WHO</abbr> was founded
+      in 1948.
+    </p>
+    <address>
+      address: Written by DUC MANH.<br />
+      Visit us at:<br />
+      Example.com<br />
+      Box 564, Disneyland<br />
+      USA
+    </address>
+    <p>cite: <cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+    <p>bdo: đảo ngược của HTML đầu tiên: <bdo dir="rtl">HTML đầu tiên</bdo>
+  </body>
+</html>

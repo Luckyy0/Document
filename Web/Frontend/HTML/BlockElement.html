@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        <h1> -> <h6>
+
+        <table>
+        <form>
+
+        <div>
+        <p>
+        <pre>
+
+        <ul>
+        <dl>
+        <dt>
+        <li>
+        <ol>
+        <dd>
+
+        <header>
+        <footer>
+        <nav>
+        <hr>
+
+        <address>
+        <article>
+        <aside>
+        <blockquote>
+        <details>
+        <dialog>
+        <fieldset>
+        <figcaption>
+        <figure>
+        <hgroup>
+        <main>
+        <section>
+
+     -->
+
+    ____________________________ Thẻ table ____________________________
+    <!-- 
+        Mỗi ô trong bảng được xác định bởi thẻ <td> và </td>.(td: table data)
+        Mỗi hàng trong bảng bắt đầu bằng <tr> và kết thúc bằng thẻ </tr>(tr: table row)
+        có bao nhiêu hàng tùy thích trong một bảng,
+            chỉ cần đảm bảo rằng số lượng ô trong mỗi hàng là như nhau.
+        dùng thẻ th(table header) làm tiêu đề cho mỗi cột tronng bảng
+
+        Thẻ <caption> xác định chú thích bảng
+        Thẻ <colgroup> chỉ định một nhóm gồm một hoặc nhiều cột trong bảng để định dạng.
+        Thẻ <thead>: Nhóm nội dung tiêu đề 
+        Thẻ <tbody>: Nhóm nội dung body
+        Thẻ <tfoot>: Nhóm nội dung chân bảng
+        colspan; số cột thẻ đó chiếm
+        rowspan: số hàng thẻ đó chiếm
+     -->
+    <table>
+      <caption>
+        Infomation
+      </caption>
+
+      <colgroup>
+        <col span="1" style="background-color: red" />
+        <col style="background-color: yellow" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th colspan="2">Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+      </tbody>
+    </table>
+
+    ____________________________ Thẻ form ____________________________
+    <!-- 
+            <form> có thể chứa một hoặc nhiều phần tử biểu mẫu:
+                <input>
+                <textarea>
+                <button>
+                <select>
+                <option>
+                <optgroup>
+                <fieldset>
+                <label>
+                <output>
+
+       -->
+    <form action="/action_page.php" method="get">
+      <input type="checkbox" name="vehicle1" value="Bike" />
+      <label for="vehicle1"> I have a bike</label><br />
+      <input type="checkbox" name="vehicle2" value="Car" />
+      <label for="vehicle2"> I have a car</label><br />
+      <input type="checkbox" name="vehicle3" value="Boat" checked />
+      <label for="vehicle3"> I have a boat</label><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    ____________________________ Thẻ Nav ____________________________
+    <!-- 
+        xác định một tập hợp các liên kết điều hướng.
+     -->
+    <nav>
+      <a href="/html/">HTML</a> | <a href="/css/">CSS</a> |
+      <a href="/js/">JavaScript</a> |
+      <a href="/python/">Python</a>
+    </nav>
+
+    ____________________________ Các thẻ list ____________________________
+    <!-- 
+        Đặc điểm chung:
+            có thể lồng nhau
+        + danh sách ko theo thứ tự:
+            <ul>
+                <li>Coffee</li>
+                <li>Tea
+                    <ul>
+                        <li>Black tea</li>
+                        <li>Green tea</li>
+                    </ul>
+                </li>
+                <li>Milk</li>
+            </ul>
+        + Danh sách có thứ tự:
+            type: loại số hiệu mỗi chỉ mục(1;A;a;I;i)
+            start="50": vị trị bắt đàu đánh số
+            <ol type="i">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol>
+        + Danh sách mô tả:
+            dt: thuật ngữ
+            dd: mô tả thuật ngữ
+            <dl>
+                <dt>Coffee</dt>
+                <dd>- black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>- white cold drink</dd>
+            </dl>
+     -->
+  </body>
+</html>

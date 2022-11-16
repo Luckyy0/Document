@@ -1,0 +1,16 @@
+-------------------Những điều cần ghi nhớ--------------------
+1. Dùng khi nào?
+    Dùng để tránh re-render không cần thiết
+2. Code cơ bản:
+    import { memo } from 'react'
+    function Content(){
+        ....
+    }
+    export default memo(Content)
+3. Hoạt động
+    Check component mà memo ôm lấy xem có thay đổi gì 
+        khi component cha re-render không:
+            nếu có => re-render
+            nếu ko => bỏ qua
+4. Cách Dùng
+    Nếu component nhỏ => có thể ko cần dùng memo
