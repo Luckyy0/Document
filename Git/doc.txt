@@ -49,8 +49,7 @@ Các lệnh cơ bản:
     6. kiểm tra vị trí thư mục đang trỏ vào
         pwd
 
-Các bước :
-
+Git Local :
     1.Cấu hình git:
         Trước khi làm việc với git phải tiến hành cấu hình
         Mọi dữ liệu được bạn tạo ra ở git sẽ ăn theo thông tin cấu hình này
@@ -103,4 +102,46 @@ Các bước :
                 git checkout <nhanh A>  :: di chuyển vào nhánh a
                 git merge <nhánh B>     :: gộp B vào a
             Xử lý conflic khi merge:
-
+                conflic xuất hiện khi merge 1 file mà nhiều người cùng sửa
+                Sửa conflict xong => tiến hành add lên git
+                    Đoạn bị xung đột được bắt đầu bằng ＜＜＜＜＜＜＜ HEAD và kết thúc tại ＞＞＞＞＞＞＞ 
+    4.Thay đổi nội dung commit lần trước
+        Sửa lại message commit bị nhầm
+            git commit --amend
+        Trường hợp add thiếu file hoặc sửa lại file đã commit
+            git add [file bị thiếu hoặc file cần sửa lại]
+            git commit --amend
+            Wq
+    5.Undo lại commit
+        Trường hợp 1: Muốn "undo" thay đổi trên một file cố định trước khi commit
+            git checkout -- [đường dẫn/tên file]
+        Nếu muốn undo hẳn một commit (do đã lỡ commit xong rồi) thì cần chỉ định mục tiêu
+            git reset --soft HEAD~1
+                Ở đây HEAD~1 nghĩa là trước 1 commit. 
+                dùng soft để lưu lại những thay đổi chưa commit và 
+                chỉ bỏ đi phần đã commit từ lần trước
+        Nếu muốn bỏ cả phần đã commit từ lần trước và phần chưa commit thì đổi soft thành hard
+            git reset --hard HEAD~1
+    6. Git Clean
+        Xóa hết các files chưa được commit
+        git clean --force
+    7. Thay đổi tên tác giả của commit
+        git config user.name "Nguyen Van Doanh"
+        git config user.email doanh@gmail.com
+        git commit --amend --reset-author
+Git Remote:
+    1.Tạo tài khoản github
+    2.Tạo repository trên github
+    3.Thêm remote repository vào local repository
+        Thêm vào:
+            git remote add origin [git remote url]
+        Check lại xem thêm vào ok hay chưa
+            git remote -v
+        Thay đổi link
+            git remote set-url origin [git remote url]
+    4. Đưa code từ local repo lên remote repo
+        git add .
+        git commit -m “commit comment”
+        git push origin [tên remote branch]
+Git clone:
+    git clone <url>
