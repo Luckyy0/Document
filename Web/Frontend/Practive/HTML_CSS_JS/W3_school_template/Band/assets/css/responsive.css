@@ -1,0 +1,14 @@
+@media (max-width: 740px) {
+  .nav > li {
+    display: block;
+  }
+  .header {
+  }
+
+  .search {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}

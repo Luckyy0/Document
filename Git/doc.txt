@@ -145,3 +145,12 @@ Git Remote:
         git push origin [tên remote branch]
 Git clone:
     git clone <url>
+Git:
+    1.Git Stash : sử dụng khi muốn lưu lại các thay đổi chưa commit || chuyển qua một branch khác mà branch hiện tại đang làm chưa xong.
+    2. Các lệnh liên quan
+        git stash save : Lưu lại trạng thái hiện tại của branch, Mỗi lần lưu sẽ tạo thành 1 version tại thời điểm đó
+        git stash list : Xem lại danh sách đã lưu
+        git stash list -p: Nếu muốn xem cả nội dung của từng thay đổi thêm option -p
+        git stash show stash@{1}: xem nội dung cụ thể hơn nữa của lần thay đổi thứ 1
+        git stash apply stash@{1} : Lấy lại thay đổi
+        git stash drop : Xóa
