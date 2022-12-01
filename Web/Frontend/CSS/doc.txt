@@ -53,6 +53,8 @@ _____________________________Đặt biến css________________________________
         }
 
 ______________________________Đơn vị CSS_________________________________
+    Nên sử dụng em để tối ưu hóa: 1em = 16px;
+    em ko bị phụ thuộc trong @media
     1. Absolute units(đơn vị tuyệt đối)
         px
         pt
@@ -280,7 +282,7 @@ ____________________________Flex box layout_____________________________________
 ________________________________@_____________________________________
 
     @media:
-        @media(min-width: 740px){
+        @media only screen and (min-width: 740px) and (max-width:1224){
             .fe-layput{
                 flex-direction: row;
             }
@@ -315,4 +317,56 @@ ________________________________Tiêu chuẩn BEM___________________________
         dễ tái sử dụng
         thích hợp làm việc nhóm
         Tính module, ko lo css của class này ảnh hưởng css của class khác
+
+_____________________________Các cách căn giữa items___________________________________________
+    Giả sử: thẻ chứa là c, thẻ con là i
+    Căn giữa theo chiều ngang:
+        1. 
+            text-align: center   :: (có thể dùng cho thẻ con trực tiếp, hoặc thẻ chứa nó)
+        2.
+            c{
+                display: flex;
+                justify-content: center;
+            }
+        3. 
+            c{position: relative}
+            i{
+                position:absolute;
+                top: 50%;
+                transform: translateX(-50%);
+            }
+    Căn giữa theo chiều dọc:
+        1.
+            line-height: <chiều cao thẻ chứa>  :: (có thể dùng cho thẻ con trực tiếp, hoặc thẻ chứa nó)
+        2. 
+            c{
+                display: flex;
+                align-item: center;
+            }
+        3.
+            c{position: relative}
+            i{
+                position:absolute;
+                left: 50%;
+                transform: translateY(-50%);
+            }
+    Căn giữa theo cả 2 chiều: 
+        1.
+            c{display: flex}
+            i{margin:auto}
+        2. 
+            c{
+                display: flex;
+                align-item: center;
+                justify-content: center;
+            }
+        3.
+            c{position: relative}
+            i{
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);  :: có thể dùng translate(-50%, -50%)
+            }
+
         

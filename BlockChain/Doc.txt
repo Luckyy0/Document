@@ -1,0 +1,3 @@
+chọn thư mục muốn tạo near-app=> mở cmd
+wsl
+npx create-near-app

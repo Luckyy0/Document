@@ -1,0 +1,342 @@
+* Java cơ bản *
+    1. vòng đời của 1 Bean
+        Constructor -> Setter method -> BeanNameAware.setBeanName()
+        -> BeanClassLoaderAware.setBeanClassLoader()-> BeanFacoryAware.setBeanFactory()
+        -> BeanPostProcessor.postProcessBeforeInitialization()
+        -> @PostConstruct -> InitializingBean.afterPropertiesSet() -> init-method
+        -> BeanPostProcessor.postProcessAfterInitialization->Bean is performing task
+        -> @PreDestroy -> DisposableBean.destroy() -> destroy-method -> finalize()
+
+        Khi IoC Container (ApplicationContext) tìm thấy một Bean cần quản lý, nó sẽ khởi tạo bằng Constructor
+        Inject dependencies vào Bean bằng Setter, và thực hiện các quá trình cài đặt khác vào Bean như setBeanName, setBeanClassLoader, v.v..
+        Hàm đánh dấu @PostConstruct được gọi
+        Tiền xử lý sau khi @PostConstruct được gọi.
+        Bean sẵn sàng để hoạt động
+        Nếu IoC Container không quản lý bean nữa hoặc bị shutdown nó sẽ gọi hàm @PreDestroy trong Bean
+        Xóa Bean.
+    2. Random 1 String
+        RandomStringUtils.randomAlphanumeric(length).toLowerCase()
+* Spring Boot *
+1. Lưu ý chung
+    @SpringBootApplication: chú thích vị trí khởi chạy đầu cho App
+    ApplicationContext context = SpringApplication.run(App.class, args):
+        tạo ra container
+        Spring đặt tên cho container là ApplicationContext
+        đặt tên cho các dependency là Bean
+    Spring khi chạy sẽ dò tìm toàn bộ các Class cùng cấp hoặc ở trong
+        các package thấp hơn so với class App(Class khởi chạy). Trong quá 
+        trình dò tìm này, khi gặp một class được đánh dấu @Component thì 
+        nó sẽ tạo ra một instance và đưa vào ApplicationContext để quản lý.
+        Các class được đưa vào context: @Component @Bean
+    App.main(args) được chạy 2 lần:
+        Lần đầu là do chúng ta chạy.
+        Lần thứ hai là do Spring Boot chạy sau khi nó được gọi SpringApplication.run(App.class, args). 
+            Đây là lúc mà IoC Container (ApplicationContext) được tạo ra và đi tìm Bean.
+    Các file config trong resources Spring sẽ tự động nhận mà không phải cấu hình:
+        application.properties
+        application.yml
+        application-{profile-name}.yml // .properties
+2. Các annotation với class
+    + Đặt trước class
+        @Component: 
+            là một Annotation đánh dấu một Bean trên Class 
+            Có thể sử dụng các annotation thay thế tương đương: @Service và @Repository
+            Lưu ý:
+                @Service gắn cho các Bean đảm nhiệm xử lý logic
+                @Repository gắn cho các Bean đảm nhiệm giao tiếp với DB
+                @Component gắn cho các Bean khác.
+        @Scope("prototype"):
+            dùng khi muốn mỗi lần gọi là một instance hoàn toàn mới(địa chỉ vùng nhớ khác)
+        @Primary:
+            Để tránh trường hợp Autowired có chứa 2 Bean cùng loại trong Context(cùng kế thừa từ interface),
+                Spring không biết sử dụng Bean nào để inject vào đối tượng
+            Khi Class nào sử dụng annotation này, nó sẽ được ưu tiên trong trường hợp 
+                có nhiều Bean cùng loại trong Context
+        @Service: 
+            Đánh dấu một Class là tầng Service, phục vụ các logic nghiệp vụ.
+        @Repository:
+            Đánh dấu một Class Là tầng Repository, phục vụ truy xuất dữ liệu.
+        @ComponentScan(" đường dẫn thư mục "):
+            Tìm kiếm các bean trong một package nhất định 
+            Lưu ý: 
+                Có thể dùng @SpringBootApplication(scanBasePackages = "đường dẫn thư mục") để thay thế
+                Tìm kiếm trên nhiều package:
+                    @ComponentScan({" đường dẫn thư mục 1 ", " đường dẫn thư mục 2 "})
+        @Configuration:
+            Chỉ định nơi định nghĩa ra các Bean.
+        @Bean:
+            Nằm trong các class có đánh dấu @Configuration
+            Là Annotation được đánh dấu trên các method cho phép Spring 
+                Boot biết được đây là Bean và sẽ thực hiện đưa Bean này 
+                vào Context
+            Nếu 1 Bean có tham số truyền vào thì Spring sẽ tự inject các Bean trong tham số đó
+                vd: @Bean("mysqlConnector")
+            nếu một Bean có quá nhiều logic để khởi tạo và cấu hình, 
+                thì sử dụng @Bean cho hiệu quả tốt hơn
+        @Controller
+            Trả về một template
+        
+    + Đặt trong class
+       
+        @Autowired: 
+            Đánh dấu cho Spring auto DI (dependency inject) một instance của Class dưới annotation đó
+            khi khởi tạo Class
+            Lưu ý:
+                Vì mỗi Bean là 1 singleton, Autowired trực tiếp class, tránh sử dụng interface
+                    Hoặc có thể dùng các annotation : @Primary và @Qualifier  
+                Có thể Autowired method (tìm Bean phù hợp với method đó và truyền vào )
+            Hoạt động:
+                Class không có hàm Constructor hay Setter. Thì sẽ sử dụng 
+                    Java Reflection để đưa đối tượng vào thuộc tính có đánh dấu @Autowired
+                Nếu có hàm Constructor thì sẽ inject Bean vào bởi tham số của hàm
+                Nếu có hàm Setter thì sẽ inject Bean vào bởi tham số của hàm
+        @Qualifier:
+            Để tránh trường hợp Autowired có chứa 2 Bean cùng loại trong Context(cùng kế thừa từ interface),
+                Spring không biết sử dụng Bean nào để inject vào đối tượng
+            Khi sử dụng annotation này, nó xác định tên của một Bean mà bạn muốn inject
+            vd: @Qualifier("Tshirt") Outfit outfit;
+        @PostConstruct:
+            Đánh dấu trên một method duy nhất sẽ được gọi sau khi một Bean được tạo ra và quản lý(ApplicationContext sẽ thực hiện việc này)
+        @PreDestroy:
+            Đánh dấu trên một method duy nhất sẽ được gọi trước khi một Bean bị xóa hoặc không được quản lý(ApplicationContext sẽ thực hiện việc này)
+    3. application.properties
+        @Value
+            Sử dụng trên thuộc tính của class, lấy thông tin từ 
+                file properties và gán vào biến.
+            vd: file properties: loda.mysql.url=jdbc:mysql://host1:33060/loda
+                file class     : @Value("${loda.mysql.url}")
+                                    String mysqlUrl;
+        server.port = 8081        :: thay đổi cổng khởi chạy
+        logging.level.root=DEBUG  :: chuyển log sang các dạng khác nhau
+        spring.messages.basename=i18n/messages :: Các message tĩnh sẽ được lưu tại thư mục i18n
+        spring.mvc.locale=vi_VN   :: thay đổi ngôn ngữ(en_US)
+        Kết nối Database:
+            spring.datasource.url=jdbc:mysql://localhost:3306/micro_db?useSSL=false
+            spring.datasource.username=root
+            spring.datasource.password=root
+
+    4. Request-response
+        
+        @ModelAttribute 
+            Đánh dấu đối tượng được gửi lên bởi Form Request
+        @RequestParam
+            các parameter:
+                name: tên của field
+                required: 
+                defaultValue: giá trị mặc định khi không có giá trị
+        @RequestMapping(value = "/addTodo", method = RequestMethod.GET)
+            Nhận toàn bộ các phương thức nếu ko chỉ định method
+        @GetMapping 
+        @PostMapping
+        @PutMapping
+        @DeleteMapping
+    5. JPA
+        Kết nối Database:
+            spring.datasource.url=jdbc:mysql://localhost:3306/micro_db?useSSL=false
+            spring.datasource.username=root
+            spring.datasource.password=root
+
+            # Hibernate Properties
+            # The SQL dialect makes Hibernate generate better SQL for the chosen database
+            spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+            # Hibernate ddl auto (create, create-drop, validate, update)
+            spring.jpa.hibernate.ddl-auto = update
+            logging.level.org.hibernate = ERROR
+        @Entity
+            Đánh dấu đây là một Entity, chịu sự quản lý của Hibernate
+        @Table(name = "user")
+            Entity này đại diện cho table USER trong db
+        @Id
+            Đánh dấu biến ở dưới là primary key của table này
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+            Tự động tăng giá trị khi insert
+        @Column(name = "hp") 
+            Mapping thông tin biến với tên cột hp trong Database
+        @OneToOne 
+            Đánh dấu có mỗi quan hệ 1-1 với Entity khác
+        @JoinColumn(name = "person_id") 
+            Liên kết với nhau qua khóa ngoại person_id
+        @OneToMany(mappedBy = "address", cascade = CascadeType.ALL) 
+            Quan hệ 1-n với đối tượng ở dưới (1-n)
+            MappedBy trỏ tới tên biến Address ở trong Entity kia.
+        @EqualsAndHashCode.Exclude
+            không sử dụng trường này trong equals và hashcode
+        @ToString.Exclude
+            Không sử dụng trong toString()
+        @ManyToOne
+            Quan hệ n-1 với đối tượng ở dưới
+        @RequiredArgsConstructor
+            auto tạo Constructor
+            kết hợp với final để thay cho @Autowired
+        @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+             Quan hệ n-n với đối tượng ở dưới
+        @ManyToMany(mappedBy = "persons")
+            trỏ tới tên biến persons ở trong Address
+        @JoinTable(name = "address_person", joinColumns = @JoinColumn(name = "address_id"),  inverseJoinColumns = @JoinColumn(name = "person_id") )
+            Tạo ra một join Table tên là "address_person"
+            TRong đó, khóa ngoại chính là address_id trỏ tới class hiện tại 
+            Khóa ngoại thứ 2 trỏ tới Entity ở dưới
+        CascadeType.ALL 
+            Lưu cả Entity tham chiếu với Entity hiện tại
+        @Transactional 
+            Đưa toàn bộ code chạy trong hàm đều nằm trong Session quản lý của Hibernate.
+        @Query(value = "select * from User u where u.email_address = ?1", nativeQuery = true)
+            Khi được gắn @Query, thì tên của method không còn tác dụng nữa
+            Truyền tham theo thứ tự các tham số của query ?1, ?2
+            Thay vì sử dụng ? ta có thể dùng:
+                @Query("SELECT u FROM User u WHERE u.status = :status and u.name = :name")
+                User findUserByNamedParams(@Param("status") Integer status, @Param("name") String name);
+
+        Quy tắc đặt tên method trong Spring JPA:
+            find…By, 
+            read…By, 
+            query…By, 
+            count…By, 
+            get…By.
+            vd:
+                Tìm kiếm theo EmailAddress và Lastname
+                    findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
+                Distinct: Tìm kiếm và loại bỏ đi các đối tượng trùng nhau
+                    findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname); 
+                IgnoreCase: Tìm kiếm không phân biệt hoa thường
+                    findByLastnameIgnoreCase(String lastname);
+                AllIgnoreCase: Tìm kiếm không phân biệt hoa thường cho tất cả thuộc tính
+                    findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);
+                Order : Sắp xếp theo Firstname ASC
+                    findByLastnameOrderByFirstnameAsc(String lastname);
+                Tìm kiếm đối tượng People có thuộc tính là đối tượng Address và trong address có zipCode
+                    findByAddressZipCode(ZipCode zipCode);
+    5.RestFull API
+    Trước class:
+        @RestController
+            Trả về dữ liệu dưới dạng JSON
+        @RestControllerAdvice
+            Tác động vào quá trình xử lý của các @RestController.
+            Kết hợp với @ExceptionHandler xử lý các ngoại lệ xảy ra.
+        @ConfigurationProperties
+            cho phép cấu hình ứng dụng từ bên ngoài và lấy các thông tin đó ra một cách dễ dàng
+            Để khởi chạy sử dụng @EnableConfigurationProperties lên main App
+            parameter:
+                prefix = "loda": Chỉ lấy các config có tiền tố là "loda"
+        @PropertySource("classpath:loda.yml")
+            Đánh dấu để lấy config từ trong file loda.yml
+            Nếu không có annotation này, Spring sẽ sử dụng file mặc định 
+                (classpath:application.yml trong thư mục resources)
+    Trong class:
+         @RequestBody
+            Dùng trong API (@RestController), nhận các thông tin từ phía Client 
+                gửi lên Server dưới dạng JSON (tương tự @)ModelAttribute
+            vd:
+                @PostMapping("/todo")
+                public ResponseEntity addTodo(@RequestBody Todo todo){}
+        @PathVariable
+            Dùng trong API, tương tự @RequestParam lấy ra thông tin trong URL
+            vd:
+                @GetMapping("/todo/{todoId}")
+                public Todo getTodo(@PathVariable(name = "todoId") Integer todoId){}
+        @ExceptionHandler(IndexOutOfBoundsException.class)
+            Kết hợp với @RestControllerAdvice xử lý các ngoại lệ xảy ra.
+            parameter:
+                Exception.class: Tất cả các Exception không được khai báo sẽ được xử lý tại đây
+                IndexOutOfBoundsException.class: IndexOutOfBoundsException sẽ được xử lý riêng tại đây
+
+        @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+            Xác định loại Http Status trả về cho người dùng sẽ được xử lý bởi mothod bên dưới
+            parameter:
+                HttpStatus.INTERNAL_SERVER_ERROR: xử lý cho tất cả Exception
+                HttpStatus.BAD_REQUEST : xử lý cho BAD_REQUEST 
+    6. Config profile
+        vd: 
+            application.yml :: là file config chính khai báo các enviroment.
+                ---
+                spring.profiles: local
+                spring.profiles.include: common, local
+                ---
+                spring.profiles: aws
+                spring.profiles.include: common, aws
+                ---
+            application-local.yml:: chỉ sử dụng khi chạy chương trình ở local
+                spring:
+                    datasource:
+                        username: root
+                        password:
+                        url: jdbc:mysql://localhost:3306/news?useSSL=false&characterEncoding=UTF-8
+                logging:
+                    level:
+                        org:
+                        hibernate:
+                            SQL: debug
+            application-aws.yml  :: chỉ sử dụng khi chạy ở AWS
+                spring:
+                    datasource:
+                        username: xxx
+                        password: xxx
+                        url: jdbc:mysql://10.127.24.12:2030/news?useSSL=false&characterEncoding=UTF-8
+            application-common :: là những config dùng chung, môi trường nào cũng cần.
+                spring:
+                    jpa:
+                        properties:
+                        hibernate:
+                            jdbc:
+                            batch_size: 50
+                            batch_versioned_data:truehibernate:
+                        ddl-auto: none
+            application.properties
+                spring.profiles.active=aws
+        @Profile("local")
+            "local"  :: Chỉ cho phép Bean chạy trong môi trường local
+            "!local" :: Cho phép Bean chạy trong môi trường khác local
+    7. Async
+        ApplicationEventPublisher
+            Dùng để bắn ra một sự kiện cho lớp kế thừa ApplicationEvent
+            Bean có sẵn trong Context do Spring cung cấp, bạn chỉ cần lôi ra sử dụng thôi
+        extends ApplicationEvent
+            Một sự kiện hợp lệ khi kế thừa lớp ApplicationEvent của Spring
+        @EventListener
+            Lắng nghe sự kiện từ tham số
+        @EnableAsync
+            Enable Async
+        @Async
+            Dùng cho bất đồng bộ
+    8.Phân trang
+        Page<User> page = userRepository.findAll(PageRequest.of(1, 5, Sort.by("name").descending()));
+            Lấy ra 5 user ở page 1, sort theo tên
+        Page<User> page = userRepository.findAll(PageRequest.of(0, 5));
+            PageRequest.of(0,5) tương đương với lấy ra page đầu tiên, và mỗi page sẽ có 5 phần tử
+        page.nextPageable()
+            Lấy trang tiếp theo
+        page.getSize()
+            In ra số lượng item trong trang
+        page.getTotalElements()
+            In ra tổng số lượng item
+        page.getTotalPages()
+            In ra tổng số page
+    9. Security
+        @EnableWebSecurity
+            Enable Web Security
+        extends WebSecurityConfigurerAdapter
+            interface tiện ích của Spring Security giúp chúng ta cài đặt các thông tin dễ dàng hơn.
+        @Bean
+            public PasswordEncoder passwordEncoder() {
+                // Password encoder, để Spring Security sử dụng mã hóa mật khẩu người dùng
+                return new BCryptPasswordEncoder();
+            }
+        @Override
+            protected void configure(AuthenticationManagerBuilder auth)throws Exception {
+                auth.userDetailsService(userService) // Cung cáp userservice cho spring security
+                .passwordEncoder(passwordEncoder()); // cung cấp password encoder
+            }
+            userDetailsService(){}
+            protected void configure(HttpSecurity http) throws Exception{}
+                Dùng cho phân quyền User
+                http
+                    .authorizeRequests()
+                        .antMatchers("/", "/home").permitAll() :: Cho phép tất cả mọi người truy cập vào 2 địa chỉ này
+                        .anyRequest().authenticated()          :: Tất cả các request khác đều cần phải xác thực mới được truy cập
+                        .and()
+                    .formLogin()                        :: Cho phép người dùng xác thực bằng form login
+                        .defaultSuccessUrl("/hello")
+                        .permitAll()                    :: Tất cả đều được truy cập vào địa chỉ này
+                        .and()
+                    .logout()                           :: Cho phép logout
+                        .permitAll();
