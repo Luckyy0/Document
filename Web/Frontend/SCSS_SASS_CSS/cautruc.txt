@@ -1,0 +1,109 @@
+Cấu trúc file:
+    sass/
+    |
+    |– abstracts/
+    |   |– _variables.scss    // Variables
+    |   |– _functions.scss    // Functions
+    |   |– _mixins.scss       // Mixins
+    |
+    |– base/
+    |   |– _animation.scss    // Animation
+    |   |– _global.scss       // Global define
+    |   |– _fonts.scss        // Fonts define
+    |   |– _reset.scss        // Reset/normalize
+    |   |– _utilities.scss    // utilities
+    |
+    |– components/
+    |   |– _buttons.scss      // Buttons
+    |   |– _tabs.scss         // Tabs
+    |   |– _slider.scss       // Slider
+    |
+    |– layout/
+    |   |– _navigation.scss   // Navigation
+    |   |– _grid.scss         // Grid system
+    |   |– _header.scss       // Header
+    |   |– _footer.scss       // Footer
+    |   |– _sidebar.scss      // Sidebar
+    |   |– _forms.scss        // Forms
+    |
+    |– pages/
+    |   |– _home.scss         // Home specific styles
+    |   |– _about.scss        // About specific styles
+    |   |– _contact.scss      // Contact specific styles
+    |
+    `– main.scss              // Main SASS file
+
+    Trong đó:
+        Abstracts ::  nơi định nghĩa variables, functions, mixins.
+        Base      :: bao gồm những tiêu chuẩn styles như resets, các rule và phần chung thường được sử dụng xuyên suốt project.
+        Components (or modules) :: định nghĩa các styles dành cho buttons, tabs, card, sliders và các thành phần tương tự. thông thường 1 project sẽ có nhiều components như vậy.
+        Layout    :: chứa tất cả các styles liên quan đến layout trong project của bạn. Ví dụ như phần header, footer, navigation và grid system.
+        Pages     :: styles cho từng trang cụ thể. Ví dụ như có một trang không cùng styles với các trang khác và bạn không muốn để ở phần styles chung.
+        Vendors   :: (có thể import từ node_modules) bao gồm tất cả những phần code mở rộng của bên thứ 3 của thư viện như, jQuery, Bootstrap…
+        main.scss :: dùng import các file khác để tạo ra file css chung cho cả website.
+
+Sắp xếp trong file:
+    @extend 
+    @include 
+        // Layout properties
+    position: ;
+    display: ;
+    justify-content: ;
+    align-items: ;
+        // Position properties
+    top: ;
+    left: ;
+    right: ;
+    bottom: ;
+
+        // Box model properties
+    width: ;
+    height: ;
+    padding: ;
+    margin: ;
+
+        // Visual Properties
+    background: ;
+    color: ;
+    border: ;
+    border-radius: ;
+    outline: ;
+    box-shadow: ;
+
+        // Typography properties
+    font-family: ;
+    font-size: ;
+    font-weight: ;
+    line-height: ;
+    text-align: ;
+    text-transform: ;
+
+        // Mics properties
+    cursor: ;
+    overflow: ;
+    z-index: ;
+
+        // CSS3 properties
+    transform: ;
+    transition: ;
+
+        // Pseudo class
+    &:hover {}
+    &:after {}
+    &:before {}
+    &:first-child {}
+    &:last-child {}
+
+        // Breakpoint sorted descending
+    @media screen and (max-width: ) {}
+    @media screen and (max-width: ) {}
+    @media screen and (max-width: ) {}
+
+        // Selector 
+    &__list {}
+    .selector {}
+
+Lưu ý:
+    Những thuộc tính như font-size, font-family, color, background nên dùng biến để thống nhất, không đặt trực tiếp.
+    Selector chỉ nên viết tối đa 3 level, càng nhiều cấp sẽ làm performance bị hạn chế hiệu năng. Bạn cũng nên sử dụng BEM để hạn chế việc phải selector nhiều cấp.
+

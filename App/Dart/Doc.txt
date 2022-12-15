@@ -1,0 +1,41 @@
+* Tổng quan *
+    1. Operation
+        Với giá trị null
+            int? a;       :: khai báo biến với default null
+            a ??= 3;      :: Gán giá trị cho a chỉ khi a = null
+            null ?? 12    :: trả về giá trị bên trái nhất khác null
+            myObject?.someProperty?.someMethod()  :: Dùng khi property or method có thể null 
+                (đoạn mã trả về null và never call someMethod nếu myObject.someProperty=null)
+        Cascades
+            tuần tự hóa code, code sau dấu .. sẽ thực hiện sau khi code trước được thực hiện
+            vd: 
+                obj..anInt=1..aString='String!'..aList=[3.0]..allDone();
+    2. Collection literals
+        List:
+            final aListOfStrings = ['one', 'two', 'three'];
+            final anEmptyListOfDouble = <double>[];
+        
+        Map:
+            final aMapOfStringsToInts = {'one': 1,'two': 2,'three': 3,};
+            final anEmptyMapOfDoublesToInts = <double, int>{};
+        Set:
+            final aSetOfStrings = {'one', 'two', 'three'};
+            final anEmptySetOfString = <String>{};
+    3. Arrow syntax
+        tương tự arrow Function js
+        int get product => value1 * value2 * value3;
+        void incrementValue1() => value1++; 
+        String joinWithCommas(List<String> strings) => strings.join(',');
+        bool hasEmpty = aListOfStrings.any((s) => s.isEmpty);
+
+        
+
+
+1. String interpolation(Nội suy chuỗi)
+    Tương tự javaScript
+    Chỉ dùng {} khi cần thiết
+    ${expression}
+    vd:
+        '${3 + 2}' => '5'
+        '${"word".toUpperCase()}' => 'WORD'
+        '$ObjectName'	 	=>  ObjectName.toString()

@@ -1,0 +1,25 @@
+Quy ước đặt tên
+    .block {}   /* Block */
+    .block__element {}  /* Element */
+    .block--modifier {}  /* Modifier */
+Thành phần cơ bản của BEM:
+    1. Block: 
+        Là một thành phần của trang web hay ứng dụng đó, các thành phần của DOM cũng có thể là các block. Block ở đây thường là các thành phần header, body, content, footer. 
+            Ví dụ section td bên dưới tập hợp các block sau:
+                .td__container làm nhiệm vụ cân max width và padding left right
+                .td__inner làm nhiệm vụ cân padding top bottom và điểm bám cho các element absolute. VD: chỉnh một button…
+                .td__header chứa Sub-title.
+                .td__content chứa Headline và Description.
+                .td__footer chứa button CTA.
+        Các prefix của các class đều là td giúp chúng ta có thể nhận diện section khi muốn update mục tương ứng trong css.
+    2. Elements: 
+        Là một thành phần của một block; không tồn tại độc lập khi không có block; phụ thuộc vào parent block của nó. 
+        Trong BEM, các phần tử được biểu thị bằng dấu gạch dưới kép __.
+
+            .td__headline là Text cỡ lớn. Style thường là H1 hoặc H2.
+            .td__intro, .td__description làm mô tả content.
+            .td__image chứa ảnh.
+            .td__button với style riêng cho button trong section này.
+    3. Modifers: 
+        Được dùng để thao tác thay đổi cách hiển thị trên block hoặc phần tử. 
+            Ví dụ muốn tạo thêm một block .block__elem khác nữa và muốn làm nổi bật nó thì sẽ thêm một class .block__elem--hightlight để tạo sự khác biệt đó.
