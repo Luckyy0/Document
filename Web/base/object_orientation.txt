@@ -1,0 +1,12 @@
+Class: Là một bản thiết kế thể hiện của một đối tượng. Nó có thể được định nghĩa là một mẫu logic 
+    chia sẻ các thuộc tính và phương thức chung.
+Object: Là một thể hiện của một lớp. Nó là một thực thể có hành vi và trạng thái
+Method: Laf hành vi của một đối tượng
+Instance variables: Mỗi đối tượng có tập hợp các Instance variable duy nhất của riêng nó. 
+    Trạng thái của một đối tượng thường được tạo bởi các giá trị được gán cho các biến thể hiện này.
+Access Modifiers: default, public, protected, private.
+    private: Chỉ có trong Class mới có thể truy cập
+    default: Chỉ có trong class với Package có thể truy cập
+    protected: Chỉ có trong class, trong package, subclass bên ngoài package có thể truy cập
+    public: Chỉ có trong class, trong package, subclass bên ngoài package, bên ngoài package có thể truy cập
+Non-access Modifiers: final, abstract, static, transient, synchronized, volatile, native.

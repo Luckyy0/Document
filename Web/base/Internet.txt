@@ -1,0 +1,303 @@
+==================Cách internet hoạt động===================
++++ Concept
+    + Network(mạng)
+        Một nhóm máy tính hoặc các thiết bị khác được kết nối với nhau
+    + Internet
+        Là một mạng toàn cầu gồm các máy tính được kết nối với nhau, giao tiếp thông qua một bộ giao thức được tiêu chuẩn hóa.
+        Internet mang tính phi tập trung (Không ai sở hữu internet hoặc kiểm soát những người có thể kết nối với nó)
+            Thay vào đó, hàng ngàn tổ chức khác nhau vận hành mạng lưới của riêng họ và đàm phán các thỏa thuận kết nối tự nguyện.
+        Internet có 3 basic parts:
+            The last mile: là một phần của internet kết nối các hộ gia đình và doanh nghiệp nhỏ với internet
+                Bao gồm các tòa tháp cho phép mọi người truy cập internet bằng điện thoại di động của họ. Dịch vụ internet không dây 
+            Data center: Lưu trữ dữ liệu người dùng và lưu trữ các ứng dụng và nội dung trực tuyến
+            The backbone(đường trục): bao gồm các mạng đường dài — chủ yếu trên cáp quang — mang dữ liệu giữa các trung tâm dữ liệu và người tiêu dùng.
+                Tạo thành từ nhiều mạng lớn (Network Service Providers or NSP ) kết nối với nhau. Các mạng này ngang hàng với nhau
+                Mỗi NSP yêu cầu kết nối với 3 Network Access Points (Điểm truy cập mạng) hoặc NAP, MAE
+                Tại NAP, lưu lượng gói có thể nhảy từ backbone của NSP này sang NSP khác
+        Khi kết nối internet :
+            1 IP duy nhất được cấp
+            Qua Nhà cung cấp dịch vụ ISP, 1 IP address tạm thời được cấp trong phiên sử dụng
+            Từ mạng LAN, được cấp 1 IP cố định hoặc IP tạm thời từ DHCP
+    + Router
+        Thiết bị chuyển mạch gói(Packet)
+        Một Router thường được kết nối giữa các mạng để định tuyến các gói giữa chúng
+        Mỗi Router biết về các mạng con của nó và địa chỉ IP nào chúng sử dụng
+        Router thường không biết địa chỉ IP nào ở 'phía trên' 
+        Khi Packet đến một Router, Router kiểm tra địa chỉ IP đích. 
+            Router kiểm tra bảng định tuyến của nó. Nếu mạng chứa địa chỉ IP được tìm thấy, 
+            gói tin sẽ được gửi đến mạng đó. Nếu không tìm thấy mạng chứa địa chỉ IP, 
+            thì Router sẽ gửi gói trên một tuyến đường mặc định, thường là lên hệ thống phân cấp backbone 
+            tới Router tiếp theo. Hy vọng rằng bộ định tuyến tiếp theo sẽ biết nơi gửi gói tin. Nếu không, 
+            một lần nữa gói được định tuyến lên trên cho đến khi nó đến được đường trục NSP. Các bộ định tuyến 
+            được kết nối với các đường trục NSP giữ các bảng định tuyến lớn nhất và tại đây, gói sẽ được định tuyến 
+            đến đúng đường trục, nơi nó sẽ bắt đầu hành trình 'đi xuống'
+    + Cloud
+        Lưu trữ tệp trên máy chủ và phân phối phần mềm qua internet, điện toán đám mây cung cấp cho 
+            người dùng trải nghiệm điện toán đơn giản hơn, đáng tin cậy hơn. Điện toán đám mây cho 
+            phép người tiêu dùng và doanh nghiệp coi điện toán như một tiện ích, để lại các chi tiết
+            kỹ thuật cho các công ty công nghệ.
+    + Packet(gói)
+        Một đơn vị dữ liệu nhỏ được truyền qua internet.
+        Lợi ích:
+            Chia thông tin thành các phần nhỏ, cho phép sử dụng năng lực của mạng hiệu quả hơn.
+        Bao gồm:
+            Header: 
+                Chứa thông tin giúp gói đến đích: 
+                    Độ dài của gói
+                    Nguồn và đích của gói
+                    Giá trị tổng kiểm tra giúp người nhận phát hiện xem gói có bị hỏng trong quá trình truyền hay không. 
+    + World wide web
+        Cung cấp một giao diện mạnh mẽ và thân thiện với người dùng hơn các ứng dụng internet khác.
+            Web hỗ trợ các siêu liên kết, cho phép người dùng duyệt từ tài liệu này sang tài liệu khác 
+            chỉ bằng một cú nhấp chuột.
+    + Router(Bộ định tuyến)
+        Một thiết bị định hướng các gói dữ liệu giữa các mạng khác nhau.
+    + IP Address(Địa chỉ IP)
+        Mã định danh duy nhất được gán cho từng thiết bị trên mạng, được sử dụng để định tuyến 
+            dữ liệu đến đích chính xác.
+    + Domain Name(Tên miền)
+        Một tên để xác định một trang web, chẳng hạn như google.com thay vì các sử dụng các IP khó nhớ
+    + Protocol 
+        Là 1 tập hợp các quy tắc và tiêu chuẩn xác định cách trao đổi thông tin giữa các thiết bị và hệ thống.
+        Vai trò:
+            Vai trò quan trọng trong việc cho phép giao tiếp và trao đổi dữ liệu qua internet
+            Cung cấp 1 quy chuẩn cho phép các thiết bị và hệ thống từ các nhà sản xuất và 
+                nhà cung cấp khác nhau giao tiếp với nhau một cách liền mạch.
+        Các Protocol điển hình:
+            IP: Giao thức Internet (chịu trách nhiệm định tuyến các gói đến đích chính xác)
+            TCP: Giao thức điều khiển truyền dẫn (đảm bảo rằng các gói được truyền một cách đáng tin cậy và theo đúng thứ tự)
+            UDP: Giao thức gói dữ liệu người dùng (đảm bảo rằng các gói được truyền một cách đáng tin cậy và theo đúng thứ tự)
+            DNS: Hệ thống tên miền (Dịch tên miền thành địa chỉ IP)
+            HTTP: Giao thức truyền siêu văn bản (truyền dữ liệu giữa máy khách và máy chủ)
+            TCP/IP: Giao thức truyền thông cơ bản được sử dụng bởi hầu hết các ứng dụng và dịch vụ dựa trên internet
+            SMTP: giao thức dựa trên văn bản, hướng kết nối
+    + IP
+        Giao thức Internet ,chịu trách nhiệm định tuyến các gói đến đích chính xác
+        IP là một giao thức không kết nối, không đáng tin cậy. IP không quan tâm liệu một gói có đến được đích hay không, không biết về các kết nối và số cổng. 
+        Tiêu đề IP chứa địa chỉ IP nguồn và IP đích
+    + TCP
+        Giao thức điều khiển truyền dẫn ,đảm bảo rằng các gói được truyền một cách đáng tin cậy và theo đúng thứ tự
+        TCP chịu trách nhiệm định tuyến các giao thức ứng dụng đến đúng ứng dụng trên máy tính đích
+        TCP là dịch vụ luồng byte, hướng kết nối ( hai ứng dụng sử dụng TCP phải thiết lập kết nối trước khi trao đổi dữ liệu),
+            đáng tin cậy (đối với mỗi gói nhận được, một xác nhận được gửi đến người gửi để xác nhận việc gửi,
+            TCP cũng bao gồm một tổng kiểm tra trong tiêu đề của nó để kiểm tra lỗi dữ liệu nhận được), 
+            không phải giao thức văn bản
+        TCP không biết gì về địa chỉ IP
+        Hoạt động:
+            Khi lớp TCP nhận dữ liệu giao thức của lớp ứng dụng từ bên trên, 
+                nó sẽ phân đoạn dữ liệu đó thành các 'khối' có thể quản lý được 
+                và sau đó thêm tiêu đề TCP với thông tin TCP cụ thể vào mỗi 'khối'. 
+                Thông tin chứa trong tiêu đề TCP bao gồm số cổng của ứng dụng mà dữ liệu cần được gửi tới.
+            Khi lớp TCP nhận được một gói từ lớp IP bên dưới nó, lớp TCP sẽ loại bỏ 
+                dữ liệu tiêu đề TCP khỏi gói, thực hiện một số tái tạo dữ liệu nếu cần, 
+                sau đó gửi dữ liệu đến ứng dụng chính xác bằng cách sử dụng số cổng được lấy từ TCP tiêu đề.
+    + UDP   
+        Truyền tải không đáng tin cậy, thông tin có thể bị mất trên đường truyền
+    + QUIC 
+        Giao thức truyền tải dựa trên UDP, hứa hẹn thay thế TCP/IP
+    + SMTP:
+        Giao thức dựa trên văn bản, hướng kết nối, phức tạp hơn HTTP
+        VD: Khi mở ứng dụng email, client sẽ mở kết nối đến mail server tương ứng
+            Mail server sẽ truyền thông báo đầu tiên để xác định chính nó
+            Client gửi message SMTP, server gửi phản hồi
+            Giao dịch sẽ tiếp tục cho đến khi client gửi lệnh SMTP quit, và server đóng kết nối
+    + DNS
+        Hệ thống tên miền chịu trách nhiệm dịch tên miền thành địa chỉ IP.
+        Khi nhập tên miền vào trình duyệt web, máy tính sẽ gửi truy vấn DNS đến máy chủ DNS, 
+            máy chủ DNS trả về địa chỉ IP tương ứng. Sau đó, máy tính sẽ sử dụng địa chỉ IP đó 
+            để kết nối với trang web hoặc tài nguyên khác đã yêu cầu.
+        Không có máy chủ DNS nào chứa toàn bộ cơ sở dữ liệu; chúng chỉ chứa một tập hợp con của nó. 
+            Nếu máy chủ DNS không chứa tên miền do máy tính khác yêu cầu, máy chủ DNS sẽ chuyển hướng máy tính yêu cầu đến máy chủ DNS khác.
+        4 DNS server liên quan đến loading trang web:
+            DNS recursor: Được coi là một thủ thư được yêu cầu đi tìm một cuốn sách cụ thể ở đâu đó trong thư viện.
+                Được thiết kế để nhận các truy vấn từ các máy khách thông qua các ứng dụng như trình duyệt web. 
+                Thông thường, recursor sau đó chịu trách nhiệm thực hiện các yêu cầu bổ sung để đáp ứng truy vấn DNS của máy khách.
+            Root nameserver: Là bước đầu tiên trong việc dịch tên máy chủ có thể đọc được của con người thành địa chỉ IP. 
+                Nó có thể được coi giống như một chỉ mục trong thư viện trỏ đến các giá sách khác nhau - 
+                thông thường, nó đóng vai trò là tham chiếu đến các vị trí cụ thể khác.
+            TLD nameserver( top level domain server): Có thể được coi là một giá sách cụ thể trong thư viện. Máy chủ tên này là bước 
+                tiếp theo trong quá trình tìm kiếm địa chỉ IP cụ thể và nó lưu trữ phần cuối cùng của tên máy chủ 
+                (Trong ví dụ.com, máy chủ TLD là “com”).
+            Authoritative nameserver: Có thể được coi là một từ điển trên giá sách, trong đó một tên cụ thể có thể được dịch thành 
+                định nghĩa của nó. Máy chủ tên có thẩm quyền là điểm dừng cuối cùng trong truy vấn máy chủ tên. Nếu máy chủ tên có 
+                thẩm quyền có quyền truy cập vào bản ghi được yêu cầu, nó sẽ trả lại địa chỉ IP cho tên máy chủ được yêu cầu trở lại 
+                Bộ truy cập DNS (thủ thư) đã thực hiện yêu cầu ban đầu.
+        8 bước tra cứu DNS:
+            1. Người dùng nhập 'example.com' vào trình duyệt web và truy vấn sẽ đi vào Internet và được nhận bởi trình phân giải đệ quy DNS(DNS recursive resolver).
+            2. Trình phân giải(resolver) sau đó truy vấn máy chủ tên gốc DNS (DNS root nameserver).
+            3. Sau đó, DNS root nameserver phản hồi resolver bằng địa chỉ của máy chủ DNS Tên miền cấp cao nhất (TLD) (chẳng hạn như .com hoặc .net), 
+                nơi lưu trữ thông tin cho các miền của nó. Khi tìm kiếm example.com, yêu cầu của chúng tôi được hướng tới TLD .com.
+            4. Resolver sau đó đưa ra yêu cầu tới .com TLD.
+            5. Sau đó, TLD sẽ phản hồi bằng địa chỉ IP của DNS - example.com.
+            6. Cuối cùng, resolver gửi một truy vấn đến DNS.
+            7. Địa chỉ IP cho example.com sau đó được trả lại cho resolver từ DNS.
+            8. Sau đó, resolver sẽ phản hồi trình duyệt web bằng địa chỉ IP của tên miền được yêu cầu ban đầu.
+    + HTTP - 80 - Giao thức truyền tin siêu văn bản
+        Giao thức giao tiếp tầng ứng dụng dựa trên TCP/IP chuẩn hóa cách client - server giao tiếp với nhau 
+        Là nền tảng của World Wide Web và được sử dụng để tải các trang web bằng các liên kết siêu văn bản.
+        HTTP là một giao thức không trạng thái - stateless (mỗi lệnh chạy độc lập với bất kỳ lệnh nào khác)
+            không có liên kết nào giữa hai yêu cầu được thực hiện liên tiếp trên cùng một kết nối. 
+            Điều này ngay lập tức có khả năng trở thành vấn đề đối với người dùng đang cố gắng tương tác 
+            mạch lạc với một số trang nhất định, chẳng hạn như sử dụng giỏ mua hàng thương mại điện tử. 
+            Nhưng trong khi bản thân cốt lõi của HTTP là không trạng thái, cookie HTTP cho phép sử dụng 
+            các phiên có trạng thái. Sử dụng khả năng mở rộng tiêu đề, Cookie HTTP được thêm vào quy trình 
+            làm việc, cho phép tạo phiên trên mỗi yêu cầu HTTP để chia sẻ cùng một bối cảnh hoặc cùng một 
+            trạng thái.
+        Khi truy cập một trang web:
+            Nếu truy cập bằng domain => browser kết nối đến DNS để truy xuất IP, tru cập trang web
+            Trình duyệt web gửi yêu cầu HTTP đến máy chủ(thông qua ngăn xếp giao thức)
+            Sau đó, máy chủ sẽ gửi phản hồi HTTP trở lại client, chứa dữ liệu được yêu cầu.
+            Client nhận lại trang, và đóng kết nối client-server
+            Sau đó, browser phân tích cú pháp qua trang, tìm kiếm các thành phần trang khác mà nó cần để hoàn thành trang web
+            Đối với mỗi phần tử cần thiết, browser sẽ thực hiện kết nối bổ sung yêu cầu HTTP tới server cho từng phần tử cho đến khi hoàn thành trang web
+        Khi máy chủ phản hồi hoàn tất, kết nối client-server bị hủy
+        - 1 Request HTTP chứa:
+            HTTP version
+            a URL
+            a HTTP method
+            HTTP request headers
+            Optional HTTP body.
+        - 1 HTTP response chứa:
+            an HTTP status code
+            HTTP response headers
+            Optional HTTP body
+        Trong đó:
+            HTTP method:
+                Cho biết hành động mà yêu cầu HTTP mong đợi từ máy chủ được truy vấn
+                method: POST,PUT,GET, DELETE
+            HTTP request headers:
+                Có trong mọi HTTP request
+                Chứa thông tin lưu trữ trong cặp key - value
+            HTTP request body:
+                Chứa toàn bộ nội dung cần trao đổi
+            HTTP status code:
+                Cho biết trạng thái của phản hồi
+                1xx: mã trạng thái thông tin
+                2xx: mã trạng thái thành công
+                3xx: mã trạng thái chuyển hướng
+                4xx: mã trạng thái lỗi náy khách
+                5xx: mã trạng thái lỗi máy chủ
+            HTTP response header:
+                Có trong mọi HTTP response
+                Chứa thông tin lưu trữ trong cặp key - value
+        Những điều được kiểm soát bởi HTTP:
+            Cache: Máy chủ có thể hướng dẫn proxy và máy khách về những gì cần lưu vào bộ đệm và 
+                trong bao lâu. Máy khách có thể hướng dẫn các proxy bộ đệm trung gian bỏ qua tài 
+                liệu được lưu trữ.
+            Nới lỏng ràng buộc nguồn gốc : Để ngăn chặn hành vi rình mò và các hành vi xâm phạm quyền 
+                riêng tư, trình duyệt Web tách biệt nghiêm ngặt giữa các trang web. Chỉ các trang từ
+                cùng một nguồn mới có thể truy cập tất cả thông tin của nguồn đó. Mặc dù là một gánh nặng 
+                đối với máy chủ, nhưng các tiêu đề HTTP có thể nới lỏng sự phân tách nghiêm ngặt này ở 
+                phía máy chủ, cho phép một tài liệu trở thành một bản vá thông tin có nguồn gốc từ các 
+                miền khác nhau; thậm chí có thể có những lý do liên quan đến bảo mật để làm như vậy.
+            Authentication: Trang web được bảo vệ để chỉ những người dùng cụ thể mới có thể truy cập. 
+                Xác thực cơ bản có thể được cung cấp bởi HTTP, bằng cách sử dụng WWW-Authenticatetiêu 
+                và similar header hoặc bằng cách đặt một phiên cụ thể bằng cách sử dụng cookie HTTP .
+            Proxy and tunneling: Máy chủ hoặc máy khách thường được đặt trên mạng nội bộ và ẩn địa chỉ IP 
+                thực của chúng khỏi các máy tính khác. Sau đó, các yêu cầu HTTP sẽ đi qua các proxy để vượt 
+                qua rào cản mạng này. Không phải tất cả proxy đều là proxy HTTP. Ví dụ, giao thức SOCKS hoạt 
+                động ở mức thấp hơn. Các giao thức khác, như ftp, có thể được xử lý bởi các proxy này.
+            Sessions: Sử dụng cookie HTTP cho phép bạn liên kết các yêu cầu với trạng thái của máy chủ.
+                Điều này tạo ra các phiên, mặc dù HTTP cơ bản là một giao thức không có trạng thái. 
+                Điều này hữu ích không chỉ cho các giỏ hàng thương mại điện tử mà còn cho bất kỳ trang 
+                web nào cho phép người dùng cấu hình đầu ra.
+    + HTTPS - 443 
+        Phiên bản mã hóa của HTTP được sử dụng để cung cấp liên lạc an toàn giữa máy khách và máy chủ.
+        Sử dụng mã hóa SSL/TLS(Bảo mật lớp cổng /Bảo mật lớp vận chuyển)
+    + TCP/IP
+        Giao thức truyền thông cơ bản được sử dụng bởi hầu hết các ứng dụng và dịch vụ dựa trên internet
+        cung cấp:
+            khả năng phân phối dữ liệu đáng tin cậy, có thứ tự
+            Được kiểm tra lỗi giữa các ứng dụng chạy trên các thiết bị khác nhau.
+        Khái niệm liên quan:
+            Port(Cổng): Sử dụng để xác định ứng dụng hoặc dịch vụ đang chạy trên thiết bị. 
+                Mỗi ứng dụng hoặc dịch vụ được gán một số cổng duy nhất, cho phép gửi dữ liệu đến đúng đích.
+            Socket: Sự kết hợp của địa chỉ IP và Port, đại diện cho một điểm cuối cụ thể để liên lạc. 
+                Sử dụng để thiết lập kết nối giữa các thiết bị và truyền dữ liệu giữa các ứng dụng.
+            Connection: Được thiết lập giữa hai Socket khi hai thiết bị muốn giao tiếp với nhau.
+                Trong quá trình thiết lập kết nối, các tham số kích thước phân đoạn tối đa, kích thước cửa sổ, cách dữ liệu sẽ được truyền qua kết nối được xác định.
+            Data transfer: Sau khi kết nối được thiết lập, dữ liệu có thể được truyền giữa các thiết bị. 
+                Dữ liệu thường được truyền theo phân đoạn, mỗi phân đoạn chứa số thứ tự và metadata khác để đảm bảo phân phối đáng tin cậy.
+    + SSL/TLS (Secure Sockets Layer / Transport Layer Security)
+        Sử dụng để cung cấp liên lạc an toàn qua internet.
+        Các khái niệm liên quan:
+            Certificate(chứng chỉ): Để thiết lập sự tin cậy giữa client - server 
+                Chứa thông tin định danh của máy chủ và được ký bởi bên thứ ba đáng tin cậy 
+                    (Certificate Authority - Cơ quan cấp chứng chỉ) để xác minh tính xác thực.
+            Handshake(bắt tay):  là quá trình client - server trao đổi thông tin để 
+                thương lượng thuật toán mã hóa và các tham số khác cho kết nối an toàn.
+            Encryption(mã hóa): Sau khi kết nối an toàn được thiết lập, dữ liệu được mã hóa bằng 
+                thuật toán đã thỏa thuận và có thể được truyền an toàn giữa máy khách và máy chủ.
+    + Stack protocol (Ngăn xếp giao thức)
+        Thường dùng là TCP/IP
+        Các lớp giao thức:
+            Application Protocols Layer (Lớp giao thức ứng dụng): 
+                Các giao thức dành riêng cho các ứng dụng như WWW, e-mail, FTP, v.v.
+            Transmission Control Protocol Layer (Lớp giao thức điều khiển truyền dẫn):
+                TCP hướng các gói đến một ứng dụng cụ thể trên máy tính bằng số cổng.
+            Internet Protocol Layer (Lớp Giao thức Internet):
+                IP hướng các gói đến một máy tính cụ thể bằng địa chỉ IP.
+            Hardware Layer (Lớp phần cứng):
+                Chuyển đổi dữ liệu gói nhị phân thành tín hiệu mạng và ngược lại.
+        VD: truyền tin "Xin chào" từ computer có IP 1.2.3.4 sang computer có IP 5.6.7.8
+            1. Trên computer 1.2.3.4, tin nhắn từ lớp giao thức ứng dụng -> lớp phần cứng
+            2. Nếu tin nhắn dài, mỗi lớp ngăn xếp mà tin nhắn đi qua có thể chia tin nhắn thành các packet
+            3. Đến lớp TCP. Mỗi Packet được gán Port .
+            4. Sau khi đi qua lớp TCP, các gói sẽ chuyển sang lớp IP. Đây là nơi mỗi gói nhận được địa chỉ đích, 5.6.7.8
+            5. Lớp phần cứng đảm nhiệm việc biến các gói chứa văn bản chữ cái của tin nhắn thành tín hiệu điện tử và truyền chúng qua đường dây điện thoại.
+            6. Ở đường truyền, ISP router định tuyến đến địa chỉ đích
+            7. Đến computer 5.6.7.8, tin nhắn từ lớp phần cứng -> lớp giao thức ứng dụng
+            8. Khi các gói đi lên qua ngăn xếp, tất cả dữ liệu định tuyến mà ngăn xếp của máy tính gửi đã thêm (chẳng hạn như địa chỉ IP và số cổng) sẽ bị loại bỏ khỏi các gói.
+            9. Khi dữ liệu đến đỉnh ngăn xếp, các gói tin đã được tập hợp lại thành dạng ban đầu, "Xin chào máy tính 5.6.7.8!"
+    + Proxy server  
+        là một chương trình hoặc máy tính trung gian được sử dụng khi điều hướng qua các mạng Internet khác nhau. 
+            Chúng tạo điều kiện truy cập vào nội dung trên World Wide Web. Một proxy chặn các request và 
+            phản hồi trở lại server; nó có thể chuyển tiếp các yêu cầu hoặc không (ví dụ: trong trường hợp cache) 
+            và nó có thể sửa đổi nó (ví dụ: thay đổi tiêu đề của nó, tại ranh giới giữa hai mạng).
+        Một proxy có thể nằm trên local computer của người dùng hoặc bất kỳ đâu giữa máy tính của người dùng và 
+            máy chủ đích trên Internet. 
+        Phân loại:
+            A forward proxy: 
+                chuyển tiếp xử lý các yêu cầu từ và đến bất kỳ đâu trên Internet.
+            A reverse proxy:
+                Nhận các yêu cầu từ Internet và chuyển tiếp chúng đến các máy chủ trong mạng nội bộ.
+        Chức năng:
+            Caching: Bộ đệm có thể công khai hoặc riêng tư, như bộ đệm của trình duyệt
+            Filtering: Như quét chống vi-rút
+            Load balancing: Để cho phép nhiều máy chủ phục vụ các yêu cầu khác nhau
+            Authentication: Để kiểm soát quyền truy cập vào các tài nguyên khác nhau
+            Logging: Cho phép lưu trữ thông tin lịch sử
+    + Quy trình bắt tay 3 bước:
+        SYN- Máy khách chọn một số ngẫu nhiên, giả sử là x, và gửi nó đến máy chủ.
+        SYN ACK- Máy chủ xác nhận yêu cầu bằng cách gửi ACK packet lại cho máy khách 
+            - một số ngẫu nhiên, giả sử được y và số x+1 
+        ACK- Máy khách tăng số y nhận được từ máy chủ và gửi lại ACK packet có số y+1
+        Lưu ý: máy khách có thể bắt đầu gửi dữ liệu ứng dụng ngay khi nó gửi ACK packet cuối cùng 
+            nhưng máy chủ sẽ vẫn phải đợi ACK packet được nhận để thực hiện yêu cầu.
+    _ Xu hướng công nghệ:
+        5G
+        IoT 
+        AI 
+        Blockchain
+        Edge computing (điện toán biên)
++ Tổng quan cách thức hoạt động
+    Ở high level, Internet hoạt động == kết nối các thiết bị và hệ 
+        thống máy tính với nhau bằng một bộ giao thức chuẩn hóa(protocol). 
+        Protocols xác định cách trao đổi thông tin giữa các thiết bị 
+        và đảm bảo rằng dữ liệu được truyền đi một cách đáng tin cậy và an toàn.
+    Cốt lõi của internet là một mạng toàn cầu gồm các bộ định tuyến được kết nối 
+        với nhau( Điều hướng lưu lượng giữa các thiết bị và hệ thống khác nhau.)
+        Khi gửi dữ liệu qua internet, dữ liệu từ thiết bị sẽ được chia thành các gói nhỏ 
+        gửi đến bộ định tuyến. Bộ định tuyến kiểm tra gói tin và chuyển tiếp nó 
+        đến bộ định tuyến tiếp theo trong đường dẫn tới đích của nó. Quá trình này
+        tiếp tục cho đến khi gói đến đích cuối cùng.
+    Để đảm bảo rằng các gói được gửi và nhận chính xác, internet sử dụng nhiều giao thức khác nhau, 
+        bao gồm Giao thức Internet (IP) và Giao thức Điều khiển Truyền (TCP). 
+        IP chịu trách nhiệm định tuyến các gói đến đích chính xác
+        TCP đảm bảo rằng các gói được truyền một cách đáng tin cậy và theo đúng thứ tự. 
+        Ngoài các giao thức cốt lõi này, còn có:
+            Hệ thống tên miền (DNS), 
+            Giao thức truyền siêu văn bản (HTTP) và (HTTPS).
+            Giao thức Sockets Layer/Transport Layer Security (SSL/TLS). 
+    
+        
