@@ -1,0 +1,39 @@
+**** Base concept ****
++ Factory method: Là một design pattern hướng đối tượng, giải quyết vấn đề tạo object mà không 
+    cần xác định chính xác lớp nào sẽ được tạo => giảm sự phụ thuộc, che giấu logic khởi tạo
+    Cách thực hiện: 
+        B1: tạo Interface
+        B2: tạo các class implements Interface đó
+        B3: tạo class chứa Factory method(input là interface, output là class implements interface đó - 
+            dựa vào argument truyền vào, để xác định lớp nào sẽ được tạo)
++ Bean
+    Là các object được quản lý bởi Spring IoC container (được coi là xương sống của ứng dụng)
++ org.springframework.context.ApplicationContext interface
+    Đại diện cho Spring IoC container
+    Chịu trách nhiệm cho khởi tạo, định cấu hình, và lắp ráp các bean
+    Duy trì sổ đăng kí các loại bean và các thành phần phụ thuộc của chúng
++ Container
+    Nhận các hướng dẫn về những đối tượng cần khởi tạo, định cấu hình và lắp ráp bằng cách đọc siêu 
+        dữ liệu cấu hình - configuration metadata(viết băng XML, Java annotation, Java code).
+    Thể hiện các bean và sự phụ thuộc giữa chúng
++ Configuration metadata - Siêu dữ liệu cấu hình
+    Viết băng XML, Java annotation, Java code
+    Cho phép thể hiện object và sự phụ thuộc giữa các object đó
++ DI 
+    DI dựa trên constructor dùng cho các phần phụ thuộc bắt buộc
+    DI dựa trên setter dùng cho các phần phụ thuộc tù chọn( có thế đi kèm với @Autowired để tạo phụ 
+        thuộc bắt buộc - không khuyến khích sử dụng)
+    
++AOP
+
+A. Core 
+1. IoC - Inversion of Control (DI - Dependency Injection)
+    Là quá trình object xác định các dependencies của chúng (các object mà chúng làm việc cùng)
+        thông qua contructor arguments, arguments của factory method, thuộc tính của đối tượng được xây 
+        dựng hoặc của đối tượng trả về từ factory method
+    Sau đó, IoC container sẽ tiêm các phụ thuộc đó khi nó tạo bean
+    org.springframework.beans và org.springframework.context là cơ sở cho IoC container
+    BeanFactory Interface cung cấp cơ chế cấu hình nâng cao, có khả năng quản lý bất kỳ đối tượng nào
+    ApplicationContext là sub-interface của BeanFactory, giúp tích hợp dễ dàng hơn với AOP
+
+        
