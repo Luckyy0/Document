@@ -30,7 +30,16 @@ B. NoSQL - Not only SQL - Non SQL. Ở đây ta tập trung vào MongoDB
     ```
     Index
     ```
-    Chỉ mục là cấu trúc dữ liệu giúp cải thiện tốc độ của các thao tác tìm kiếm phổ biến. Chúng lưu trữ một phần nhỏ của tập dữ liệu trong một cấu trúc được tổ chức tốt. Cấu trúc này cho phép tìm kiếm và sắp xếp tài liệu nhanh hơn bằng cách giảm số lượng tài liệu mà nó phải quét.
+    Chỉ mục là cấu trúc dữ liệu giúp cải thiện tốc độ của các thao tác tìm kiếm phổ biến. Chúng lưu trữ một phần nhỏ của tập dữ liệu trong một cấu trúc được tổ chức tốt. Cấu trúc này cho phép tìm kiếm và sắp xếp tài liệu nhanh hơn bằng cách giảm số lượng tài liệu mà nó phải quét.  
+    Hoạt động tương tự như các chỉ mục được tìm thấy trong một cuốn sách, giúp nhanh chóng định vị thông tin cụ thể thay vì quét qua toàn bộ nội dung  
+    Là cấu trúc dữ liệu chứa phiên bản nhỏ hơn của dữ liệu trong document, cùng với tham chiếu đến tài liệu gốc  
+    Các loại của index  
+    -Single Field Index: Chỉ mục dựa trên một trường duy nhất trong tài liệu.  
+    -Multikey Index:  Chỉ mục được sử dụng khi trường được lập chỉ mục chứa một mảng giá trị.  
+    -Text Index: Index dùng để hỗ trợ truy vấn tìm kiếm văn bản trên nội dung chuỗi.  
+    -2dsphere Index: Chỉ mục được sử dụng để hỗ trợ các truy vấn không gian địa lý trên dữ liệu hình cầu.  
+    -2d Index: Chỉ mục được sử dụng để hỗ trợ các truy vấn không gian địa lý trên dữ liệu phẳng.
+
     ```
     Cursor
     ``````
@@ -540,7 +549,7 @@ B. NoSQL - Not only SQL - Non SQL. Ở đây ta tập trung vào MongoDB
     ```
     bulkWrite
     ```
-    Cho phép bạn thực hiện nhiều thao tác tạo, cập nhật và xóa trong một lệnh duy nhất, điều này có thể cải thiện đáng kể hiệu suất của ứng dụng.  
+    Cho phép thực hiện nhiều thao tác tạo, cập nhật và xóa trong một lệnh duy nhất, điều này có thể cải thiện đáng kể hiệu suất của ứng dụng.  
     Có 2 loại:  
     -Ordered Bulk Write - ghi hàng loạt theo thứ tự : Trong loại thao tác hàng loạt này, MongoDB thực thi các thao tác ghi theo thứ tự cung cấp. Nếu thao tác ghi không thành công, MongoDB sẽ trả về lỗi và không tiến hành các thao tác còn lại.
     -Unordered Bulk Write - Ghi hàng loạt không theo thứ tự : Trong loại hoạt động hàng loạt này, MongoDB có thể thực hiện các thao tác ghi theo bất kỳ thứ tự nào. Nếu thao tác ghi không thành công, MongoDB sẽ tiếp tục xử lý các thao tác ghi còn lại.  
@@ -592,6 +601,19 @@ B. NoSQL - Not only SQL - Non SQL. Ở đây ta tập trung vào MongoDB
     VD:  
     Truy xuất số lượng tất cả các document trong collection:
     ![Alt text](image-64.png)  
+    ```
+    Aggregation - tổng hợp 
+    ```
+    Cung cấp một cách để xử lý và chuyển đổi dữ liệu được lưu trữ trong các collection.  
+    Cho phép thực hiện các phép tính và trả về kết quả đã tính bằng nhiều công cụ tổng hợp dữ liệu khác nhau, chẳng hạn như aggregation pipelines, map-reduce functions, or single-purpose aggregation methods.  
+    - Aggregation Pipeline  
+    Cho phép thực hiện một loạt các chuyển đổi dữ liệu trên các tài liệu trong một collection. Pipeline bao gồm nhiều giai đoạn và mỗi giai đoạn áp dụng một thao tác cụ thể trên các tài liệu đầu vào. Trong số các thao tác này, có thể tìm thấy các tính năng như lọc, sắp xếp, chiếu và nhóm.  
+    VD:  
+    ![Alt text](image-109.png)  
+    - Single-Purpose Aggregation  
+    Cũng hỗ trợ các phương thức tập hợp đơn mục đích, chẳng hạn như db.collection.count(), db.collection.distinct() và db.collection.group(), v.v. Các phương thức này cung cấp một cách nhanh hơn và thuận tiện hơn để thực hiện các tập hợp đơn giản trực tiếp.  
+    VD:  
+    ![Alt text](image-111.png)  
 8. Các toán tử  
     ```
     Toán tử cập nhật
@@ -794,9 +816,193 @@ B. NoSQL - Not only SQL - Non SQL. Ở đây ta tập trung vào MongoDB
     - $nor  
     Được sử dụng để trả về các tài liệu không có điều kiện nào được chỉ định là đúng.  
     Vd:   q
-    ![Alt text](image-108.png)
+    ![Alt text](image-108.png)  
 
- 
+    ```
+    Toán tử thông thường - thường dùng với aggregation
+    ```
+    - $match  
+    Sử dụng để lọc các document với pipeline trong aggregation. Nó giúp loại trừ các document không đáp ứng (các) điều kiện đã chỉ định. Toán tử $match lọc tài liệu và chỉ chuyển những tài liệu phù hợp với các điều kiện đã chỉ định sang giai đoạn tiếp theo của quy trình.  
+    Cú pháp:  
+    ![Alt text](image-112.png)  
+    Vd:  
+    Trả về tất cả employees có age > 30 và department là HR  
+    ![Alt text](image-113.png)  
+    - $group  
+    Được sử dụng để tổng hợp và thực hiện các thao tác trên dữ liệu được nhóm.  
+    Toán tử cho phép phân loại document trong một bộ sưu tập dựa trên các trường cụ thể và thực hiện các thao tác khác nhau trên từng nhóm.  
+    Các hoạt động này bao gồm đếm số lượng tài liệu trong một nhóm, tổng hợp các giá trị của một trường cụ thể, tính toán các giá trị trung bình, v.v.  
+    Cú pháp:  
+    ![Alt text](image-114.png)  
+    Các tham số:  
+
+        | parameter | description |
+        |---|---|
+        | _id: | đại diện cho các tiêu chí để nhóm các document. Nó có thể là một tên trường hoặc một biểu thức trả về một giá trị. |
+        |field| tên của field trả về |
+        | accumulator1 | Có thể là 1 trong các bộ tích lũy $sum, $avg, $min, $max, $push,...|
+        | expression1 | Chỉ định trường sẽ thực hiện accumulator1 |  
+
+        VD:  
+        Trả về document gồm 2 trường _id và total_spent. _id là theo trường customer_id trong orders, total_spenr được tính toán dựa trên sum của amount field  
+        ![Alt text](image-115.png)  
+        Với bộ dữ liệu:  
+        ![Alt text](image-117.png)  
+        ta thực hiện group như sau:  
+        ![Alt text](image-116.png)  
+        Ở trong first state: Trả về document gồm 2 trường _id và books. Nhóm tất cả dữ liệu theo author field và trả về tất cả thông tin sách theo author  
+        ![Alt text](image-118.png)  
+        Ở trong Second Stage: Ta thêm 1 field vào document trả về là totalCopies, đuqọc tính bằng tổng số copies trong field books tạo ở stage 1  
+        ![Alt text](image-119.png)  
+    - $sort  
+    Là một toán tử tổng hợp sắp xếp các document được chuyển qua pipeline. Nó nhận một hoặc nhiều trường làm tham số và sắp xếp tài liệu theo thứ tự tăng dần hoặc giảm dần dựa trên giá trị trong các trường đã chỉ định.  
+    Cú pháp:  
+    ![Alt text](image-120.png)  
+    sort order là 1 == sắp xếp tăng dần; -1 == sắp xếp giảm dần  
+    vd:  
+    Sắp xếp student với age desc và name asce  
+    ![Alt text](image-121.png)  
+    - $skip  
+    Công cụ hữu ích để phân trang các kết quả truy vấn hoặc bỏ qua một số document thể trong một colelction. Toán tử này có thể được áp dụng trong aggregation pipeline bằng cách sử dụng phương thức skip().  
+    Cú pháp:  
+    ![Alt text](image-122.png)  
+    VD:  
+    ![Alt text](image-123.png)  
+    - $limit  
+    Giới hạn số lượng tài liệu được chuyển đến giai đoạn tiếp theo trong quy trình. Toán tử $limit rất hữu ích để gỡ lỗi và thử nghiệm các đường ống. Nó cũng hữu ích để giới hạn số lượng tài liệu được trả về bởi một đường dẫn.  
+    Cú pháp:  
+    ![Alt text](image-124.png)  
+    VD:  
+    ![Alt text](image-125.png)  
+    - $unwind  
+    lL một giai đoạn aggregation pipeline mạnh mẽ trong MongoDB, cho phép bạn giải cấu trúc một trường mảng từ các tài liệu đầu vào và tạo một tài liệu mới cho từng phần tử trong mảng, về cơ bản là "tháo gỡ" mảng.  
+    Làm phẳng cấu trúc mảng và dễ dàng thao tác hoặc phân tích dữ liệu trong các mảng dưới dạng các tài liệu riêng biệt.  
+    Cú pháp:  
+    ![Alt text](image-126.png)  
+    Các tham số:  
+
+        | parameter | description | 
+        |---|---| 
+        | path | Một chuỗi đại diện cho field path của mảng cần unwind . Nó phải được bắt đầu bằng $ để chỉ ra tham chiếu đến một trường trong tài liệu đầu vào. |
+        | includeArrayIndex | Không bắt buộc. Tên của một new field để giữ chỉ mục mảng của phần tử. Tên không được bắt đầu bằng ký hiệu đô la $. | 
+        | preserveNullAndEmptyArrays | Không bắt buộc. Một giá trị boolean xác định có xuất tài liệu cho các tài liệu đầu vào không có đường dẫn đã chỉ định hoặc có một mảng trống, null hoặc giá trị bị thiếu hay không. Theo mặc định, các tài liệu đầu vào này không được bao gồm trong đầu ra - False. |  
+
+        VD:  
+        Có data sau  
+        ![Alt text](image-127.png)  
+        Thực hiện unwind  
+        ![Alt text](image-128.png)  
+        First state return  
+        ![Alt text](image-129.png)  
+        Second Stage return  
+        ![Alt text](image-130.png)  
+        Third Stage return  
+        ![Alt text](image-131.png)
+    - $sum  
+    Cho phép tính tổng các giá trị số trong các trường được chỉ định hoặc bằng cách đánh giá các giá trị biểu thức cho từng tài liệu đầu vào.  
+    Sủ dụng $ifNull or $cond để giải quyết non-numerric  
+    Cú pháp:  
+    ![Alt text](image-132.png)  
+    VD:  
+    ![Alt text](image-133.png)  
+    ![Alt text](image-134.png)  
+    - $lookup  
+    Cho phép bạn thực hiện phép nối ngoài bên trái giữa hai tập hợp. Nó được sử dụng để kết hợp dữ liệu từ nhiều bộ sưu tập trong một aggregation pipeline operation.   
+    Cú pháp  
+    ![Alt text](image-135.png)   
+    Các tham só   
+
+        | parameter | description | 
+        |---|---|  
+        | from |  target collection để thực hiện thao tác nối |  
+        | localField | field từ collection đầu vào (nghĩa là bộ sưu tập áp dụng $lookup) | 
+        | foreignField | field từ collection đích |  
+        | as | Chỉ định tên của trường mảng mới để thêm vào tài liệu đầu vào. Trường mảng mới chứa các tài liệu phù hợp từ bộ sưu tập. Nếu tên được chỉ định đã tồn tại trong tài liệu đầu vào, trường hiện có sẽ bị ghi đè. |  
+
+        Vd:  
+        Có 2 collection data  
+        ![Alt text](image-136.png)  
+        ![Alt text](image-137.png)  
+        Thực hiện hoạt động  
+        ![Alt text](image-138.png)  
+        Kết quả trả vê  
+        ![Alt text](image-139.png) 
+9. index  
+    - Single Field  
+    Là chỉ mục sắp xếp và tổ chức dữ liệu dựa trên một trường duy nhất bên trong document. Nó có thể ở trên trường cấp cao nhất hoặc trên trường lồng nhau (trường con trong tài liệu được nhúng). Các chỉ mục trường đơn rất hữu ích để cải thiện hiệu suất của các thao tác đọc, giúp tìm kiếm các tài liệu có chứa một giá trị trường cụ thể nhanh hơn.  
+    Single Field rất phù hợp trong các trường hợp sử dụng như tìm kiếm, sắp xếp hoặc lọc tài liệu dựa trên một giá trị trường cụ thể.  
+    Vd:  
+    Chỉ định tên field được gán index và 1 - sắp xếp tăng dần  
+    ![Alt text](image-140.png)  
+    Tạo một Single Field duy nhất để ngăn việc chèn các giá trị trùng lặp cho một trường cụ thể.  
+    ![Alt text](image-141.png)  
+    Loại chỉ mục có thể không lập chỉ mục tất cả các tài liệu trong một bộ sưu tập, dẫn đến giảm kích thước chỉ mục và hiệu suất tốt hơn.  
+    ![Alt text](image-142.png)  
+    - compound  
+    Loại chỉ mục này có thể hỗ trợ các truy vấn liên quan đến nhiều trường, cho phép tối ưu hóa hiệu suất truy vấn của mình và tìm kiếm hiệu quả thông qua các bộ dữ liệu lớn.  
+    Cú pháp:  
+    ![Alt text](image-143.png)  
+    VD:  
+    ![Alt text](image-144.png)  
+    - Text  
+    Cung cấp một tính năng mạnh mẽ gọi là Text Indexes để cho phép tìm kiếm nội dung chuỗi trong tài liệu. Điều này rất hữu ích khi cần thực hiện tìm kiếm và phân tích văn bản trong collection.  
+    Chỉ mục Văn bản cho phép tìm kiếm các từ, cụm từ hoặc thậm chí các biểu thức truy vấn phức tạp một cách dễ dàng.  
+    Tùy chọn search:  
+    $language: Chỉ định ngôn ngữ cho truy vấn tìm kiếm.  
+    $caseSensitive: Bật hoặc tắt tìm kiếm phân biệt chữ hoa chữ thường (mặc định là false).  
+    $diacriticSensitive : Bật hoặc tắt tìm kiếm theo dấu phụ (mặc định là false).  
+    VD:  
+    Create text index    
+    ![Alt text](image-145.png)  
+    Thực thi  
+    Tìm tất cả sách có tiêu đề khớp với từ “mongodb” hoặc “guide”  
+    ![Alt text](image-146.png)  
+    ![Alt text](image-151.png)  
+    Tương tự trên nhưng truy vấn trên title field  
+    drop index  
+    ![Alt text](image-147.png)  
+    - Geospatial  
+    Sử dụng để truy vấn dữ liệu tọa độ không gian địa lý trong MongoDB. Các chỉ mục này hữu ích khi lưu trữ thông tin liên quan đến các đối tượng không gian hoặc địa lý, chẳng hạn như vị trí của nhà hàng, khách sạn hoặc địa danh và thực hiện các truy vấn dựa trên khoảng cách hoặc ngăn chặn.  
+        + 2dsphere Index  
+        Hỗ trợ các truy vấn trên bề mặt của hình cầu hoặc vật thể hình tròn  
+        ![Alt text](image-148.png)  
+        + 2d Index  
+        Hỗ trợ các truy vấn trên mặt phẳng Cartesian phẳng, có thể hữu ích cho các trường hợp đơn giản hơn khi xử lý dữ liệu quy mô nhỏ. Nó lưu trữ dữ liệu không gian địa lý dưới dạng các cặp tọa độ kế thừa.  
+        ![Alt text](image-149.png)  
+    - Expiring  
+    Cho phép tự động xóa tài liệu khỏi bộ sưu tập sau một khoảng thời gian nhất định hoặc vào một ngày hết hạn cụ thể.   
+    VD:   
+    ![Alt text](image-150.png)  
+10. Scaling MongoDB  
+Mở rộng quy mô là rất quan trọng để duy trì hiệu suất cao và tính khả dụng của cơ sở dữ liệu. Có hai phương pháp chính để chia tỷ lệ MongoDB: chia tỷ lệ theo chiều ngang và chia tỷ lệ theo chiều dọc.  
+```
+Horizontal Scaling
+```
+Chia tỷ lệ theo chiều ngang đề cập đến quá trình thêm nhiều máy chủ vào hệ thống để chia sẻ khối lượng công việc một cách đồng đều. Trong MongoDB, tỷ lệ ngang đạt được thông qua sharding.  
+- Sharding  
+Là một phương pháp phân tán dữ liệu trên nhiều máy chủ, cho phép MongoDB mở rộng quy mô và quản lý lượng lớn dữ liệu.  
+Sharding cho phép phân vùng dữ liệu và phân phối dữ liệu trên nhiều máy, đảm bảo rằng không một máy nào bị quá tải dữ liệu hoặc truy vấn. Với việc sử dụng shard key - khóa phân đoạn, MongoDB sẽ tự động phân phối dữ liệu trên nhiều máy.  
+Thành phần của sharding:  
+-Shard: Một máy chủ hoặc một replica set - bộ bản sao lưu trữ một phần dữ liệu được phân đoạn.  
+-Config Server: Máy chủ hoặc bộ bản sao lưu trữ siêu dữ liệu về các cụm được phân đoạn. Máy chủ cấu hình theo dõi dữ liệu nào được lưu trữ trên phân đoạn nào.  
+-Query Router (mongos) - bộ định tuyến truy vấn: Một máy chủ định tuyến các truy vấn của ứng dụng đến phân đoạn thích hợp dựa trên siêu dữ liệu thu được từ máy chủ cấu hình.  
+```
+Vertical Scaling  
+```
+- Replica Sets  
+Chia tỷ lệ theo chiều dọc liên quan đến việc tăng tài nguyên có sẵn trên các máy chủ riêng lẻ, chẳng hạn như CPU, bộ nhớ và lưu trữ. Điều này có thể được thực hiện bằng cách thêm nhiều tài nguyên hơn vào các máy chủ hiện có hoặc bằng cách nâng cấp lên các máy chủ mạnh hơn.  
+Các thành phần của Replica Sets:  
+-Primary Node: Xử lý tất cả các thao tác ghi và cũng có thể xử lý các thao tác đọc.  
+-Secondary Nodes: Các nút phụ sao chép dữ liệu được lưu trữ trong nút chính và có thể phục vụ các hoạt động đọc. Có thể được thăng cấp lên vai trò chính nếu nút chính gặp lỗi.  
+-Arbiter Nodes (optional): Không lưu trữ bất kỳ dữ liệu nào nhưng tham gia vào quá trình bầu cử để chọn nút chính.  
+
+
+
+
+
+
+
+
 
 
 

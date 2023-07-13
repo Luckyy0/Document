@@ -104,7 +104,7 @@ A. SQL - Structured Query Language - Ngôn ngữ truy vấn có cấu trúc
     INTEGER(size): tương tự INT
     BIGINT(size): Số nguyên lớn(-9223372036854775808 -> 9223372036854775807). Phạm vi 0 -> 18446744073709551615. size tối đa (là 255)
     FLOAT(p): Biểu diễn số thập phân.
-    DECIMAL(size, d): size là tổng số chữ số. d là số chữ số sau dấu thập phân. max size là 65. max d là 30. default size là 10. default d là 0. 
+    DECIMAL(size, d): size là tổng số chữ số. d là số chữ số saux dấu thập phân. max size là 65. max d là 30. default size là 10. default d là 0. 
 +DATE AND TIME
     DATE: Định dạng: YYYY-MM-DD. Phạm vi được hỗ trợ là từ '1000-01-01' đến '9999-12-31'
     DATETIME(fsp): Định dạng: YYYY-MM-DD hh:mm:ss. Phạm vi được hỗ trợ là từ '1000-01-01 00:00:00' đến '9999-12-31 23:59:59'. 
