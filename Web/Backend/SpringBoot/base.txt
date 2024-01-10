@@ -23,7 +23,36 @@
     DI dựa trên constructor dùng cho các phần phụ thuộc bắt buộc
     DI dựa trên setter dùng cho các phần phụ thuộc tù chọn( có thế đi kèm với @Autowired để tạo phụ 
         thuộc bắt buộc - không khuyến khích sử dụng)
-    
++Java Reflection 
+    Là một tính năng cho phép truy cập và sử dụng thông tin về một lớp hoặc đối tượng tại runtime. 
+    Reflection có thể được sử dụng để: 
+        - Lấy tên của các thuộc tính, phương thức và lớp.
+        - Lấy kiểu dữ liệu của các thuộc tính, phương thức và lớp.
+        - Gọi các phương thức.
+        - Lấy và đặt các giá trị của các thuộc tính.
+        - Khởi tạo các đối tượng.
+        - Lấy các chú thích từ các lớp và đối tượng.
+    Reflection nguy hiểm nếu không được sử dụng đúng cách. Nó có thể được sử dụng để truy cập các thành 
+        phần của một lớp hoặc đối tượng mà bạn không nên truy cập, điều này có thể dẫn đến các vấn đề về bảo mật và hiệu suất.
++Spring AOT 
+    Là một tính năng của Spring Boot cho phép biên dịch ứng dụng Spring thành mã nhị phân trước khi chạy. 
+        => cải thiện hiệu suất. Do với java app, just-in-Time (JIT) biên dịch mã Java thành mã nhị phân tại runtime. 
+        Quá trình này có thể tốn thời gian, đặc biệt là đối với các ứng dụng lớn. Còn AOT biên dịch thành mã nhị phân 
+        trước runtime => loại bỏ sự cần thiết phải tải các lớp Java tại runtime
+    Spring AOT còn có thể tối ưu hóa mã nhị phân cho phần cứng cụ thể 
+    Spring AOT cũng có thể làm tăng kích thước của ứng dụng; do Spring AOT phải bao gồm mã nhị phân cho tất cả các lớp Java 
+        được sử dụng trong ứng dụng.
+    => Cần cân nhắc khi sử dụng AOT: 
+        Nếu hiệu suất là quan trọng => Spring AOT
+        Tuy nhiên, nếu kích thước của ứng dụng là quan trọng => không nên dùng AOT 
+    Spring AOT được triển khai bằng cách sử dụng công cụ GraalVM  
++ GraalVM 
+    Là một máy ảo đa ngôn ngữ (Java, Python, R, Go,...) được phát triển bởi Oracle . 
+    GraalVM là một phiên bản của Java Runtime Environment(JRE) được xây dựng trên nền tảng của trình biên 
+        dịch Just-in-Time (JIT). 
+    GraalVM có thể biên dịch mã Java thành mã nhị phân gốc trước khi chạy, điều này có thể cải thiện hiệu suất của mã.
+    Tuy nhiên GraalVM làm tăng kích thước của ứng dụng  
+
 +AOP
 
 A. Core 

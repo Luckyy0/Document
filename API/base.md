@@ -18,6 +18,30 @@ Các loại API:
     Ease of maintenance: API hoạt động như một cổng kết nối giữa hai hệ thống. Mỗi hệ thống có nghĩa vụ thực hiện các thay đổi nội bộ để API không bị ảnh hưởng. Bằng cách này, mọi thay đổi mã trong tương lai của một bên không ảnh hưởng đến bên kia.  
 Web API:  
     API Web hoặc Web Service API là giao diện xử lý ứng dụng giữa máy chủ web và trình duyệt web. Tất cả web services đều là API nhưng không phải tất cả các API đều là web services. API REST là một loại API Web đặc biệt.  
+    - Các Anntation trong spring  
+    @RestController :  Trả về dữ liệu dưới dạng JSON  
+    @RestControllerAdvice : Tác động vào quá trình xử lý của các @RestController. Kết hợp với @ExceptionHandler xử lý các ngoại lệ xảy ra.  
+    @ConfigurationProperties: cho phép cấu hình ứng dụng từ bên ngoài và lấy các thông tin đó ra một cách dễ dàng. Để khởi chạy sử dụng @EnableConfigurationProperties lên main App. Các parameter:
+        - prefix = "loda": Chỉ lấy các config có tiền tố là "loda"
+        - @PropertySource("classpath:loda.yml"): Đánh dấu để lấy config từ trong file loda.yml. Nếu không có annotation này, Spring sẽ sử dụng file mặc định 
+(classpath:application.yml trong thư mục resources)   
+
+        @RequestBody: Dùng trong API (@RestController), nhận các thông tin từ phía Client gửi lên Server dưới dạng JSON (tương tự @)ModelAttribute  
+        vd:  
+            @PostMapping("/todo")  
+            public ResponseEntity addTodo(@RequestBody Todo todo){}  
+        @PathVariable: Dùng trong API, tương tự @RequestParam lấy ra thông tin trong URL  
+        vd:  
+            @GetMapping("/todo/{todoId}")  
+            public Todo getTodo(@PathVariable(name = "todoId") Integer todoId){}  
+        @ExceptionHandler(IndexOutOfBoundsException.class) : Kết hợp với @RestControllerAdvice xử lý các ngoại lệ xảy ra.  
+        Các parameter:  
+            - Exception.class: Tất cả các Exception không được khai báo sẽ được xử lý tại đây
+                IndexOutOfBoundsException.class: IndexOutOfBoundsException sẽ được xử lý riêng tại đây  
+        @ResponseStatus(value = HttpStatus.BAD_REQUEST) : Xác định loại Http Status trả về cho người dùng sẽ được xử lý bởi mothod bên dưới.
+        Các parameter:  
+            - HttpStatus.INTERNAL_SERVER_ERROR: xử lý cho tất cả Exception
+            - HttpStatus.BAD_REQUEST : xử lý cho BAD_REQUEST 
 
 API integrations:   
     Là các thành phần phần mềm tự động cập nhật dữ liệu giữa máy khách và máy chủ.   
@@ -141,7 +165,7 @@ Cấu trúc gồm ba phần được phân tách bằng dấu chấm :
     ![Alt text](image-19.png)
 
 Hoạt động:  
-Khi người dùng đăng nhập thành công bằng thông tin đăng nhập của họ, JWWT sẽ được trả về.  
+Khi người dùng đăng nhập thành công bằng thông tin đăng nhập của họ, JWT sẽ được trả về.  
 Bất cứ khi nào người dùng muốn truy cập vào một tuyến đường hoặc tài nguyên được bảo vệ, tác nhân người dùng sẽ gửi JWT, thường là trong tiêu đề Ủy quyền bằng lược đồ Bearer   
 ![Alt text](image-20.png)  
 Các tuyến được bảo vệ của máy chủ sẽ kiểm tra JWT hợp lệ trong Authorizationtiêu đề và nếu có, người dùng sẽ được phép truy cập các tài nguyên được bảo vệ.

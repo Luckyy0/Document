@@ -1,0 +1,43 @@
+
+
+IOC (Inversion of Control) :
+	Là một nguyên lý thiết kế ứng dụng trong công nghệ phần mềm, trong đó thay vì các đối tượng tự tạo ra các đối tượng 
+		mà chúng cần, thì một bên thứ ba sẽ tạo ra và cung cấp các đối tượng đó cho chúng.
+	Trong Spring, bên thứ ba đó là Spring Container (IoC Container). Spring Container sẽ quản lý vòng đời của các bean 
+		các đối tượng trong dự án Spring), khởi tạo, cấu hình, và tương tác giữa các bean trong ứng dụng Spring.
+	Ví dụ,  thay vì một đối tượng CustomerService tự tạo ra một đối tượng DatabaseService, thì Spring Container sẽ tạo ra 
+		cả hai đối tượng này và cung cấp DatabaseService cho CustomerService.
+	Lợi ích:
+		Tăng tính linh hoạt, khả năng mở rộng của ứng dụng:  các đối tượng không tự tạo ra các đối tượng mà chúng cần =>có thể dễ dàng được 
+			thay thế bằng các đối tượng khác mà không cần thay đổi mã nguồn của chúng.
+		Giảm sự phụ thuộc giữa các đối tượng:  Khi các đối tượng không tự tạo ra các đối tượng mà chúng cần => chúng sẽ ít phụ thuộc lẫn nhau hơn. 
+			Điều này giúp giảm sự phức tạp của ứng dụng và cải thiện khả năng bảo trì của ứng dụng.
+		Tăng tính dễ test của ứng dụng: Các đối tượng có thể được test độc lập với nhau=>việc kiểm tra chất lượng ứng dụng dễ dàng hơn.
+		Tăng tính bảo trì của ứng dụng: Việc quản lý vòng đời của các đối tượng được thực hiện bởi Spring Container => bảo trì ứng dụng dễ dàng hơn.
+		Tăng tính đơn giản và dễ hiểu của mã nguồn: Khi các đối tượng không tự tạo ra các đối tượng mà chúng cần, thì mã nguồn sẽ đơn giản và dễ hiểu hơn. 
+			Điều này giúp giảm thời gian và chi phí phát triển ứng dụng.
+	Trong Spring, IOC được triển khai thông qua hai kỹ thuật chính:
+		Dependency Injection (DI): Kỹ thuật này cho phép một đối tượng (client) nhận một đối tượng khác (dependency) từ một bên thứ ba (container).
+		Service Locator: Kỹ thuật này cho phép một đối tượng (client) tìm kiếm một đối tượng (dependency) từ một bên thứ ba (locator).
+		Events: Đây là một cách triển khai IOC dựa trên sự kiện. Khi một sự kiện xảy ra, các đối tượng quan tâm sẽ được thông báo.
+	Dependency Injection là kỹ thuật phổ biến nhất để triển khai IOC trong Spring.
+DI(Dependency Injection):
+	Đây là một kỹ thuật lập trình trong đó một đối tượng (client) nhận một đối tượng khác (dependency) từ bên thứ ba (container).
+	Cách xác định các phụ thuộc:
+		Constructor Arguments: Đối tượng có thể xác định các phụ thuộc của mình thông qua các đối số của constructor (hàm tạo).
+		Factory Method Arguments: Có thể thông qua các đối số của một phương thức tạo đối tượng (factory method).
+		Properties Set After Construction: thông qua các thuộc tính (properties) được thiết lập sau khi đối tượng được khởi tạo hoặc được trả về từ một phương thức tạo.
+	Cách triển khai:
+		Constructor injection: cách triển khai DI đơn giản nhất.Đối tượng có thể xác định các phụ thuộc của mình thông qua các đối số của constructor (hàm tạo).
+		Setter injection: cách triển khai DI phức tạp hơn một chút. Trong setter injection, các dependency được inject vào các setter của đối tượng.
+		Field injection: Đây là cách triển khai DI ít được sử dụng nhất. Trong field injection, các dependency được inject trực tiếp vào các field của đối tượng.
+	
+Factory Method:
+	Là một mẫu thiết kế tạo lập trong lập trình hướng đối tượng. Mẫu thiết kế này cung cấp một phương thức (method) chung để tạo các đối tượng của một 
+		lớp cụ thể hoặc các lớp con của lớp đó.
+	Mục đích là để tách biệt việc tạo đối tượng khỏi việc sử dụng đối tượng => tạo đối tượng trở nên linh hoạt và dễ dàng thay đổi hơn
+	Cấu trúc :
+		Lớp cơ sở (base class): Lớp cơ sở này cung cấp một phương thức factory method để tạo đối tượng.
+		Lớp con (derived class): Lớp con này có thể ghi đè phương thức factory method của lớp cơ sở để tạo ra các đối tượng con của mình.
+	Ví Dụ:
+	

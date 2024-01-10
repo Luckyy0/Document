@@ -1,0 +1,11 @@
+- annotation
+@Configuration(trước class): chỉ định đến Spring rằng đây là lớp cấu hình sẽ cung cấp Bean đến container, phạm viSpring Framework
+@Bean(trong class chứa @Configuration, trước method) : chỉ định rằng return của method được thêm như 1 Bean trong container 
+	( mặc định, tên method tương ứng với Bean IDs) 
+	Lưu ý: việc cấu hình rõ ràng bằng Java hoặc XML chỉ cần thiết nếu Spring không thể tự động định cấu hình các thành phần
+@SpringBootApplication: là 1 annotation tổng hợp kết hợp 3 annotation sau:
+	@SpringBootConfiguration: chỉ định lớp cấu hình là 1 dạng đặc biệt của @Configuration, phạm vi Spring Boot
+		Tính năng bổ sung: tự động tìm kiếm và kích hoạt các Bean trong class đánh dấu annotation này
+	@EnableAutoConfiguration: enable tính năng tự động cấu hình của spring boot
+	@ComponentScan: cho phép khai báo các class với @Component, @Controller, @Service, spring sẽ auto phát hiện và đăng ký class 
+		với annotation kia như 1 annotation trong container

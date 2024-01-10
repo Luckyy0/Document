@@ -138,7 +138,7 @@
 
             # Hibernate Properties
             # The SQL dialect makes Hibernate generate better SQL for the chosen database
-            spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+            spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
             # Hibernate ddl auto (create, create-drop, validate, update)
             spring.jpa.hibernate.ddl-auto = update
             logging.level.org.hibernate = ERROR
@@ -340,3 +340,25 @@
                         .and()
                     .logout()                           :: Cho phép logout
                         .permitAll();
+    10. Exception 
+        + Tạo class extends runtimeException
+        public class ResourceNotFoundException extends RuntimeException {
+            private static final long serialVersionUID = 1L;
+            public ResourceNotFoundException(String message) {
+                super(message);
+            }
+        }
+        + Tạo class xử lý ngoại lệ
+        @RestControllerAdvice
+        public class ApiException {
+            @ExceptionHandler(ResourceNotFoundException.class)
+            public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest rq) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+            }
+        }
+        + Thực thi 
+        @GetMapping("/todo/{id}")
+        public ResponseEntity<Todo> listTodo(@PathVariable int id) { 
+            return ResponseEntity.ok(toDoRepository.findById(id).orElseThrow(() ->  new ResourceNotFoundException("Todo not found with id: " + id)));
+        }
+        

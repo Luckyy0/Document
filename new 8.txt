@@ -1,0 +1,11 @@
+* Tổng quan
+- Spring boot là 1 extension của spring framework
+- Về cốt lỗi, spring cung cấp 1 container( spring application context) để create và manage application components
+	Các components, beans được wired với nhau trong container để tạo nên ứng dụng, và chúng được wired dựa trên mẫu thiết kế dependency injection(DI)
+- DI: Thay vì 1 bean create và maintain vòng đời của beans mà chúng phụ thuộc vào, nó ủy quyển cho container create, maintain components, và inject vào bean cần chúng 
+	( inject qua constructor, setter, Factory method)
+- Automatic configuration: có nguồn gốc từ các kỹ thuật Spring được gọi là:
+	Autowiring: Spring sẽ tự động chèn Beans mà chúng phụ thuộc vào
+	Component scanning: quét components dựa trên classpath và create chúng như Beans trong container
+- main method: run khi JAR file thực thi
+	

@@ -1,0 +1,11 @@
+**tip
++h2 database:
+- Tạo tên db xác định thay vì tự động:
+	spring.datasource.generate-unique-name=false
+	spring.datasource.name=tacocloud
+- Truy cập h2 db:
+	http://localhost:8080/h2-console
++import sql
+- trong resource folder:
+	schema.sql cho khởi tạo table
+	data.sql cho khởi tạo data
