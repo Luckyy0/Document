@@ -1,0 +1,529 @@
+----JAVA EE--------
+What is the primary purpose of Java EE (now Jakarta EE)?
+A. To provide a platform for desktop applications
+B. To offer APIs and runtime environment for enterprise applications
+C. To compile Java code into bytecode
+D. To manage memory in Java programs
+-> B
+Giải thích: 
+Đáp án B đúng vì Java EE cung cấp các API và môi trường runtime cho các ứng dụng doanh nghiệp như web services, EJB, JPA. 
+Đáp án A sai vì dành cho Java SE hoặc Swing. 
+Đáp án C sai vì là chức năng của JDK. 
+Đáp án D sai vì thuộc về JVM.
+
+
+Which Java EE technology is used for building web services that are platform-independent?
+A. Servlets
+B. JSP (JavaServer Pages)
+C. JAX-WS (Java API for XML Web Services)
+D. JPA (Java Persistence API)
+-> C
+A sai vì Servlets dùng để xử lý yêu cầu HTTP, không phải web services độc lập nền tảng.
+B sai vì JSP dùng để tạo trang web động, không phải web services.
+C đúng vì JAX-WS là API để xây dựng web services dựa trên XML, độc lập nền tảng.
+D sai vì JPA dùng cho quản lý dữ liệu bền vững, không phải web services.
+
+In Java EE, what is CDI (Contexts and Dependency Injection) primarily used for?
+A. Managing database connections
+B. Injecting dependencies and managing the lifecycle of components
+C. Handling HTTP requests
+D. Parsing XML files
+-> B
+Giải thích:
+A sai vì quản lý kết nối database là JPA hoặc JDBC.
+B đúng vì CDI dùng để inject dependencies và quản lý vòng đời thành phần.
+C sai vì xử lý HTTP là Servlets.
+D sai vì parsing XML là JAXP.
+
+Which Java EE component is responsible for handling persistence in relational databases?
+A. Servlet
+B. EJB
+C. JPA (Java Persistence API)
+D. JTA (Java Transaction API)
+-> C
+Giải thích:
+A sai vì Servlet xử lý web requests.
+B sai vì EJB là cho business logic, dù có thể dùng persistence.
+C đúng vì JPA xử lý persistence trong database quan hệ.
+D sai vì JTA là cho transaction management.
+
+Which Java EE specification defines the API for building RESTful web services?
+A. JAX-WS
+B. JAX-RS
+C. JMS
+D. JPA
+-> B
+Giải thích:
+A sai vì JAX-WS là cho SOAP web services.
+B đúng vì JAX-RS là cho RESTful web services.
+C sai vì JMS là messaging.
+D sai vì JPA là persistence.
+
+---- JDK -------
+
+What is the difference between JDK and JRE?
+A. JDK includes development tools like compiler, JRE only runtime
+B. JDK is for running apps, JRE for developing
+C. JDK is open-source, JRE is not
+D. JDK supports enterprise, JRE does not
+-> A
+Giải thích:
+A đúng vì JDK có công cụ phát triển như compiler, JRE chỉ runtime.
+B sai vì ngược lại.
+C sai vì cả hai đều open-source trong OpenJDK.
+D sai vì enterprise là Java EE, không liên quan trực tiếp.
+
+To run a jar file, is the minimum requirement?
+A. JDK
+B. JRE
+C. JVM
+D. Compiler
+-> B
+Giải thích:
+A sai vì JDK Bao gồm JRE + các công cụ phát triển (javac, javadoc, debugger, …). Dành cho lập trình viên, không bắt buộc để chạy chương trình
+B đúng vì Chứa JVM + thư viện chuẩn + công cụ cần thiết để chạy ứng dụng Java. Nói cách khác, JRE = JVM + core libraries + supporting files.→ Đây là môi trường tối thiểu cần có để chạy file .jar.
+C sai vì Bao gồm JRE + các công cụ phát triển (javac, javadoc, debugger, …) => ko phải yêu cầu tối thiểu
+D sai vì run không cần compiler.
+
+
+What is the purpose of jdeps in JDK?
+A. To analyze dependencies of class files
+B. To run Java applications
+C. To debug code
+D. To create executables
+-> A
+Giải thích:
+A đúng vì jdeps phân tích dependencies.
+B sai vì run là java.
+C sai vì debug là jdb.
+D sai vì executables là jlink hoặc native image.
+
+In JDK, what is jshell?
+A. A REPL tool for interactive Java programming
+B. A shell script executor
+C. A database connector
+D. A web server
+-> A
+Giải thích:
+A đúng vì jshell là REPL cho Java. (Read – chương trình đọc dòng lệnh bạn nhập vào. Eval (Evaluate) – thực thi (biên dịch + chạy) đoạn mã đó ngay lập tức. Print – in ra kết quả của đoạn mã vừa chạy.Loop – quay lại bước đầu để chờ lệnh tiếp theo.
+B sai vì không phải shell script.
+C sai vì database là JDBC.
+D sai vì web là Tomcat hoặc khác.
+
+
+Does JRE include a compiler?
+A. Yes, javac
+B. No, only runtime components
+C. Yes, for bytecode
+D. Yes, for native code
+-> B
+Giải thích:
+A sai vì javac là JDK.
+B đúng vì JRE chỉ runtime, không compiler.
+C sai vì không compile.
+D sai vì không native.
+
+
+What libraries are included in JRE?
+A. Core Java libraries like java.lang, java.util
+B. Development tools like javac
+C. Enterprise APIs like EJB
+D. All third-party libraries
+-> A
+Giải thích:
+A đúng vì JRE bao gồm core libraries.
+B sai vì tools là JDK.
+C sai vì enterprise là Java EE.
+D sai vì third-party không included.
+
+
+What happens if a Java app requires a specific JRE version?
+A. It always runs
+B. It compiles automatically
+C. It may not run or throw exceptions if version mismatch
+D. It upgrades JRE
+-> C
+Giải thích:
+C đúng vì mismatch có thể lỗi.
+
+------JVM-----
+What is Just-In-Time (JIT) compilation in JVM?
+A. Compiles bytecode to native code at runtime for performance
+B. Compiles source to bytecode
+C. Loads classes
+D. Manages memory
+-> A
+Giải thích:
+A đúng vì JIT compile bytecode thành native lúc runtime để tăng hiệu suất.
+B sai vì đó là javac.
+C sai vì class loading riêng.
+D sai vì memory là GC.
+
+What are the main areas of JVM memory?
+A. Heap, Stack, Method Area, PC Register, Native Method Stack
+B. Only Heap and Stack
+C. RAM and ROM
+D. Cache and Buffer
+-> A
+Giải thích:
+A đúng vì các khu vực chính: Heap, Stack, Method Area, PC Register, Native Stack.
+
+
+What is the role of ClassLoader in JVM?
+A. Loads class files into memory dynamically
+B. Compiles classes
+C. Executes methods
+D. Collects garbage
+-> A
+Giải thích:
+A đúng vì ClassLoader load class động vào memory.
+B sai vì compile javac.
+C sai vì execution là interpreter.
+D sai vì GC.
+
+What is the difference between stack and heap in JVM?
+A. Stack for local variables and method calls, heap for objects and dynamic allocation
+B. Stack for objects, heap for methods
+C. Stack is global, heap local
+D. Stack is garbage collected, heap not
+-> A
+Giải thích:
+A đúng vì stack cho variables local và calls, heap cho objects dynamic.
+B sai vì ngược.
+C sai vì stack local per thread, heap global.
+D sai vì heap GC, stack không cần.
+
+What is the purpose of JVM's interpreter?
+A. To execute bytecode line by line
+B. To compile to native
+C. To load classes
+D. To manage threads
+-> A
+Giải thích:
+A đúng vì interpreter thực thi bytecode từng dòng.
+B sai vì đó là JIT.
+C sai vì ClassLoader.
+D sai vì thread management riêng.
+
+
+What is OutOfMemoryError in JVM?
+A. Thrown when heap space is exhausted
+B. When stack overflows
+C. When class not found
+D. When thread deadlocks
+-> A
+Giải thích:
+A đúng vì OutOfMemoryError khi heap hết.
+B sai vì StackOverflowError.
+C sai vì ClassNotFoundException.
+D sai vì Deadlock không error cụ thể.
+
+What is the relationship between JVM and bytecode?
+A. JVM executes platform-independent bytecode
+B. JVM generates bytecode
+C. Bytecode runs JVM
+D. They are unrelated
+-> A
+Giải thích:
+A đúng vì JVM thực thi bytecode independent.
+B sai vì generate là javac.
+C sai vì ngược.
+D sai vì liên quan.
+
+---- Statements -------
+In Java, what is the difference between if-else and switch statements?
+A. Switch can handle multiple cases more efficiently for primitives and enums, if-else for boolean conditions
+B. If-else for multiples, switch for single
+C. Switch is faster always
+D. If-else can't nest, switch can
+-> A
+Giải thích:
+A đúng vì switch xử lý multiple cases hiệu quả cho primitives/enums, if-else cho conditions boolean.
+B sai vì ngược.
+C sai vì if-else Là chuỗi điều kiện kiểm tra tuần tự. Mỗi if được kiểm tra theo thứ tự từ trên xuống cho đến khi gặp điều kiện đúng. switch-caseKhi biên dịch, switch có thể được chuyển hóa thành jump table hoặc lookup table.Nghĩa là JVM có thể nhảy trực tiếp đến nhánh tương ứng, không cần kiểm tra tuần tự.
+Với if-else, Mỗi điều kiện được dịch ra thành cặp lệnh so sánh và nhảy (branch)
+Với switch. Tùy loại giá trị trong switch, JVM sinh ra hai dạng lệnh: tableswitch (cho giá trị liên tiếp, ví dụ 1,2,3,4), lookupswitch (cho giá trị rời rạc, ví dụ 1, 100, 999)
+Cả hai đều cho phép JVM Tính chỉ số offset và nhảy trực tiếp đến case tương ứng → O(1) thay vì O(n).
+=> if-else sẽ tối ưu hơn khi ít nhánh điều kiện
+D sai vì if-else có thể nest.
+
+What is a labeled statement in Java?
+A. A statement with a label for break or continue in loops
+B. A variable declaration
+C. A method call
+D. An exception throw
+-> A
+Giải thích:
+A đúng vì labeled statement dùng label cho break/continue trong loops.
+B sai vì không variable.
+C sai vì không method.
+D sai vì không exception.
+
+What is the difference between do-while and while?
+A. Do-while executes at least once, while may not
+B. While executes once, do-while multiple
+C. Do-while no condition
+D. While for arrays only
+-> A
+Giải thích:
+A đúng vì do-while chạy ít nhất một lần.
+B sai vì ngược.
+C sai vì có condition.
+D sai vì không arrays.
+
+What is the purpose of synchronized statement?
+A. For thread safety, locks an object
+B. For async code
+C. For loops
+D. For conditions
+-> A
+Giải thích:
+A đúng vì synchronized lock object cho thread safety.
+B sai vì ngược.
+C sai vì không loops.
+D sai vì không conditions.
+
+
+What is a try-with-resources statement?
+A. Automatically closes resources after try block
+B. For exceptions only
+C. For loops
+D. For declarations
+-> A
+Giải thích:
+A đúng vì try-with-resources tự close resources.
+B sai vì không chỉ exceptions.
+C sai vì không loops.
+D sai vì không declarations.
+
+
+--- Object Class ----
+What does equals() method in Object do by default?
+A. Compares references (==)
+B. Compares values
+C. Throws exception
+D. Returns hash
+-> A
+Giải thích:
+A đúng vì default equals so sánh reference.
+B sai vì không values (phải override).
+C sai vì không throw.
+D sai vì không hash.
+
+What are wait(), notify(), notifyAll() in Object?
+A. For thread synchronization and communication
+B. For cloning
+C. For equality
+D. For hashing
+-> A
+Giải thích:
+A đúng vì cho thread sync và communicate.
+B sai vì không clone.
+C sai vì không equality.
+D sai vì không hashing.
+
+What is the contract between equals and hashCode?
+A. If two objects equal, hashCodes must be equal; converse not necessary
+B. Always equal
+C. HashCode determines equals
+D. No contract
+-> A
+Giải thích:
+A đúng vì equals thì hashCode equal, ngược không cần.
+B sai vì không luôn.
+C sai vì không.
+D sai vì có contract.
+
+In Object, is clone() deep or shallow?
+A. Shallow
+B. Deep
+C. Neither
+D. Both
+-> A
+Giải thích:
+A đúng vì shallow copy.
+B sai vì không deep (phải implement).
+C sai vì shallow.
+D sai vì không both.
+
+What does getClass() return?
+A. The runtime class
+B. String name
+C. The complie time class
+D. Clone
+-> A
+
+
+---- Access Modifiers ----
+Can top-level classes be private?
+A. No, only public or default
+B. Yes
+C. Only protected
+D. Only in interfaces
+-> A
+Giải thích:
+A đúng vì top-level class chỉ public hoặc default.
+B sai vì không.
+C sai vì không protected.
+D sai vì không interfaces.
+
+What happens if a subclass overrides a protected method?
+A. Can make it public, but not private or default
+B. Must same modifier
+C. Can make private
+D. Can't override protected
+-> A
+Giải thích:
+A đúng vì override có thể widen access (protected to public), không narrow.
+B sai vì không phải same.
+C sai vì không narrow.
+D sai vì có thể override.
+
+Can abstract methods have private modifier?
+A. No, must be public or protected
+B. Yes
+C. Only default
+D. Only in classes
+-> A
+Giải thích:
+A đúng vì abstract methods không private (vì cần override).
+B sai vì không.
+C sai vì không.
+D sai vì không.
+
+--- Inheritance ---
+Can constructors be inherited?
+A. No, but called via super
+B. Yes, automatically
+C. Only default
+D. Only parameterized
+-> A
+Giải thích:
+A đúng vì constructors không inherit, gọi super.
+B sai vì không auto.
+C sai vì không.
+D sai vì không.
+
+What happens if subclass doesn't call super()?
+A. Implicit super() calls default constructor
+B. Error if no default
+C. Always error
+D. No constructor
+-> A
+Giải thích:
+A đúng vì implicit super() gọi default.
+B đúng nếu no default thì error, nhưng A tổng quát.
+Giải thích điều chỉnh: A đúng vì implicit gọi default, nhưng nếu no default thì compile error. Nhưng câu hỏi là không call, vậy implicit.
+C sai vì không luôn.
+D sai vì có.
+
+
+------- Java Polymorphism -----------
+Can polymorphism apply to static methods?
+A. No, static is compile-time binding
+B. Yes
+C. Only finals
+D. Only abstracts
+-> A
+Giải thích:
+A đúng vì static không polymorphic, binding compile.
+
+Can polymorphism apply to fields?
+A. No, fields are resolved at compile time by reference type
+B. Yes
+C. Only static
+D. Only final
+-> A
+Giải thích:
+A đúng vì fields không polymorphic, resolve by ref type.
+B sai vì không.
+C sai vì static cũng by ref.
+D sai vì không.
+
+---- Abstraction ----
+Can abstract classes be final?
+A. No, contradiction
+B. Yes
+C. Only if no methods
+D. Only with body
+-> A
+Giải thích:
+A đúng vì abstract cần extend, final không cho.
+
+------- Collections ---------
+What is TreeSet?
+A. Sorted Set using tree, unique elements
+B. Unsorted
+C. List
+D. Map
+-> A
+
+What is the difference between HashSet and LinkedHashSet?
+A. LinkedHashSet maintains insertion order, HashSet does not
+B. HashSet ordered
+C. Same
+D. LinkedHashSet duplicates
+-> A
+
+What is ConcurrentHashMap?
+A. Thread-safe Map
+B. Non-thread safe
+C. List
+D. Set
+-> A
+
+What is the difference between ArrayList and LinkedList?
+A. ArrayList array-based fast access, LinkedList node-based fast insert/delete
+B. Same
+C. ArrayList slow access
+D. LinkedList no insert
+-> A
+
+What is the difference between Iterator and ListIterator?
+A. ListIterator bidirectional, add/remove
+B. Same
+C. Iterator bidirectional
+D. ListIterator no remove
+-> A
+Giải thích:
+A đúng vì ListIterator two-way, modify.
+B sai vì khác.
+C sai vì Iterator one-way.
+D sai vì có remove.
+
+What is Collections.unmodifiableList?
+A. Makes list read-only
+B. Modifiable
+C. Sorted
+D. Synchronized
+-> A
+Giải thích:
+A đúng vì unmodifiable view.
+B sai vì không.
+C sai vì không sorted.
+D sai vì synchronized riêng.
+
+---- Java IO --------
+What is FileInputStream?
+A. Byte stream for reading files
+B. Writing
+C. Character read
+D. Network
+-> A
+
+What is Serializable?
+A. Interface for object serialization to streams
+B. For files only
+C. For reading
+D. No IO
+-> A
+
+
+What is DataInputStream?
+A. Reads primitives from byte stream
+B. Objects
+C. Characters
+D. Files only
+-> A
+
+---- Java Streams -----
