@@ -1,0 +1,1259 @@
+Which of the following best describes Java EE?
+A. A programming language for embedded systems
+B. A set of specifications for enterprise application development
+C. A new version of Java programming language
+D. A database management system
+-> B
+
+Which Java EE component is primarily responsible for handling business logic?
+A. JSP
+B. Servlet
+C. EJB
+D. JDBC
+-> C
+
+In Java EE, what is the purpose of JPA?
+A. Handling web page rendering
+B. Managing database connections
+C. Object-relational mapping
+D. Managing security
+-> C
+
+What is the primary role of a Servlet in Java EE?
+A. Database access
+B. Business logic implementation
+C. Handling HTTP requests and responses
+D. Object-relational mapping
+-> C
+
+Which Java EE technology is used for building web services that are platform-independent?
+A. Servlets
+B. JSP (JavaServer Pages)
+C. JAX-WS (Java API for XML Web Services)
+D. JPA (Java Persistence API)
+-> C
+
+Which Java EE specification defines the API for building RESTful web services?
+A. JAX-WS
+B. JAX-RS
+C. JMS
+D. JPA
+-> B
+
+In Java EE, what is CDI (Contexts and Dependency Injection) primarily used for?
+A. Managing database connections
+B. Injecting dependencies and managing the lifecycle of components
+C. Handling HTTP requests
+D. Parsing XML files
+-> B
+
+What is the main difference between JDK and JRE?
+A. JDK includes JVM, JRE does not
+B. JDK includes development tools, JRE only includes runtime environment
+C. JRE is for servers, JDK is for clients
+D. JRE includes compiler, JDK does not
+-> B
+
+Which component is responsible for bytecode execution?
+A. JDK
+B. JRE
+C. JVM
+D. Java Compiler
+-> C
+
+What happens during the class loading phase in JVM?
+A. Bytecode is executed
+B. Classes are loaded into memory
+C. Objects are garbage collected
+D. Source code is compiled
+-> B
+
+Which memory area in JVM is shared among all threads?
+A. Stack
+B. Program Counter Register
+C. Heap
+D. Native Method Stack
+-> C
+
+What is the purpose of the Just-In-Time (JIT) compiler in JVM?
+A. Compile Java source to bytecode
+B. Compile bytecode to native machine code at runtime
+C. Manage memory allocation
+D. Handle class loading
+-> B
+
+What is the function of the Java Compiler (javac)?
+A. Execute Java programs
+B. Convert Java source code to bytecode
+C. Optimize bytecode during runtime
+D. Manage memory allocation
+-> B
+
+Which JVM memory area stores local variables and method calls?
+A. Heap
+B. Method Area
+C. Stack
+D. PC Register
+-> C
+
+What is the main advantage of Java's "write once, run anywhere" principle?
+A. Faster execution speed
+B. Platform independence through bytecode
+C. Automatic memory management
+D. Built-in security features
+-> B
+
+ Which component is responsible for garbage collection in Java?
+A. Java Compiler
+B. JVM
+C. JDK
+D. JRE
+-> B
+
+To run a jar file, is the minimum requirement?
+A. JDK
+B. JRE
+C. JVM
+D. Compiler
+-> B
+
+What libraries are included in JRE?
+A. Core Java libraries like java.lang, java.util
+B. Development tools like javac
+C. Enterprise APIs like EJB
+D. All third-party libraries
+-> A
+
+What happens if a Java app requires a specific JRE version?
+A. It always runs
+B. It compiles automatically
+C. It may not run or throw exceptions if version mismatch
+D. It upgrades JRE
+-> C
+
+In JDK, what is jshell?
+A. A REPL tool for interactive Java programming
+B. A shell script executor
+C. A database connector
+D. A web server
+-> A
+
+What is the difference between stack and heap in JVM?
+A. Stack for local variables and method calls, heap for objects and dynamic allocation
+B. Stack for objects, heap for methods
+C. Stack is global, heap local
+D. Stack is garbage collected, heap not
+-> A
+
+What is OutOfMemoryError in JVM?
+A. Thrown when heap space is exhausted
+B. When stack overflows
+C. When class not found
+D. When thread deadlocks
+-> A
+
+What is the purpose of JVM's interpreter?
+A. To execute bytecode line by line
+B. To compile to native
+C. To load classes
+D. To manage threads
+-> A
+
+What is Just-In-Time (JIT) compilation in JVM?
+A. Compiles bytecode to native code at runtime for performance
+B. Compiles source to bytecode
+C. Loads classes
+D. Manages memory
+-> A
+
+What are the main areas of JVM memory?
+A. Heap, Stack, Method Area, PC Register, Native Method Stack
+B. Only Heap and Stack
+C. RAM and ROM
+D. Cache and Buffer
+-> A
+
+Which of the following is true about the Object class in Java?
+A. It is the superclass of all interfaces
+B. All arrays extend Object class
+C. It contains final methods that cannot be overridden
+D. Enum types do not extend Object class
+-> B
+
+What is the default implementation of equals() method in Object class?
+A. Compares object values
+B. Compares memory addresses
+C. Always returns true
+D. Always returns false
+-> B
+
+Which method must be overridden when overriding equals() method?
+A. toString()
+B. finalize()
+C. hashCode()
+D. getClass()
+-> C
+
+What is the output of this code?
+    Object obj1 = new Object();
+    Object obj2 = obj1;
+    System.out.println(obj1.equals(obj2));
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> A
+
+What does the getClass() method return?
+A. Class name as String
+B. Class object representing the runtime class
+C. Superclass of the object
+D. The complie time class
+-> B
+
+What are wait(), notify(), notifyAll() in Object?
+A. For thread synchronization and communication
+B. For cloning
+C. For equality
+D. For hashing
+-> A
+
+Which of the following is a valid Java statement?
+A. int x = 10; if (x = 5) { }
+B. boolean flag = true; if (flag = false) { }
+C. String s = null; if (s instanceof String) { }
+D. int[] arr = new int[]; arr.length = 10;
+-> B
+
+What is the purpose of the clone() method?
+A. Create a shallow copy of the object
+B. Create a deep copy of the object
+C. Delete the object from memory
+D. Compare two objects for equality
+-> A
+
+Which statement about the wait() and notify() methods is correct?
+A. They can be called from any object
+B. They are static methods of Object class
+C. They do not require synchronization
+D. They are used for file I/O operations
+-> A
+
+What is the result of this code?
+    String str1 = "Hello";
+    String str2 = new String("Hello");
+    System.out.println(str1 == str2);
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> B
+
+Which access modifier provides the widest accessibility?
+A. private
+B. default (package-private)
+C. protected
+D. public
+-> D
+
+What is the effect of declaring a class as final?
+A. It cannot be instantiated
+B. It cannot be extended
+C. It cannot have methods
+D. It cannot implement interfaces
+-> B
+
+Which of the following is true about method overriding?
+A. The access modifier cannot be more restrictive
+B. The return type must be exactly the same
+C. The method must be declared static
+D. Parameters can be different types
+-> A
+
+What is multiple inheritance in Java?
+A. A class extending multiple classes
+B. A class implementing multiple interfaces
+C. An interface extending multiple classes
+D. A class having multiple parent classes
+-> B
+
+What is the output of this code?
+    class Animal {
+        void sound() { System.out.println("Animal sound"); }
+    }
+    class Dog extends Animal {
+        void sound() { System.out.println("Bark"); }
+    }
+    public class Test {
+        public static void main(String[] args) {
+            Animal a = new Dog();
+            a.sound();
+        }
+    }
+A. Animal sound
+B. Bark
+C. Compilation error
+D. Runtime exception
+-> B
+
+Which access modifier allows access within the same package and by subclasses?
+A. private
+B. default
+C. protected
+D. public
+-> C
+
+What is method hiding in Java?
+A. When static method in subclass has same signature as static method in superclass
+B. When instance method in subclass has same signature as instance method in superclass
+C. When private methods are not visible in subclass
+D. When methods are declared final
+-> A
+
+Which of the following about abstract classes is correct?
+A. They cannot have constructors
+B. They cannot have instance variables
+C. They cannot be instantiated
+D. They cannot have concrete methods
+-> C
+
+What is the purpose of the final keyword for methods?
+A. Make method abstract
+B. Prevent method from being overridden
+C. Make method static
+D. Allow multiple implementations
+-> B
+
+Can top-level classes be private?
+A. No, only public or default
+B. Yes
+C. Only protected
+D. Only in interfaces
+-> A
+
+What happens if a subclass overrides a protected method?
+A. Can make it public, but not private or default
+B. Must same modifier
+C. Can make private
+D. Can't override protected
+-> A
+
+What is compile-time polymorphism?
+A. Method overriding
+B. Method overloading
+C. Dynamic method dispatch
+D. Interface implementation
+-> B
+
+Which keyword is used to achieve abstraction by declaring methods without implementation?
+A. final
+B. static
+C. abstract
+D. native
+-> C
+
+What is the purpose of default methods in interfaces?
+A. Force implementing classes to override them
+B. Provide backward compatibility when adding new methods
+C. Make methods final in implementing classes
+D. Allow multiple inheritance of state
+-> B
+
+Which OOP concept allows the same operation to behave differently on different classes?
+A. Encapsulation
+B. Abstraction
+C. Polymorphism
+D. Inheritance
+-> C
+
+Which of the following is true about functional interfaces?
+A. They must have exactly one abstract method
+B. They cannot have default methods
+C. They must be declared with @FunctionalInterface
+D. They cannot have static methods
+-> A
+
+
+Which of the following about static polymorphism is correct?
+A. It is achieved through method overriding
+B. It is resolved at runtime
+C. It is also known as compile-time polymorphism
+D. It requires dynamic method dispatch
+-> C
+
+ What is the purpose of the @Override annotation?
+A. To force method overriding
+B. To provide compile-time checking of overriding
+C. To improve performance of overridden methods
+D. To make methods final
+-> B
+
+ Which of the following about interface default methods is correct?
+A. They are implicitly abstract
+B. They must be implemented by all implementing classes
+C. They can be overridden by implementing classes
+D. They cannot have method body
+-> C
+
+ What is the difference between abstraction and encapsulation?
+A. Abstraction hides implementation, encapsulation hides data
+B. Abstraction hides data, encapsulation hides implementation
+C. Both hide implementation details
+D. Both are the same concept
+-> A
+
+Which interface is at the top of Collections hierarchy?
+A. Collection
+B. List
+C. Set
+D. Map
+-> A
+
+What is the main difference between ArrayList and LinkedList?
+A. ArrayList is synchronized, LinkedList is not
+B. ArrayList uses array internally, LinkedList uses doubly linked list
+C. LinkedList allows null elements, ArrayList does not
+D. ArrayList is faster for insertion and deletion
+-> B
+
+Which collection maintains insertion order and allows duplicates?
+A. HashSet
+B. TreeSet
+C. ArrayList
+D. HashMap
+-> C
+
+What is the time complexity of contains() method in HashSet?
+A. O(1)
+B. O(n)
+C. O(log n)
+D. O(n²)
+-> A
+
+Which interface does not extend Collection interface?
+A. List
+B. Set
+C. Map
+D. Queue
+-> C
+
+What is the difference between HashMap and Hashtable?
+A. HashMap is synchronized, Hashtable is not
+B. HashMap allows null keys and values, Hashtable does not
+C. Hashtable is faster than HashMap
+D. HashMap does not allow duplicates, Hashtable does
+-> B
+
+Which collection class is synchronized by default?
+A. ArrayList
+B. HashMap
+C. Vector
+D. LinkedList
+-> C
+
+What is the purpose of the Comparable interface?
+A. To define natural ordering of objects
+B. To compare two different objects
+C. To create multiple comparison logics
+D. To sort collections in reverse order
+-> A
+
+Which method is used to iterate through a Collection?
+A. for loop only
+B. Iterator
+C. Direct access by index
+D. while loop only
+-> B
+
+ Which collection maintains elements in sorted order?
+A. HashSet
+B. ArrayList
+C. TreeSet
+D. LinkedList
+-> C
+
+ What is the initial capacity of ArrayList in Java?
+A. 0
+B. 10
+C. 16
+D. 32
+-> B
+
+ Which method is used to add an element to a Set?
+A. put()
+B. add()
+C. insert()
+D. push()
+-> B
+
+ What is the difference between Iterator and ListIterator?
+A. Iterator can traverse in both directions, ListIterator only forward
+B. ListIterator can traverse in both directions, Iterator only forward
+C. Iterator works with all collections, ListIterator only with List
+D. Both B and C
+-> D
+
+ Which collection is best for frequent search operations?
+A. LinkedList
+B. ArrayList
+C. HashSet
+D. Vector
+-> C
+
+ What is type safety in Collections?
+A. Using synchronized collections
+B. Using generics to ensure type compatibility
+C. Using final collections
+D. Using immutable collections
+-> B
+
+ Which Map implementation maintains insertion order?
+A. HashMap
+B. TreeMap
+C. LinkedHashMap
+D. Hashtable
+-> C
+
+ Which collection is thread-safe and does not use locking?
+A. Vector
+B. Hashtable
+C. CopyOnWriteArrayList
+D. SynchronizedList
+-> C
+
+ What is the difference between poll() and remove() in Queue?
+A. poll() returns null if queue is empty, remove() throws exception
+B. remove() returns null if queue is empty, poll() throws exception
+C. Both behave the same way
+D. poll() is for Stack, remove() for Queue
+-> A
+
+
+What is the output of this code?
+int[] arr = new int[5];
+System.out.println(arr[0]);
+A. 0
+B. null
+C. Compilation error
+D. Runtime exception
+-> A
+
+What is the length of this array?
+
+java
+int[][] arr = new int[3][4];
+A. 3
+B. 4
+C. 12
+D. Compilation error
+-> A
+
+Which method can be used to sort an array?
+A. Arrays.sort()
+B. Array.sort()
+C. Collection.sort()
+D. List.sort()
+-> A
+
+What is the main difference between array and ArrayList?
+A. Array is fixed size, ArrayList is dynamic size
+B. Array can store primitives, ArrayList cannot
+C. Array is faster for access by index
+D. All of the above
+-> D
+
+What is the output of this code?
+
+java
+String[] arr = {"A", "B", "C"};
+System.out.println(arr.length());
+A. 3
+B. 2
+C. Compilation error
+D. Runtime exception
+-> C
+
+What is the time complexity of accessing an element by index in array?
+A. O(1)
+B. O(n)
+C. O(log n)
+D. O(n²)
+-> A
+
+Which method copies elements from one array to another?
+A. Arrays.copy()
+B. System.arraycopy()
+C. Array.copy()
+D. Both A and B
+-> B
+
+What is the difference between InputStream and Reader?
+A. InputStream reads bytes, Reader reads characters
+B. InputStream reads characters, Reader reads bytes
+C. Both read bytes
+D. Both read characters
+-> A
+
+Which class is used to read text files efficiently?
+A. FileReader
+B. BufferedReader
+C. FileInputStream
+D. Scanner
+-> B
+
+What is the purpose of the File class?
+A. To read file content
+B. To write file content
+C. To represent file and directory pathnames
+D. To delete files
+-> C
+
+Which stream classes are used for object serialization?
+A. ObjectInputStream and ObjectOutputStream
+B. FileInputStream and FileOutputStream
+C. DataInputStream and DataOutputStream
+D. BufferedReader and BufferedWriter
+-> A
+
+What is the difference between FileInputStream and FileReader?
+A. FileInputStream reads bytes, FileReader reads characters
+B. FileInputStream reads characters, FileReader reads bytes
+C. FileInputStream is for text files, FileReader for binary files
+D. There is no difference
+-> A
+
+Which class is used to format output?
+A. PrintWriter
+B. PrintStream
+C. Formatter
+D. All of the above
+-> D
+
+What is the purpose of the transient keyword?
+A. To make variables persistent
+B. To exclude variables from serialization
+C. To make variables volatile
+D. To improve serialization performance
+-> B
+
+Which exception is thrown during serialization if class is not Serializable?
+A. IOException
+B. NotSerializableException
+C. ClassCastException
+D. SerializationException
+-> B
+
+What is the difference between flush() and close() methods?
+A. flush() writes buffered data, close() releases resources
+B. close() writes buffered data, flush() releases resources
+C. Both do the same thing
+D. flush() is for input streams, close() for output streams
+-> A
+
+ Which class is used for random access to files?
+A. RandomAccessFile
+B. FileReader
+C. BufferedReader
+D. FileInputStream
+-> A
+
+What is the main characteristic of Java Streams?
+A. They store data
+B. They can be reused multiple times
+C. They process data in a functional way
+D. They are synchronized
+-> C
+
+Which operation is intermediate in Stream API?
+A. forEach
+B. collect
+C. filter
+D. count
+-> C
+
+What is the output of this code?
+
+java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+long count = numbers.stream().filter(n -> n % 2 == 0).count();
+System.out.println(count);
+A. 2
+B. 5
+C. 0
+D. Compilation error
+-> A
+
+Which method is used to convert a Stream to List?
+A. toList()
+B. collect(Collectors.toList())
+C. asList()
+D. Both A and B
+-> D
+
+What is the difference between map() and flatMap()?
+A. map() transforms elements, flatMap() transforms and flattens
+B. flatMap() transforms elements, map() transforms and flattens
+C. Both do the same thing
+D. map() is for primitive streams, flatMap() for object streams
+-> A
+
+Which terminal operation returns Optional?
+A. findFirst()
+B. forEach()
+C. count()
+D. collect()
+-> A
+
+What is the purpose of the reduce() operation?
+A. To filter elements
+B. To transform elements
+C. To combine elements into a single result
+D. To sort elements
+-> C
+
+Which method creates a stream from an array?
+A. Arrays.stream()
+B. Stream.of()
+C. List.stream()
+D. Both A and B
+-> D
+
+What is the difference between sequential and parallel streams?
+A. Sequential streams are always faster
+B. Parallel streams use multiple threads
+C. Parallel streams guarantee order
+D. Sequential streams cannot process large data
+-> B
+
+ Which method is used to skip elements in a stream?
+A. skip()
+B. limit()
+C. filter()
+D. distinct()
+-> A
+
+What is the output of this code?
+public class Test {
+    public static void main(String[] args) {
+        Integer i1 = 100;
+        Integer i2 = 100;
+        Integer i3 = 200;
+        Integer i4 = 200;
+        
+        System.out.println(i1 == i2);
+        System.out.println(i3 == i4);
+    }
+}
+A. true true
+B. false false
+C. true false
+D. false true
+-> C
+
+What is the output of this code?
+public class Test {
+    public static void main(String[] args) {
+        Integer i = new Integer(10);
+        Integer j = new Integer(10);
+        System.out.println(i == j);
+        System.out.println(i.equals(j));
+    }
+}
+A. true true
+B. false true
+C. true false
+D. false false
+-> B
+
+Which method will be called?
+
+public class Test {
+    static void test(int x) { System.out.println("int"); }
+    static void test(Integer x) { System.out.println("Integer"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. int
+B. Integer
+C. Compilation error
+D. Runtime exception
+-> A
+
+Which method will be called?
+
+java
+public class Test {
+    static void test(Long x) { System.out.println("Long"); }
+    static void test(double x) { System.out.println("double"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. Long
+B. double
+C. Compilation error
+D. Runtime exception
+-> B
+
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = null;
+        int j = i;
+        System.out.println(j);
+    }
+}
+A. 0
+B. null
+C. Compilation error
+D. NullPointerException
+-> D
+
+Which method will be called?
+
+java
+public class Test {
+    static void test(Object x) { System.out.println("Object"); }
+    static void test(int... x) { System.out.println("varargs"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. Object
+B. varargs
+C. Compilation error
+D. Runtime exception
+-> B
+
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = 10;
+        Integer j = 10;
+        Integer k = new Integer(10);
+        System.out.println(i == j);
+        System.out.println(i == k);
+    }
+}
+A. true true
+B. true false
+C. false true
+D. false false
+-> B
+
+Which method will be called?
+
+java
+public class Test {
+    static void test(Number x) { System.out.println("Number"); }
+    static void test(Integer x) { System.out.println("Integer"); }
+    
+    public static void main(String[] args) {
+        Integer i = 10;
+        test(i);
+    }
+}
+A. Number
+B. Integer
+C. Compilation error
+D. Runtime exception
+-> B
+
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = 1000;
+        Integer j = 1000;
+        System.out.println(i <= j);
+        System.out.println(i >= j);
+    }
+}
+A. true true
+B. true false
+C. false true
+D. false false
+-> A
+
+ What is the output?
+
+java
+public class Test {
+    static void test(int a, long b) { System.out.println("int-long"); }
+    static void test(Integer a, int b) { System.out.println("Integer-int"); }
+    
+    public static void main(String[] args) {
+        test(10, 20);
+    }
+}
+A. int-long
+B. Integer-int
+C. Compilation error
+D. Runtime exception
+-> C
+
+11. COLLECTIONS (Code-based)
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add(1, "C");
+        System.out.println(list);
+    }
+}
+A. [A, B, C]
+B. [A, C, B]
+C. [C, A, B]
+D. [A, B]
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(1);
+        System.out.println(set.size());
+    }
+}
+A. 1
+B. 2
+C. 3
+D. Compilation error
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.put("B", 2);
+        map.put("A", 3);
+        System.out.println(map.get("A"));
+    }
+}
+A. 1
+B. 2
+C. 3
+D. null
+-> C
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+        queue.offer(2);
+        queue.poll();
+        System.out.println(queue.peek());
+    }
+}
+A. 1
+B. 2
+C. null
+D. Exception
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        list.set(1, 4);
+        System.out.println(list);
+    }
+}
+A. [1, 2, 3]
+B. [1, 4, 3]
+C. [4, 2, 3]
+D. UnsupportedOperationException
+-> B
+
+12. ARRAYS (Code-based)
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        System.out.println(arr[0]);
+    }
+}
+A. 0
+B. null
+C. Compilation error
+D. Runtime exception
+-> A
+
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[][] arr = new int[2][3];
+        System.out.println(arr.length + " " + arr[0].length);
+    }
+}
+A. 2 3
+B. 3 2
+C. 2 2
+D. 3 3
+-> A
+
+What is the output?
+
+java
+import java.util.Arrays;
+public class Test {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+        System.out.println(arr1 == arr2);
+        System.out.println(Arrays.equals(arr1, arr2));
+    }
+}
+A. false true
+B. true false
+C. true true
+D. false false
+-> A
+
+What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        for (int i = 0; i < arr.length; i += 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+A. 1 2 3 4 5
+B. 1 3 5
+C. 2 4
+D. 1 2 3
+-> B
+
+What is the output?
+
+java
+import java.util.Arrays;
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 1, 4, 2};
+        Arrays.sort(arr, 1, 4);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+A. [1, 2, 3, 4, 5]
+B. [5, 1, 3, 4, 2]
+C. [5, 1, 3, 4, 2]
+D. [5, 1, 3, 4, 2]
+-> B
+
+13. JAVA IO (Code-based)
+What is the output if file doesn't exist?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) {
+        File file = new File("test.txt");
+        System.out.println(file.exists());
+    }
+}
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> B
+
+What happens with this code?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        FileWriter fw = new FileWriter("output.txt");
+        fw.write("Hello");
+        fw.close();
+    }
+}
+A. Tạo file với nội dung "Hello"
+B. Không tạo file
+C. Compilation error
+D. Runtime exception
+-> A
+
+What is the output?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+        System.out.println(br.readLine());
+        br.close();
+    }
+}
+A. Dòng đầu tiên của file
+B. Toàn bộ nội dung file
+C. null nếu file rỗng
+D. A hoặc C
+-> D
+
+What happens with this code?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(
+            new FileOutputStream("data.ser"));
+        oos.writeObject("Hello");
+        oos.close();
+    }
+}
+A. Ghi object String vào file
+B. Compilation error
+C. Runtime exception
+D. Không ghi gì
+-> A
+
+What is the output?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        File file = new File("test.txt");
+        System.out.println(file.getAbsolutePath());
+    }
+}
+A. Đường dẫn tuyệt đối của file
+B. "test.txt"
+C. null
+D. Runtime exception
+-> A
+
+14. JAVA STREAMS (Code-based)
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.stream()
+               .filter(n -> n % 2 == 0)
+               .forEach(System.out::print);
+    }
+}
+A. 1 3 5
+B. 2 4
+C. 1 2 3 4 5
+D. Compilation error
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        List<String> result = words.stream()
+                                   .filter(s -> s.length() > 5)
+                                   .toList();
+        System.out.println(result);
+    }
+}
+A. [apple]
+B. [banana, cherry]
+C. [cherry]
+D. []
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Optional<Integer> sum = numbers.stream()
+                                       .reduce((a, b) -> a + b);
+        System.out.println(sum.get());
+    }
+}
+A. 15
+B. 10
+C. 5
+D. Compilation error
+-> A
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("Java", "Stream", "API");
+        String result = words.stream()
+                             .map(String::toUpperCase)
+                             .reduce("", (a, b) -> a + b);
+        System.out.println(result);
+    }
+}
+A. JAVA STREAM API
+B. JAVASTREAMAPI
+C. JavaStreamAPI
+D. Compilation error
+-> B
+
+What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        long count = numbers.stream()
+                           .map(n -> n * n)
+                           .filter(n -> n > 10)
+                           .count();
+        System.out.println(count);
+    }
+}
+A. 1
+B. 2
+C. 3
+D. 4
+-> B
