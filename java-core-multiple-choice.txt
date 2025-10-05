@@ -1,0 +1,2093 @@
+1. JAVA EE
+Câu 1: Which of the following best describes Java EE?
+A. A programming language for embedded systems
+B. A set of specifications for enterprise application development
+C. A new version of Java programming language
+D. A database management system
+-> B
+Giải thích:
+A sai vì Java EE không phải ngôn ngữ cho hệ thống nhúng
+B đúng vì Java EE là tập hợp các đặc tả để phát triển ứng dụng doanh nghiệp
+C sai vì Java EE không phải phiên bản mới của Java
+D sai vì Java EE không phải hệ quản trị cơ sở dữ liệu
+
+Câu 2: Which Java EE component is primarily responsible for handling business logic?
+A. JSP
+B. Servlet
+C. EJB
+D. JDBC
+-> C
+Giải thích:
+A sai vì JSP dùng cho presentation layer
+B sai vì Servlet xử lý HTTP requests/responses
+C đúng vì EJB (Enterprise Java Beans) chuyên xử lý business logic
+D sai vì JDBC dùng để kết nối database
+
+Câu 3: In Java EE, what is the purpose of JPA?
+A. Handling web page rendering
+B. Managing database connections
+C. Object-relational mapping
+D. Managing security
+-> C
+Giải thích:
+A sai vì đây là chức năng của JSP/JSF
+B sai vì quản lý kết nối database là của JDBC
+C đúng vì JPA (Java Persistence API) dùng cho ORM
+D sai vì bảo mật được xử lý bởi JAAS
+
+Câu 4: Which Java EE technology is used for asynchronous messaging?
+A. JMS
+B. JNDI
+C. JTA
+D. JAX-RS
+-> A
+Giải thích:
+A đúng vì JMS (Java Message Service) dùng cho messaging bất đồng bộ
+B sai vì JNDI dùng cho naming và directory services
+C sai vì JTA dùng cho transaction management
+D sai vì JAX-RS dùng cho RESTful web services
+
+Câu 5: What is the main purpose of CDI in Java EE?
+A. Database connectivity
+B. Dependency injection
+C. XML parsing
+D. Security enforcement
+-> B
+Giải thích:
+A sai vì database connectivity là JDBC
+B đúng vì CDI (Contexts and Dependency Injection) quản lý dependency injection
+C sai vì XML parsing có các API khác
+D sai vì security có JAAS và other APIs
+
+Câu 6: Which annotation is used to define a stateless EJB?
+A. @Stateless
+B. @Stateful
+C. @Singleton
+D. @Entity
+-> A
+Giải thích:
+A đúng vì @Stateless định nghĩa stateless session bean
+B sai vì @Stateful dùng cho stateful session bean
+C sai vì @Singleton dùng cho singleton session bean
+D sai vì @Entity dùng cho JPA entities
+
+Câu 7: What is the primary role of a Servlet in Java EE?
+A. Database access
+B. Business logic implementation
+C. Handling HTTP requests and responses
+D. Object-relational mapping
+-> C
+Giải thích:
+A sai vì database access là của JDBC/JPA
+B sai vì business logic chính là của EJB
+C đúng vì Servlet chuyên xử lý HTTP requests/responses
+D sai vì ORM là của JPA
+
+Câu 8: Which Java EE specification is used for web services?
+A. JAX-WS
+B. JMS
+C. JTA
+D. JNDI
+-> A
+Giải thích:
+A đúng vì JAX-WS (Java API for XML Web Services) dùng cho web services
+B sai vì JMS dùng cho messaging
+C sai vì JTA dùng cho transactions
+D sai vì JNDI dùng cho naming services
+
+Câu 9: In Java EE, what does JTA stand for?
+A. Java Transaction API
+B. Java Threading API
+C. Java Template API
+D. Java Testing API
+-> A
+Giải thích:
+A đúng vì JTA là Java Transaction API
+B sai vì không có Java Threading API trong EE
+C sai vì không có Java Template API
+D sai vì testing có các framework riêng
+
+Câu 10: Which component is responsible for managing distributed transactions in Java EE?
+A. EJB Container
+B. Web Container
+C. Application Client Container
+D. Applet Container
+-> A
+Giải thích:
+A đúng vì EJB Container quản lý distributed transactions
+B sai vì Web Container chỉ quản lý Servlets/JSPs
+C sai vì Application Client Container cho desktop apps
+D sai vì Applet Container cho Java applets
+
+2. JDK, JRE, JVM
+Câu 1: What is the main difference between JDK and JRE?
+A. JDK includes JVM, JRE does not
+B. JDK includes development tools, JRE only includes runtime environment
+C. JRE is for servers, JDK is for clients
+D. JRE includes compiler, JDK does not
+-> B
+Giải thích:
+A sai vì cả JDK và JRE đều có JVM
+B đúng vì JDK có development tools (javac, debugger), JRE chỉ có môi trường chạy
+C sai vì cả hai đều chạy được trên server và client
+D sai vì JRE không có compiler
+
+Câu 2: Which component is responsible for bytecode execution?
+A. JDK
+B. JRE
+C. JVM
+D. Java Compiler
+-> C
+Giải thích:
+A sai vì JDK là development kit
+B sai vì JRE là runtime environment
+C đúng vì JVM thực thi bytecode
+D sai vì compiler chỉ biên dịch source code thành bytecode
+
+Câu 3: What happens during the class loading phase in JVM?
+A. Bytecode is executed
+B. Classes are loaded into memory
+C. Objects are garbage collected
+D. Source code is compiled
+-> B
+Giải thích:
+A sai vì execution phase mới thực thi bytecode
+B đúng vì class loading nạp classes vào memory
+C sai vì garbage collection thu hồi bộ nhớ
+D sai vì compilation xảy ra trước khi chạy
+
+Câu 4: Which memory area in JVM is shared among all threads?
+A. Stack
+B. Program Counter Register
+C. Heap
+D. Native Method Stack
+-> C
+Giải thích:
+A sai vì Stack là riêng cho mỗi thread
+B sai vì Program Counter Register là riêng cho mỗi thread
+C đúng vì Heap được chia sẻ bởi tất cả threads
+D sai vì Native Method Stack là riêng cho mỗi thread
+
+Câu 5: What is the purpose of the Just-In-Time (JIT) compiler in JVM?
+A. Compile Java source to bytecode
+B. Compile bytecode to native machine code at runtime
+C. Manage memory allocation
+D. Handle class loading
+-> B
+Giải thích:
+A sai vì đây là công việc của javac compiler
+B đúng vì JIT biên dịch bytecode thành native code khi chạy
+C sai vì memory management là của Memory Manager
+D sai vì class loading là của ClassLoader
+
+Câu 6: Which of the following is NOT part of JDK?
+A. javac
+B. java
+C. jar
+D. JVM
+-> D
+Giải thích:
+A sai vì javac là Java compiler trong JDK
+B sai vì java launcher trong JDK
+C sai vì jar tool trong JDK
+D đúng vì JVM là thành phần độc lập, không chỉ thuộc JDK
+
+Câu 7: What is the function of the Java Compiler (javac)?
+A. Execute Java programs
+B. Convert Java source code to bytecode
+C. Optimize bytecode during runtime
+D. Manage memory allocation
+-> B
+Giải thích:
+A sai vì execution là của JVM
+B đúng vì javac biên dịch source code thành bytecode
+C sai vì optimization là của JIT compiler
+D sai vì memory management là của JVM
+
+Câu 8: Which JVM memory area stores local variables and method calls?
+A. Heap
+B. Method Area
+C. Stack
+D. PC Register
+-> C
+Giải thích:
+A sai vì Heap lưu objects
+B sai vì Method Area lưu class metadata
+C đúng vì Stack lưu local variables và method calls
+D sai vì PC Register lưu address của instruction hiện tại
+
+Câu 9: What is the main advantage of Java's "write once, run anywhere" principle?
+A. Faster execution speed
+B. Platform independence through bytecode
+C. Automatic memory management
+D. Built-in security features
+-> B
+Giải thích:
+A sai vì không liên quan trực tiếp đến execution speed
+B đúng vì bytecode chạy trên bất kỳ platform nào có JVM
+C sai vì đây là tính năng của garbage collection
+D sai vì đây là tính năng bảo mật riêng
+
+Câu 10: Which component is responsible for garbage collection in Java?
+A. Java Compiler
+B. JVM
+C. JDK
+D. JRE
+-> B
+Giải thích:
+A sai vì compiler chỉ biên dịch code
+B đúng vì JVM quản lý garbage collection
+C sai vì JDK là development kit
+D sai vì JRE là runtime environment
+
+3. STATEMENTS & OBJECT CLASS
+Câu 1: Which of the following is true about the Object class in Java?
+A. It is the superclass of all interfaces
+B. All arrays extend Object class
+C. It contains final methods that cannot be overridden
+D. Enum types do not extend Object class
+-> B
+Giải thích:
+A sai vì interfaces không extend classes
+B đúng vì tất cả arrays đều extend Object class
+C sai vì Object class có các methods có thể override
+D sai vì enum types extend Object class
+
+Câu 2: What is the default implementation of equals() method in Object class?
+A. Compares object values
+B. Compares memory addresses
+C. Always returns true
+D. Always returns false
+-> B
+Giải thích:
+A sai vì không phải implementation mặc định
+B đúng vì equals() mặc định so sánh memory addresses (==)
+C sai vì chỉ return true nếu cùng object
+D sai vì không phải luôn return false
+
+Câu 3: Which method must be overridden when overriding equals() method?
+A. toString()
+B. finalize()
+C. hashCode()
+D. getClass()
+-> C
+Giải thích:
+A sai vì toString() không bắt buộc khi override equals()
+B sai vì finalize() liên quan đến garbage collection
+C đúng vì khi override equals() phải override hashCode() để đảm bảo contract
+D sai vì getClass() trả về class của object
+
+Câu 4: What is the output of this code?
+
+java
+Object obj1 = new Object();
+Object obj2 = obj1;
+System.out.println(obj1.equals(obj2));
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì cả hai reference cùng trỏ đến một object
+B sai vì chúng cùng object nên equals() return true
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 5: Which of the following statements about finalize() method is correct?
+A. It is guaranteed to be called when object becomes eligible for GC
+B. It is always called immediately when object goes out of scope
+C. It can be called multiple times on the same object
+D. Its execution timing is not guaranteed
+-> D
+Giải thích:
+A sai vì không guaranteed sẽ được gọi
+B sai vì không gọi ngay lập tức
+C sai vì chỉ gọi một lần trên mỗi object
+D đúng vì thời điểm execution của finalize() không được đảm bảo
+
+Câu 6: What does the getClass() method return?
+A. Class name as String
+B. Class object representing the runtime class
+C. Superclass of the object
+D. Memory address of the object
+-> B
+Giải thích:
+A sai vì không trả về String mà trả về Class object
+B đúng vì getClass() trả về Class object của runtime class
+C sai vì không trả về superclass
+D sai vì không trả về memory address
+
+Câu 7: Which of the following is a valid Java statement?
+A. int x = 10; if (x = 5) { }
+B. boolean flag = true; if (flag = false) { }
+C. String s = null; if (s instanceof String) { }
+D. int[] arr = new int[]; arr.length = 10;
+-> B
+Giải thích:
+A sai vì không thể dùng phép gán trong condition
+B đúng vì đây là phép gán boolean hợp lệ
+C sai vì instanceof luôn return false với null
+D sai vì không thể thay đổi array length
+
+Câu 8: What is the purpose of the clone() method?
+A. Create a shallow copy of the object
+B. Create a deep copy of the object
+C. Delete the object from memory
+D. Compare two objects for equality
+-> A
+Giải thích:
+A đúng vì clone() tạo shallow copy mặc định
+B sai vì shallow copy không phải deep copy
+C sai vì không xóa object từ memory
+D sai vì so sánh objects là của equals()
+
+Câu 9: Which statement about the wait() and notify() methods is correct?
+A. They can be called from any object
+B. They are static methods of Object class
+C. They do not require synchronization
+D. They are used for file I/O operations
+-> A
+Giải thích:
+A đúng vì wait() và notify() có thể gọi từ bất kỳ object nào
+B sai vì chúng là instance methods
+C sai vì yêu cầu synchronization
+D sai vì dùng cho thread coordination, không phải file I/O
+
+Câu 10: What is the result of this code?
+
+java
+String str1 = "Hello";
+String str2 = new String("Hello");
+System.out.println(str1 == str2);
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì == so sánh references, không phải nội dung
+B đúng vì str1 và str2 là hai objects khác nhau trong memory
+C sai vì code hợp lệ
+D sai vì không có exception
+
+4. ACCESS MODIFIERS & INHERITANCE
+Câu 1: Which access modifier provides the widest accessibility?
+A. private
+B. default (package-private)
+C. protected
+D. public
+-> D
+Giải thích:
+A sai vì private chỉ truy cập trong cùng class
+B sai vì default chỉ trong cùng package
+C sai vì protected trong package và subclasses
+D đúng vì public truy cập từ anywhere
+
+Câu 2: What is the effect of declaring a class as final?
+A. It cannot be instantiated
+B. It cannot be extended
+C. It cannot have methods
+D. It cannot implement interfaces
+-> B
+Giải thích:
+A sai vì abstract classes mới không thể instantiated
+B đúng vì final class không thể được kế thừa
+C sai vì final class vẫn có thể có methods
+D sai vì final class vẫn có thể implement interfaces
+
+Câu 3: Which of the following is true about method overriding?
+A. The access modifier cannot be more restrictive
+B. The return type must be exactly the same
+C. The method must be declared static
+D. Parameters can be different types
+-> A
+Giải thích:
+A đúng vì overridden method không thể có access modifier hạn chế hơn
+B sai vì return type có thể là covariant type
+C sai vì static methods không thể overridden
+D sai vì parameters phải giống hệt nhau
+
+Câu 4: What is multiple inheritance in Java?
+A. A class extending multiple classes
+B. A class implementing multiple interfaces
+C. An interface extending multiple classes
+D. A class having multiple parent classes
+-> B
+Giải thích:
+A sai vì Java không hỗ trợ class extending multiple classes
+B đúng vì đây là cách Java hỗ trợ multiple inheritance thông qua interfaces
+C sai vì interface chỉ có thể extend multiple interfaces
+D sai vì không thể có multiple parent classes
+
+Câu 5: Which keyword is used to call parent class constructor?
+A. super
+B. this
+C. parent
+D. base
+-> A
+Giải thích:
+A đúng vì super() gọi parent class constructor
+B sai vì this() gọi constructor trong cùng class
+C sai vì không có keyword parent trong Java
+D sai vì không có keyword base trong Java
+
+Câu 6: What is the output of this code?
+
+java
+class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+class Dog extends Animal {
+    void sound() { System.out.println("Bark"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}
+A. Animal sound
+B. Bark
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì đây là polymorphism - runtime type được sử dụng
+B đúng vì method được gọi dựa trên actual object type (Dog)
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 7: Which access modifier allows access within the same package and by subclasses?
+A. private
+B. default
+C. protected
+D. public
+-> C
+Giải thích:
+A sai vì private chỉ trong cùng class
+B sai vì default chỉ trong cùng package
+C đúng vì protected cho phép access trong package và bởi subclasses
+D sai vì public cho phép access từ anywhere
+
+Câu 8: What is method hiding in Java?
+A. When static method in subclass has same signature as static method in superclass
+B. When instance method in subclass has same signature as instance method in superclass
+C. When private methods are not visible in subclass
+D. When methods are declared final
+-> A
+Giải thích:
+A đúng vì đây là định nghĩa của method hiding với static methods
+B sai vì đây là method overriding với instance methods
+C sai vì đây là tính chất của private access modifier
+D sai vì final methods không thể overridden
+
+Câu 9: Which of the following about abstract classes is correct?
+A. They cannot have constructors
+B. They cannot have instance variables
+C. They cannot be instantiated
+D. They cannot have concrete methods
+-> C
+Giải thích:
+A sai vì abstract classes có thể có constructors
+B sai vì abstract classes có thể có instance variables
+C đúng vì abstract classes không thể được instantiated
+D sai vì abstract classes có thể có concrete methods
+
+Câu 10: What is the purpose of the final keyword for methods?
+A. Make method abstract
+B. Prevent method from being overridden
+C. Make method static
+D. Allow multiple implementations
+-> B
+Giải thích:
+A sai vì abstract keyword làm method abstract
+B đúng vì final keyword ngăn method bị overridden
+C sai vì static keyword làm method static
+D sai vì final không cho phép multiple implementations
+
+5. x
+Câu 1: What is compile-time polymorphism?
+A. Method overriding
+B. Method overloading
+C. Dynamic method dispatch
+D. Interface implementation
+-> B
+Giải thích:
+A sai vì method overriding là runtime polymorphism
+B đúng vì method overloading được resolve tại compile-time
+C sai vì dynamic method dispatch là runtime polymorphism
+D sai vì interface implementation không phải polymorphism type
+
+Câu 2: Which principle of OOP is achieved through abstract classes and interfaces?
+A. Encapsulation
+B. Inheritance
+C. Polymorphism
+D. Abstraction
+-> D
+Giải thích:
+A sai vì encapsulation đạt được qua access modifiers
+B sai vì inheritance đạt được qua extends keyword
+C sai vì polymorphism đạt được qua method overriding/overloading
+D đúng vì abstraction đạt được qua abstract classes và interfaces
+
+Câu 3: What is the main difference between abstract classes and interfaces in Java 8+?
+A. Abstract classes can have constructors, interfaces cannot
+B. Interfaces can have instance variables, abstract classes cannot
+C. Abstract classes support multiple inheritance, interfaces do not
+D. Interfaces can be instantiated, abstract classes cannot
+-> A
+Giải thích:
+A đúng vì abstract classes có constructors, interfaces không có
+B sai vì interfaces không thể có instance variables
+C sai vì abstract classes không hỗ trợ multiple inheritance
+D sai vì cả hai đều không thể instantiated
+
+Câu 4: Which of the following demonstrates runtime polymorphism?
+A. Method overloading
+B. Method overriding with dynamic method dispatch
+C. Constructor overloading
+D. Static method calls
+-> B
+Giải thích:
+A sai vì method overloading là compile-time polymorphism
+B đúng vì method overriding với dynamic dispatch là runtime polymorphism
+C sai vì constructor overloading là compile-time
+D sai vì static method calls là compile-time
+
+Câu 5: What is the output of this code?
+
+java
+interface Shape { void draw(); }
+class Circle implements Shape {
+    public void draw() { System.out.println("Drawing Circle"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+A. Drawing Circle
+B. Compilation error
+C. Runtime exception
+D. No output
+-> A
+Giải thích:
+A đúng vì interface reference có thể trỏ đến implementing class object
+B sai vì code hợp lệ - Circle implements Shape correctly
+C sai vì không có exception
+D sai vì có output
+
+Câu 6: Which keyword is used to achieve abstraction by declaring methods without implementation?
+A. final
+B. static
+C. abstract
+D. native
+-> C
+Giải thích:
+A sai vì final cho methods không thể overridden
+B sai vì static cho class-level methods
+C đúng vì abstract keyword khai báo methods không có implementation
+D sai vì native cho methods implemented in other languages
+
+Câu 7: What is the purpose of default methods in interfaces?
+A. Force implementing classes to override them
+B. Provide backward compatibility when adding new methods
+C. Make methods final in implementing classes
+D. Allow multiple inheritance of state
+-> B
+Giải thích:
+A sai vì default methods không bắt buộc override
+B đúng vì default methods cho phép thêm methods mới mà không phá vỡ existing implementations
+C sai vì default methods không làm methods final
+D sai vì default methods không liên quan đến inheritance of state
+
+Câu 8: Which OOP concept allows the same operation to behave differently on different classes?
+A. Encapsulation
+B. Abstraction
+C. Polymorphism
+D. Inheritance
+-> C
+Giải thích:
+A sai vì encapsulation là về data hiding
+B sai vì abstraction là về hiding implementation details
+C đúng vì polymorphism cho phép cùng operation có behavior khác nhau trên different classes
+D sai vì inheritance là về code reuse
+
+Câu 9: What is the main advantage of using interfaces over abstract classes?
+A. Interfaces can have constructors
+B. Interfaces support multiple inheritance
+C. Interfaces can have instance variables
+D. Interfaces can have method implementations
+-> B
+Giải thích:
+A sai vì interfaces không có constructors
+B đúng vì class có thể implement multiple interfaces
+C sai vì interfaces không có instance variables
+D sai vì chỉ default/static methods có implementation trong interfaces
+
+Câu 10: Which of the following is true about functional interfaces?
+A. They must have exactly one abstract method
+B. They cannot have default methods
+C. They must be declared with @FunctionalInterface
+D. They cannot have static methods
+-> A
+Giải thích:
+A đúng vì đây là định nghĩa của functional interface
+B sai vì functional interfaces có thể có default methods
+C sai vì @FunctionalInterface là optional
+D sai vì functional interfaces có thể có static methods
+Câu 11: What is the output of this code?
+
+java
+abstract class Vehicle {
+    abstract void start();
+    void stop() { System.out.println("Vehicle stopped"); }
+}
+class Car extends Vehicle {
+    void start() { System.out.println("Car started"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Vehicle v = new Car();
+        v.start();
+        v.stop();
+    }
+}
+A. Car started
+Vehicle stopped
+B. Vehicle started
+Vehicle stopped
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì abstract method start() được override trong Car, concrete method stop() được kế thừa
+B sai vì start() được override nên gọi implementation của Car
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 12: Which of the following about static polymorphism is correct?
+A. It is achieved through method overriding
+B. It is resolved at runtime
+C. It is also known as compile-time polymorphism
+D. It requires dynamic method dispatch
+-> C
+Giải thích:
+A sai vì method overriding là runtime polymorphism
+B sai vì static polymorphism resolved tại compile-time
+C đúng vì static polymorphism (method overloading) resolved tại compile-time
+D sai vì dynamic method dispatch là runtime polymorphism
+
+Câu 13: What is the main advantage of using polymorphism?
+A. Code duplication increases
+B. Tight coupling between classes
+C. Code flexibility and extensibility
+D. Compile-time optimization
+-> C
+Giải thích:
+A sai vì polymorphism giảm code duplication
+B sai vì polymorphism giảm coupling
+C đúng vì polymorphism tăng flexibility và extensibility
+D sai vì không phải lợi ích chính
+
+Câu 14: Which of the following is true about abstract methods?
+A. They can have method body
+B. They can be declared as private
+C. They must be implemented by concrete subclasses
+D. They can be declared as static
+-> C
+Giải thích:
+A sai vì abstract methods không có body
+B sai vì abstract methods không thể private
+C đúng vì abstract methods phải được implemented bởi concrete subclasses
+D sai vì abstract methods không thể static
+
+Câu 15: What is the purpose of the @Override annotation?
+A. To force method overriding
+B. To provide compile-time checking of overriding
+C. To improve performance of overridden methods
+D. To make methods final
+-> B
+Giải thích:
+A sai vì annotation không force overriding
+B đúng vì @Override giúp compiler kiểm tra overriding correctness
+C sai vì không ảnh hưởng performance
+D sai vì final keyword làm methods final
+
+Câu 16: Which concept allows treating objects of different classes uniformly?
+A. Encapsulation
+B. Polymorphism
+C. Abstraction
+D. Inheritance
+-> B
+Giải thích:
+A sai vì encapsulation là data hiding
+B đúng vì polymorphism cho phép xử lý objects của different classes uniformly
+C sai vì abstraction là hiding implementation
+D sai vì inheritance là code reuse
+
+Câu 17: What is the output of this code?
+
+java
+class Parent {
+    void display() { System.out.println("Parent"); }
+}
+class Child extends Parent {
+    void display() { System.out.println("Child"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.display();
+    }
+}
+A. Parent
+B. Child
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì method được gọi dựa trên actual object type
+B đúng vì runtime polymorphism - Child's display() được gọi
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 18: Which of the following about interface default methods is correct?
+A. They are implicitly abstract
+B. They must be implemented by all implementing classes
+C. They can be overridden by implementing classes
+D. They cannot have method body
+-> C
+Giải thích:
+A sai vì default methods có implementation
+B sai vì default methods không bắt buộc implement
+C đúng vì implementing classes có thể override default methods
+D sai vì default methods phải có body
+
+Câu 19: What is the difference between abstraction and encapsulation?
+A. Abstraction hides implementation, encapsulation hides data
+B. Abstraction hides data, encapsulation hides implementation
+C. Both hide implementation details
+D. Both are the same concept
+-> A
+Giải thích:
+A đúng vì abstraction hides implementation, encapsulation hides data
+B sai vì ngược lại với định nghĩa
+C sai vì chỉ abstraction hides implementation
+D sai vì đây là hai concepts khác nhau
+
+Câu 20: Which keyword is used to prevent method overriding?
+A. static
+B. final
+C. abstract
+D. private
+-> B
+Giải thích:
+A sai vì static methods không thể overridden nhưng có method hiding
+B đúng vì final methods không thể overridden
+C sai vì abstract methods phải được overridden
+D sai vì private methods không visible trong subclasses
+
+6. COLLECTIONS
+Câu 1: Which interface is at the top of Collections hierarchy?
+A. Collection
+B. List
+C. Set
+D. Map
+-> A
+Giải thích:
+A đúng vì Collection interface là root của Collections hierarchy
+B sai vì List extends Collection
+C sai vì Set extends Collection
+D sai vì Map không extends Collection
+
+Câu 2: What is the main difference between ArrayList and LinkedList?
+A. ArrayList is synchronized, LinkedList is not
+B. ArrayList uses array internally, LinkedList uses doubly linked list
+C. LinkedList allows null elements, ArrayList does not
+D. ArrayList is faster for insertion and deletion
+-> B
+Giải thích:
+A sai vì cả hai đều không synchronized
+B đúng vì ArrayList dùng array, LinkedList dùng doubly linked list
+C sai vì cả hai đều cho phép null elements
+D sai vì LinkedList nhanh hơn cho insertion và deletion
+
+Câu 3: Which collection maintains insertion order and allows duplicates?
+A. HashSet
+B. TreeSet
+C. ArrayList
+D. HashMap
+-> C
+Giải thích:
+A sai vì HashSet không duy trì order
+B sai vì TreeSet duy trì sorted order, không cho phép duplicates
+C đúng vì ArrayList duy trì insertion order và cho phép duplicates
+D sai vì HashMap không duy trì order
+
+Câu 4: What is the time complexity of contains() method in HashSet?
+A. O(1)
+B. O(n)
+C. O(log n)
+D. O(n²)
+-> A
+Giải thích:
+A đúng vì HashSet dùng hashing nên contains() là O(1) average case
+B sai vì đây là complexity của List.contains()
+C sai vì đây là complexity của TreeSet.contains()
+D sai vì đây là quadratic complexity
+
+Câu 5: Which interface does not extend Collection interface?
+A. List
+B. Set
+C. Map
+D. Queue
+-> C
+Giải thích:
+A sai vì List extends Collection
+B sai vì Set extends Collection
+C đúng vì Map không extends Collection
+D sai vì Queue extends Collection
+
+Câu 6: What is the difference between HashMap and Hashtable?
+A. HashMap is synchronized, Hashtable is not
+B. HashMap allows null keys and values, Hashtable does not
+C. Hashtable is faster than HashMap
+D. HashMap does not allow duplicates, Hashtable does
+-> B
+Giải thích:
+A sai vì Hashtable synchronized, HashMap không synchronized
+B đúng vì HashMap cho phép null keys/values, Hashtable không cho phép
+C sai vì Hashtable chậm hơn do synchronization
+D sai vì cả hai đều không cho phép duplicate keys
+
+Câu 7: Which collection class is synchronized by default?
+A. ArrayList
+B. HashMap
+C. Vector
+D. LinkedList
+-> C
+Giải thích:
+A sai vì ArrayList không synchronized
+B sai vì HashMap không synchronized
+C đúng vì Vector synchronized by default
+D sai vì LinkedList không synchronized
+
+Câu 8: What is the purpose of the Comparable interface?
+A. To define natural ordering of objects
+B. To compare two different objects
+C. To create multiple comparison logics
+D. To sort collections in reverse order
+-> A
+Giải thích:
+A đúng vì Comparable định nghĩa natural ordering
+B sai vì đây là chức năng của Comparator
+C sai vì Comparable chỉ có một comparison logic
+D sai vì reverse order có thể đạt được bằng Comparator
+
+Câu 9: Which method is used to iterate through a Collection?
+A. for loop only
+B. Iterator
+C. Direct access by index
+D. while loop only
+-> B
+Giải thích:
+A sai vì có nhiều cách để iterate
+B đúng vì Iterator là cách chuẩn để iterate through Collection
+C sai vì không phải Collection nào cũng hỗ trợ access by index
+D sai vì có nhiều cách để iterate
+
+Câu 10: What is the difference between fail-fast and fail-safe iterators?
+A. Fail-fast throws ConcurrentModificationException, fail-safe does not
+B. Fail-safe is faster than fail-fast
+C. Fail-fast works with synchronized collections only
+D. Fail-safe iterators are part of Java Collection Framework
+-> A
+Giải thích:
+A đúng vì fail-fast throws exception khi modification xảy ra trong iteration
+B sai vì fail-safe thường chậm hơn
+C sai vì fail-fast làm việc với cả non-synchronized collections
+D sai vì fail-safe iterators không phải part của core Collection Framework
+
+Câu 11: Which collection maintains elements in sorted order?
+A. HashSet
+B. ArrayList
+C. TreeSet
+D. LinkedList
+-> C
+Giải thích:
+A sai vì HashSet không duy trì order
+B sai vì ArrayList duy trì insertion order
+C đúng vì TreeSet duy trì elements theo sorted order
+D sai vì LinkedList duy trì insertion order
+
+Câu 12: What is the initial capacity of ArrayList in Java?
+A. 0
+B. 10
+C. 16
+D. 32
+-> B
+Giải thích:
+A sai vì initial capacity không phải 0
+B đúng vì ArrayList có initial capacity là 10
+C sai vì đây là initial capacity của HashMap
+D sai vì không phải initial capacity của ArrayList
+
+Câu 13: Which method is used to add an element to a Set?
+A. put()
+B. add()
+C. insert()
+D. push()
+-> B
+Giải thích:
+A sai vì put() dùng cho Map
+B đúng vì add() dùng cho Set
+C sai vì không có method insert() trong Set
+D sai vì push() dùng cho Stack
+
+Câu 14: What is the difference between Iterator and ListIterator?
+A. Iterator can traverse in both directions, ListIterator only forward
+B. ListIterator can traverse in both directions, Iterator only forward
+C. Iterator works with all collections, ListIterator only with List
+D. Both B and C
+-> D
+Giải thích:
+A sai vì ngược lại
+B đúng vì ListIterator có thể traverse cả hai directions
+C đúng vì ListIterator chỉ làm việc với List implementations
+D đúng vì cả B và C đều đúng
+
+Câu 15: Which collection is best for frequent search operations?
+A. LinkedList
+B. ArrayList
+C. HashSet
+D. Vector
+-> C
+Giải thích:
+A sai vì LinkedList chậm cho search operations
+B sai vì ArrayList search là O(n)
+C đúng vì HashSet search là O(1) average case
+D sai vì Vector search là O(n)
+
+Câu 16: What is type safety in Collections?
+A. Using synchronized collections
+B. Using generics to ensure type compatibility
+C. Using final collections
+D. Using immutable collections
+-> B
+Giải thích:
+A sai vì synchronized collections liên quan đến thread safety
+B đúng vì generics đảm bảo type compatibility tại compile-time
+C sai vì final collections không liên quan đến type safety
+D sai vì immutable collections liên quan đến mutability
+
+Câu 17: Which Map implementation maintains insertion order?
+A. HashMap
+B. TreeMap
+C. LinkedHashMap
+D. Hashtable
+-> C
+Giải thích:
+A sai vì HashMap không duy trì order
+B sai vì TreeMap duy trì sorted order
+C đúng vì LinkedHashMap duy trì insertion order
+D sai vì Hashtable không duy trì order
+
+Câu 18: What is the purpose of the hashCode() method in HashMap?
+A. To determine the bucket location for the key
+B. To compare keys for equality
+C. To sort the keys
+D. To serialize the map
+-> A
+Giải thích:
+A đúng vì hashCode() xác định bucket location cho key
+B sai vì equals() dùng để compare keys
+C sai vì HashMap không sort keys
+D sai vì hashCode() không liên quan đến serialization
+
+Câu 19: Which collection is thread-safe and does not use locking?
+A. Vector
+B. Hashtable
+C. CopyOnWriteArrayList
+D. SynchronizedList
+-> C
+Giải thích:
+A sai vì Vector dùng synchronization
+B sai vì Hashtable dùng synchronization
+C đúng vì CopyOnWriteArrayList là thread-safe mà không dùng locking
+D sai vì SynchronizedList dùng synchronization
+
+Câu 20: What is the difference between poll() and remove() in Queue?
+A. poll() returns null if queue is empty, remove() throws exception
+B. remove() returns null if queue is empty, poll() throws exception
+C. Both behave the same way
+D. poll() is for Stack, remove() for Queue
+-> A
+Giải thích:
+A đúng vì poll() return null khi queue empty, remove() throws exception
+B sai vì ngược lại
+C sai vì behavior khác nhau khi queue empty
+D sai vì cả hai đều cho Queue
+
+7. ARRAYS
+Câu 1: What is the output of this code?
+
+java
+int[] arr = new int[5];
+System.out.println(arr[0]);
+A. 0
+B. null
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì primitive arrays được initialized với default values (0 cho int)
+B sai vì null chỉ cho reference types
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 2: Which of the following correctly declares and initializes an array?
+A. int arr[] = new int[3];
+B. int[] arr = new int[3];
+C. int arr = new int[3];
+D. Both A and B
+-> D
+Giải thích:
+A đúng vì đây là valid syntax
+B đúng vì đây cũng là valid syntax
+C sai vì thiếu brackets
+D đúng vì cả A và B đều đúng
+
+Câu 3: What is the length of this array?
+
+java
+int[][] arr = new int[3][4];
+A. 3
+B. 4
+C. 12
+D. Compilation error
+-> A
+Giải thích:
+A đúng vì length của outer array là 3
+B sai vì đây là length của inner arrays
+C sai vì đây là total elements
+D sai vì code hợp lệ
+
+Câu 4: Which method can be used to sort an array?
+A. Arrays.sort()
+B. Array.sort()
+C. Collection.sort()
+D. List.sort()
+-> A
+Giải thích:
+A đúng vì Arrays.sort() dùng để sort arrays
+B sai vì không có class Array với method sort()
+C sai vì Collections.sort() dùng cho Collections
+D sai vì List.sort() dùng cho Lists
+
+Câu 5: What is the main difference between array and ArrayList?
+A. Array is fixed size, ArrayList is dynamic size
+B. Array can store primitives, ArrayList cannot
+C. Array is faster for access by index
+D. All of the above
+-> D
+Giải thích:
+A đúng vì array fixed size, ArrayList dynamic size
+B đúng vì array store primitives, ArrayList chỉ store objects
+C đúng vì array access nhanh hơn ArrayList
+D đúng vì cả ba đều đúng
+
+Câu 6: What is the output of this code?
+
+java
+String[] arr = {"A", "B", "C"};
+System.out.println(arr.length());
+A. 3
+B. 2
+C. Compilation error
+D. Runtime exception
+-> C
+Giải thích:
+A sai vì code không compile
+B sai vì code không compile
+C đúng vì length là field, không phải method - nên dùng arr.length
+D sai vì compilation error xảy ra trước runtime
+
+Câu 7: Which of the about multidimensional arrays is correct?
+A. All dimensions must have the same size
+B. It is implemented as array of arrays
+C. It can only have two dimensions
+D. It cannot contain primitive types
+-> B
+Giải thích:
+A sai vì dimensions có thể có different sizes
+B đúng vì multidimensional array là array of arrays
+C sai vì có thể có nhiều hơn hai dimensions
+D sai vì có thể chứa primitive types
+
+Câu 8: What is the time complexity of accessing an element by index in array?
+A. O(1)
+B. O(n)
+C. O(log n)
+D. O(n²)
+-> A
+Giải thích:
+A đúng vì array access by index là constant time O(1)
+B sai vì đây là complexity của linear search
+C sai vì đây là complexity của binary search
+D sai vì đây là quadratic complexity
+
+Câu 9: Which method copies elements from one array to another?
+A. Arrays.copy()
+B. System.arraycopy()
+C. Array.copy()
+D. Both A and B
+-> B
+Giải thích:
+A sai vì Arrays.copyOf() mới tồn tại
+B đúng vì System.arraycopy() là native method hiệu quả
+C sai vì không có Array.copy()
+D sai vì chỉ B đúng
+
+Câu 10: What happens when you try to access array index out of bounds?
+A. Compilation error
+B. Array resizes automatically
+C. ArrayIndexOutOfBoundsException
+D. Returns null
+-> C
+Giải thích:
+A sai vì đây là runtime error
+B sai vì array không resize automatically
+C đúng vì ArrayIndexOutOfBoundsException được throw
+D sai vì không return null
+
+8. JAVA IO
+Câu 1: What is the difference between InputStream and Reader?
+A. InputStream reads bytes, Reader reads characters
+B. InputStream reads characters, Reader reads bytes
+C. Both read bytes
+D. Both read characters
+-> A
+Giải thích:
+A đúng vì InputStream cho byte streams, Reader cho character streams
+B sai vì ngược lại
+C sai vì Reader không read bytes
+D sai vì InputStream không read characters
+
+Câu 2: Which class is used to read text files efficiently?
+A. FileReader
+B. BufferedReader
+C. FileInputStream
+D. Scanner
+-> B
+Giải thích:
+A sai vì FileReader không efficient cho large files
+B đúng vì BufferedReader cung cấp buffering cho efficient reading
+C sai vì FileInputStream cho byte streams
+D sai vì Scanner có thể dùng nhưng BufferedReader hiệu quả hơn
+
+Câu 3: What is the purpose of the File class?
+A. To read file content
+B. To write file content
+C. To represent file and directory pathnames
+D. To delete files
+-> C
+Giải thích:
+A sai vì File class không dùng để read content
+B sai vì File class không dùng để write content
+C đúng vì File class đại diện cho file và directory pathnames
+D sai vì delete chỉ là một operation của File class
+
+Câu 4: Which stream classes are used for object serialization?
+A. ObjectInputStream and ObjectOutputStream
+B. FileInputStream and FileOutputStream
+C. DataInputStream and DataOutputStream
+D. BufferedReader and BufferedWriter
+-> A
+Giải thích:
+A đúng vì ObjectInputStream và ObjectOutputStream dùng cho serialization
+B sai vì dùng cho byte streams
+C sai vì dùng cho primitive data types
+D sai vì dùng cho character streams
+
+Câu 5: What is the difference between FileInputStream and FileReader?
+A. FileInputStream reads bytes, FileReader reads characters
+B. FileInputStream reads characters, FileReader reads bytes
+C. FileInputStream is for text files, FileReader for binary files
+D. There is no difference
+-> A
+Giải thích:
+A đúng vì FileInputStream cho byte streams, FileReader cho character streams
+B sai vì ngược lại
+C sai vì ngược lại
+D sai vì có sự khác biệt quan trọng
+
+Câu 6: Which class is used to format output?
+A. PrintWriter
+B. PrintStream
+C. Formatter
+D. All of the above
+-> D
+Giải thích:
+A đúng vì PrintWriter có formatting capabilities
+B đúng vì PrintStream có formatting capabilities
+C đúng vì Formatter class chuyên cho formatting
+D đúng vì cả ba đều có thể dùng để format output
+
+Câu 7: What is the purpose of the transient keyword?
+A. To make variables persistent
+B. To exclude variables from serialization
+C. To make variables volatile
+D. To improve serialization performance
+-> B
+Giải thích:
+A sai vì transient làm variables không persistent
+B đúng vì transient excludes variables khỏi serialization
+C sai vì volatile khác với transient
+D sai vì transient không cải thiện performance
+
+Câu 8: Which exception is thrown during serialization if class is not Serializable?
+A. IOException
+B. NotSerializableException
+C. ClassCastException
+D. SerializationException
+-> B
+Giải thích:
+A sai vì IOException là general I/O exception
+B đúng vì NotSerializableException được throw khi class không implements Serializable
+C sai vì ClassCastException liên quan đến casting
+D sai vì không có SerializationException
+
+Câu 9: What is the difference between flush() and close() methods?
+A. flush() writes buffered data, close() releases resources
+B. close() writes buffered data, flush() releases resources
+C. Both do the same thing
+D. flush() is for input streams, close() for output streams
+-> A
+Giải thích:
+A đúng vì flush() writes buffered data, close() releases resources
+B sai vì ngược lại
+C sai vì chúng làm các việc khác nhau
+D sai vì flush() và close() đều có thể dùng cho cả input và output streams
+
+Câu 10: Which class is used for random access to files?
+A. RandomAccessFile
+B. FileReader
+C. BufferedReader
+D. FileInputStream
+-> A
+Giải thích:
+A đúng vì RandomAccessFile cho phép random access
+B sai vì FileReader chỉ cho sequential access
+C sai vì BufferedReader chỉ cho sequential access
+D sai vì FileInputStream chỉ cho sequential access
+
+9. JAVA STREAMS
+Câu 1: What is the main characteristic of Java Streams?
+A. They store data
+B. They can be reused multiple times
+C. They process data in a functional way
+D. They are synchronized
+-> C
+Giải thích:
+A sai vì streams không store data
+B sai vì streams không thể reused
+C đúng vì streams process data theo functional way
+D sai vì streams không synchronized
+
+Câu 2: Which operation is intermediate in Stream API?
+A. forEach
+B. collect
+C. filter
+D. count
+-> C
+Giải thích:
+A sai vì forEach là terminal operation
+B sai vì collect là terminal operation
+C đúng vì filter là intermediate operation
+D sai vì count là terminal operation
+
+Câu 3: What is the output of this code?
+
+java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+long count = numbers.stream().filter(n -> n % 2 == 0).count();
+System.out.println(count);
+A. 2
+B. 5
+C. 0
+D. Compilation error
+-> A
+Giải thích:
+A đúng vì có 2 số chẵn (2 và 4) trong list
+B sai vì đây là total count
+C sai vì có số chẵn trong list
+D sai vì code hợp lệ
+
+Câu 4: Which method is used to convert a Stream to List?
+A. toList()
+B. collect(Collectors.toList())
+C. asList()
+D. Both A and B
+-> D
+Giải thích:
+A đúng vì toList() có từ Java 16
+B đúng vì collect(Collectors.toList()) dùng cho các version trước
+C sai vì asList() của Arrays class
+D đúng vì cả A và B đều đúng
+
+Câu 5: What is the difference between map() and flatMap()?
+A. map() transforms elements, flatMap() transforms and flattens
+B. flatMap() transforms elements, map() transforms and flattens
+C. Both do the same thing
+D. map() is for primitive streams, flatMap() for object streams
+-> A
+Giải thích:
+A đúng vì map() transforms elements, flatMap() transforms và flattens streams
+B sai vì ngược lại
+C sai vì chúng làm việc khác nhau
+D sai vì cả hai đều làm việc với object streams
+
+Câu 6: Which terminal operation returns Optional?
+A. findFirst()
+B. forEach()
+C. count()
+D. collect()
+-> A
+Giải thích:
+A đúng vì findFirst() return Optional
+B sai vì forEach() return void
+C sai vì count() return long
+D sai vì collect() return collection type
+
+Câu 7: What is the purpose of the reduce() operation?
+A. To filter elements
+B. To transform elements
+C. To combine elements into a single result
+D. To sort elements
+-> C
+Giải thích:
+A sai vì filter() dùng để filter elements
+B sai vì map() dùng để transform elements
+C đúng vì reduce() combine elements thành single result
+D sai vì sorted() dùng để sort elements
+
+Câu 8: Which method creates a stream from an array?
+A. Arrays.stream()
+B. Stream.of()
+C. List.stream()
+D. Both A and B
+-> D
+Giải thích:
+A đúng vì Arrays.stream() tạo stream từ array
+B đúng vì Stream.of() cũng tạo stream từ array
+C sai vì List.stream() tạo stream từ List
+D đúng vì cả A và B đều đúng
+
+Câu 9: What is the difference between sequential and parallel streams?
+A. Sequential streams are always faster
+B. Parallel streams use multiple threads
+C. Parallel streams guarantee order
+D. Sequential streams cannot process large data
+-> B
+Giải thích:
+A sai vì parallel streams có thể nhanh hơn với large data
+B đúng vì parallel streams dùng multiple threads
+C sai vì parallel streams không guarantee order
+D sai vì sequential streams có thể process large data
+
+Câu 10: Which method is used to skip elements in a stream?
+A. skip()
+B. limit()
+C. filter()
+D. distinct()
+-> A
+Giải thích:
+A đúng vì skip() bỏ qua n elements đầu tiên
+B sai vì limit() giới hạn số lượng elements
+C sai vì filter() lọc elements theo predicate
+D sai vì distinct() loại bỏ duplicates
+
+10. BOXING, AUTO-BOXING & OVERLOAD
+Câu 1: What is the output of this code?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i1 = 100;
+        Integer i2 = 100;
+        Integer i3 = 200;
+        Integer i4 = 200;
+        
+        System.out.println(i1 == i2);
+        System.out.println(i3 == i4);
+    }
+}
+A. true true
+B. false false
+C. true false
+D. false true
+-> C
+Giải thích:
+A sai vì Integer cache chỉ từ -128 đến 127
+B sai vì 100 trong cache range nên cùng object
+C đúng vì 100 trong cache (true), 200 ngoài cache (false)
+D sai vì kết quả ngược lại
+
+Câu 2: What is the output of this code?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = new Integer(10);
+        Integer j = new Integer(10);
+        System.out.println(i == j);
+        System.out.println(i.equals(j));
+    }
+}
+A. true true
+B. false true
+C. true false
+D. false false
+-> B
+Giải thích:
+A sai vì == so sánh reference, hai objects khác nhau
+B đúng vì == false (khác objects), equals true (cùng giá trị)
+C sai vì == không thể true với new objects
+D sai vì equals so sánh giá trị nên true
+
+Câu 3: Which method will be called?
+
+java
+public class Test {
+    static void test(int x) { System.out.println("int"); }
+    static void test(Integer x) { System.out.println("Integer"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. int
+B. Integer
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì compiler chọn exact match (int) thay vì auto-boxing
+B sai vì không phải phương thức được chọn
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 4: Which method will be called?
+
+java
+public class Test {
+    static void test(Long x) { System.out.println("Long"); }
+    static void test(double x) { System.out.println("double"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. Long
+B. double
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì cần boxing và widening (int -> Long không trực tiếp)
+B đúng vì int có thể widen thành double
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 5: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = null;
+        int j = i;
+        System.out.println(j);
+    }
+}
+A. 0
+B. null
+C. Compilation error
+D. NullPointerException
+-> D
+Giải thích:
+A sai vì unboxing null gây exception
+B sai vì primitive không thể nhận null
+C sai vì code biên dịch được
+D đúng vì unboxing null gây NullPointerException
+
+Câu 6: Which method will be called?
+
+java
+public class Test {
+    static void test(Object x) { System.out.println("Object"); }
+    static void test(int... x) { System.out.println("varargs"); }
+    
+    public static void main(String[] args) {
+        test(10);
+    }
+}
+A. Object
+B. varargs
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì varargs match tốt hơn Object
+B đúng vì exact match với varargs tốt hơn boxing + Object
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 7: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = 10;
+        Integer j = 10;
+        Integer k = new Integer(10);
+        System.out.println(i == j);
+        System.out.println(i == k);
+    }
+}
+A. true true
+B. true false
+C. false true
+D. false false
+-> B
+Giải thích:
+A sai vì i và k khác objects
+B đúng vì i và j cùng cache object, i và k khác objects
+C sai vì i và j cùng object
+D sai vì i và j cùng object
+
+Câu 8: Which method will be called?
+
+java
+public class Test {
+    static void test(Number x) { System.out.println("Number"); }
+    static void test(Integer x) { System.out.println("Integer"); }
+    
+    public static void main(String[] args) {
+        Integer i = 10;
+        test(i);
+    }
+}
+A. Number
+B. Integer
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì Integer match chính xác hơn Number
+B đúng vì exact match được ưu tiên
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 9: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        Integer i = 1000;
+        Integer j = 1000;
+        System.out.println(i <= j);
+        System.out.println(i >= j);
+    }
+}
+A. true true
+B. true false
+C. false true
+D. false false
+-> A
+Giải thích:
+A đúng vì toán tử so sánh (<=, >=) unbox values để so sánh
+B sai vì cả hai đều true
+C sai vì i và j bằng nhau
+D sai vì i và j bằng nhau
+
+Câu 10: What is the output?
+
+java
+public class Test {
+    static void test(int a, long b) { System.out.println("int-long"); }
+    static void test(Integer a, int b) { System.out.println("Integer-int"); }
+    
+    public static void main(String[] args) {
+        test(10, 20);
+    }
+}
+A. int-long
+B. Integer-int
+C. Compilation error
+D. Runtime exception
+-> C
+Giải thích:
+A sai vì ambiguous method call
+B sai vì ambiguous method call
+C đúng vì cả hai method đều match với các arguments
+D sai vì compilation error xảy ra trước
+
+11. COLLECTIONS (Code-based)
+Câu 1: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add(1, "C");
+        System.out.println(list);
+    }
+}
+A. [A, B, C]
+B. [A, C, B]
+C. [C, A, B]
+D. [A, B]
+-> B
+Giải thích:
+A sai vì "C" được chèn vào index 1, đẩy "B" sang index 2
+B đúng vì [A, C, B] sau khi chèn
+C sai vì "C" không chèn ở đầu
+D sai vì có thêm "C"
+
+Câu 2: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(1);
+        System.out.println(set.size());
+    }
+}
+A. 1
+B. 2
+C. 3
+D. Compilation error
+-> B
+Giải thích:
+A sai vì Set loại bỏ duplicates nhưng size là 2
+B đúng vì Set chỉ chứa các phần tử duy nhất
+C sai vì phần tử trùng không được thêm
+D sai vì code hợp lệ
+
+Câu 3: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.put("B", 2);
+        map.put("A", 3);
+        System.out.println(map.get("A"));
+    }
+}
+A. 1
+B. 2
+C. 3
+D. null
+-> C
+Giải thích:
+A sai vì giá trị của "A" bị ghi đè
+B sai vì đây là giá trị của "B"
+C đúng vì put cùng key sẽ ghi đè giá trị cũ
+D sai vì "A" đã có trong map
+
+Câu 4: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+        queue.offer(2);
+        queue.poll();
+        System.out.println(queue.peek());
+    }
+}
+A. 1
+B. 2
+C. null
+D. Exception
+-> B
+Giải thích:
+A sai vì poll() đã xóa phần tử đầu (1)
+B đúng vì peek() trả về 2 (phần tử đầu mới)
+C sai vì queue không rỗng
+D sai vì không có exception
+
+Câu 5: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        list.set(1, 4);
+        System.out.println(list);
+    }
+}
+A. [1, 2, 3]
+B. [1, 4, 3]
+C. [4, 2, 3]
+D. UnsupportedOperationException
+-> B
+Giải thích:
+A sai vì phần tử tại index 1 đã thay đổi
+B đúng vì set(1,4) thay giá trị tại index 1 thành 4
+C sai vì thay đổi tại index 1 không phải 0
+D sai vì Arrays.asList cho phép set() nhưng không cho add/remove
+
+12. ARRAYS (Code-based)
+Câu 1: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        System.out.println(arr[0]);
+    }
+}
+A. 0
+B. null
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì mảng primitive được khởi tạo với default values
+B sai vì primitive không thể null
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 2: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[][] arr = new int[2][3];
+        System.out.println(arr.length + " " + arr[0].length);
+    }
+}
+A. 2 3
+B. 3 2
+C. 2 2
+D. 3 3
+-> A
+Giải thích:
+A đúng vì arr.length = 2 (số hàng), arr[0].length = 3 (số cột)
+B sai vì ngược lại
+C sai vì không đúng dimensions
+D sai vì không đúng dimensions
+
+Câu 3: What is the output?
+
+java
+import java.util.Arrays;
+public class Test {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+        System.out.println(arr1 == arr2);
+        System.out.println(Arrays.equals(arr1, arr2));
+    }
+}
+A. false true
+B. true false
+C. true true
+D. false false
+-> A
+Giải thích:
+A đúng vì == so sánh references (false), Arrays.equals so sánh nội dung (true)
+B sai vì == không thể true
+C sai vì == không thể true
+D sai vì Arrays.equals trả về true
+
+Câu 4: What is the output?
+
+java
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        for (int i = 0; i < arr.length; i += 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+A. 1 2 3 4 5
+B. 1 3 5
+C. 2 4
+D. 1 2 3
+-> B
+Giải thích:
+A sai vì không in tất cả phần tử
+B đúng vì i += 2 nên in index 0, 2, 4
+C sai vì in index chẵn, không phải lẻ
+D sai vì không in đủ 5 phần tử
+
+Câu 5: What is the output?
+
+java
+import java.util.Arrays;
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 1, 4, 2};
+        Arrays.sort(arr, 1, 4);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+A. [1, 2, 3, 4, 5]
+B. [5, 1, 3, 4, 2]
+C. [5, 1, 3, 4, 2]
+D. [5, 1, 3, 4, 2]
+-> B
+Giải thích:
+A sai vì chỉ sort từ index 1 đến 3
+B đúng vì sort từ index 1 đến 3: [3,1,4] -> [1,3,4]
+C sai vì kết quả khác
+D sai vì kết quả khác
+
+13. JAVA IO (Code-based)
+Câu 1: What is the output if file doesn't exist?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) {
+        File file = new File("test.txt");
+        System.out.println(file.exists());
+    }
+}
+A. true
+B. false
+C. Compilation error
+D. Runtime exception
+-> B
+Giải thích:
+A sai vì file không tồn tại
+B đúng vì exists() trả về false khi file không tồn tại
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 2: What happens with this code?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        FileWriter fw = new FileWriter("output.txt");
+        fw.write("Hello");
+        fw.close();
+    }
+}
+A. Tạo file với nội dung "Hello"
+B. Không tạo file
+C. Compilation error
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì FileWriter tạo file và ghi nội dung
+B sai vì file được tạo
+C sai vì code hợp lệ
+D sai vì không có exception
+
+Câu 3: What is the output?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+        System.out.println(br.readLine());
+        br.close();
+    }
+}
+A. Dòng đầu tiên của file
+B. Toàn bộ nội dung file
+C. null nếu file rỗng
+D. A hoặc C
+-> D
+Giải thích:
+A đúng nếu file có nội dung
+B sai vì readLine() chỉ đọc một dòng
+C đúng nếu file rỗng
+D đúng vì có thể là A hoặc C tùy nội dung file
+
+Câu 4: What happens with this code?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        ObjectOutputStream oos = new ObjectOutputStream(
+            new FileOutputStream("data.ser"));
+        oos.writeObject("Hello");
+        oos.close();
+    }
+}
+A. Ghi object String vào file
+B. Compilation error
+C. Runtime exception
+D. Không ghi gì
+-> A
+Giải thích:
+A đúng vì ObjectOutputStream ghi objects
+B sai vì code hợp lệ
+C sai vì String là Serializable
+D sai vì có ghi dữ liệu
+
+Câu 5: What is the output?
+
+java
+import java.io.*;
+public class Test {
+    public static void main(String[] args) throws IOException {
+        File file = new File("test.txt");
+        System.out.println(file.getAbsolutePath());
+    }
+}
+A. Đường dẫn tuyệt đối của file
+B. "test.txt"
+C. null
+D. Runtime exception
+-> A
+Giải thích:
+A đúng vì getAbsolutePath() trả về absolute path
+B sai vì không trả về relative path
+C sai vì luôn trả về path
+D sai vì không có exception
+
+14. JAVA STREAMS (Code-based)
+Câu 1: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.stream()
+               .filter(n -> n % 2 == 0)
+               .forEach(System.out::print);
+    }
+}
+A. 1 3 5
+B. 2 4
+C. 1 2 3 4 5
+D. Compilation error
+-> B
+Giải thích:
+A sai vì filter lấy số chẵn
+B đúng vì 2 và 4 là số chẵn
+C sai vì không in tất cả
+D sai vì code hợp lệ
+
+Câu 2: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        List<String> result = words.stream()
+                                   .filter(s -> s.length() > 5)
+                                   .toList();
+        System.out.println(result);
+    }
+}
+A. [apple]
+B. [banana, cherry]
+C. [cherry]
+D. []
+-> B
+Giải thích:
+A sai vì "apple" chỉ có 5 ký tự
+B đúng vì "banana" (6), "cherry" (6) đều > 5
+C sai vì thiếu "banana"
+D sai vì có phần tử thỏa mãn
+
+Câu 3: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Optional<Integer> sum = numbers.stream()
+                                       .reduce((a, b) -> a + b);
+        System.out.println(sum.get());
+    }
+}
+A. 15
+B. 10
+C. 5
+D. Compilation error
+-> A
+Giải thích:
+A đúng vì reduce tính tổng: 1+2+3+4+5=15
+B sai vì không phải tổng 10
+C sai vì không phải 5
+D sai vì code hợp lệ
+
+Câu 4: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("Java", "Stream", "API");
+        String result = words.stream()
+                             .map(String::toUpperCase)
+                             .reduce("", (a, b) -> a + b);
+        System.out.println(result);
+    }
+}
+A. JAVA STREAM API
+B. JAVASTREAMAPI
+C. JavaStreamAPI
+D. Compilation error
+-> B
+Giải thích:
+A sai vì không có khoảng trắng
+B đúng vì nối các chuỗi thành "JAVASTREAMAPI"
+C sai vì đã chuyển thành chữ hoa
+D sai vì code hợp lệ
+
+Câu 5: What is the output?
+
+java
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        long count = numbers.stream()
+                           .map(n -> n * n)
+                           .filter(n -> n > 10)
+                           .count();
+        System.out.println(count);
+    }
+}
+A. 1
+B. 2
+C. 3
+D. 4
+-> B
+Giải thích:
+A sai vì có 2 số > 10
+B đúng vì 4²=16>10, 5²=25>10
+C sai vì 3²=9 không >10
+D sai vì chỉ có 2 số
